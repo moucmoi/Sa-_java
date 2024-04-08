@@ -14,6 +14,7 @@ public class Athlete {
     private List<Epreuve> epreuve;
 
 
+
     public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Equipe equipe, Sport sport) {
         this.nom = nom;
         this.prenom = prenom;
@@ -26,6 +27,7 @@ public class Athlete {
         this.sport = sport;
         this.epreuve=new ArrayList<>();
     }
+  
     public Pays getPays() {
         return pays;
     }
@@ -66,6 +68,7 @@ public class Athlete {
         return endurance;
     }
 
+
     public void ajouterEpreuve(Epreuve newEpreuve) {
         this.epreuve.add(newEpreuve);
     }
@@ -78,4 +81,6 @@ public class Athlete {
     public String toString() {
         return this.nom + " " + this.prenom;
     }
+
+
 }
