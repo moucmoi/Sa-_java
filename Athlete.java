@@ -14,7 +14,7 @@ public class Athlete {
     private List<Epreuve> epreuve;
 
 
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Equipe equipe, Sport sport, List<Epreuve> epreuve) {
+    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Equipe equipe, Sport sport) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
@@ -24,7 +24,7 @@ public class Athlete {
         this.pays = pays;
         this.equipe = equipe;
         this.sport = sport;
-        this.epreuve = epreuve;
+        this.epreuve=new ArrayList<>();
     }
     public Pays getPays() {
         return pays;
@@ -66,5 +66,16 @@ public class Athlete {
         return endurance;
     }
 
-    
+    public void ajouterEpreuve(Epreuve newEpreuve) {
+        this.epreuve.add(newEpreuve);
+    }
+
+    public int participer() {
+        return 3;
+    }
+
+    @Override
+    public String toString() {
+        return this.nom + " " + this.prenom;
+    }
 }
