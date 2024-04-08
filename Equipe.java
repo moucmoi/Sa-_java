@@ -3,15 +3,15 @@ import java.util.ArrayList;
 
 public class Equipe {
     private String nomEquipe;
-    private List<Athlete> athletes;
+    private List<Athlete> lesAthletes;
 
     public Equipe(String nomEquipe){
         this.nomEquipe = nomEquipe;
-        this.athletes = new ArrayList<>();
+        this.lesAthletes = new ArrayList<>();
     }
 
     public void ajouteAthlete(Athlete athlete){
-        this.athletes.add(athlete);
+        this.lesAthletes.add(athlete);
     }
 
     public String getNom(){
@@ -19,12 +19,12 @@ public class Equipe {
     }
 
     public List<Athlete> getLesAthletes(){
-        return this.athletes
+        return this.lesAthletes
     }
 
     @Override
 
     public String toString(){
-        return "Equipe :" + this.nomEquipe + "/n" + "Athletes :" + this.athletes;
+        return "Equipe :" + this.nomEquipe + "/n" + "Athletes :" + this.lesAthletes;
     }
 }
