@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 public abstract class Sport{
-    protected String nomSport;
-    public List<Athlete> lesAthletes;
-    public List<Epreuve> lesEpreuves;
+    private String nomSport;
+    private List<Athlete> lesAthletes;
+    private List<Epreuve> lesEpreuves;
 
 
     public Sport(String nomSport) {
@@ -32,5 +32,5 @@ public abstract class Sport{
         this.lesEpreuves.add(epreuve);
     }
 
-    public abstract int calculerScore();
+    public abstract int calculerScore(Athlete athlete);
 }
