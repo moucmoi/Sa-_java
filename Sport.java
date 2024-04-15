@@ -4,8 +4,7 @@ public abstract class Sport{
     private String nomSport;
     private List<Athlete> lesAthletes;
     private List<Epreuve> lesEpreuves;
-
-
+  
     public Sport(String nomSport) {
         this.nomSport = nomSport;
         this.lesAthletes = new ArrayList<>();
