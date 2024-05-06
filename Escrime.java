@@ -4,7 +4,7 @@ public class Escrime extends Sport{
     }
     
     @Override
-    public int calculerScore(Athlete athlete) {
+    public double calculerScore(Athlete athlete) {
         return 0.5*athlete.getForce() + 2.5*athlete.getAgilite() + athlete.getEndurance();
     }
 }

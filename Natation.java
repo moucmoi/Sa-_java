@@ -4,7 +4,7 @@ public class Natation extends Sport{
     }
     
     @Override
-    public int calculerScore(Athlete athlete) {
+    public double calculerScore(Athlete athlete) {
         return athlete.getForce() + 0.5*athlete.getAgilite() + 2.5*athlete.getEndurance();
     }
 }

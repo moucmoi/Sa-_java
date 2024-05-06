@@ -5,7 +5,7 @@ public class Athletisme extends Sport{
     }
     
     @Override
-    public int calculerScore(Athlete athlete) {
+    public double calculerScore(Athlete athlete) {
         return 0.5*athlete.getForce() + athlete.getAgilite() + 2*athlete.getEndurance();
     }
 }
