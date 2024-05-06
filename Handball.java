@@ -5,7 +5,7 @@ public class Handball extends Sport {
     }
 
     @Override
-    public int calculerScore(Athlete athlete) {
+    public double calculerScore(Athlete athlete) {
         return athlete.getForce() + 1.5*athlete.getAgilite() + 1.5*athlete.getEndurance();
     }
 }

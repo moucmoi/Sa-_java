@@ -31,5 +31,5 @@ public abstract class Sport{
         this.lesEpreuves.add(epreuve);
     }
 
-    public abstract int calculerScore(Athlete athlete);
+    public abstract double calculerScore(Athlete athlete);
 }

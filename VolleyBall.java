@@ -4,7 +4,7 @@ public class VolleyBall extends Sport{
     }
     
     @Override
-    public int calculerScore(Athlete athlete) {
+    public double calculerScore(Athlete athlete) {
         return 1.5*athlete.getForce() + athlete.getAgilite() + 1.5*athlete.getEndurance();
     }
 }
