@@ -19,7 +19,7 @@ public class Equipe {
     }
 
     public List<Athlete> getLesAthletes(){
-        return this.lesAthletes
+        return this.lesAthletes;
     }
 
     @Override

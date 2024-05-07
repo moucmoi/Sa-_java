@@ -1,5 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
 
 public class Epreuve {
     private String nomEpreuve;
@@ -33,7 +31,6 @@ public class Epreuve {
     @Override
 
     public String toString(){
-        return "Epreuve :" + this.nomEpreuve + "homme :" + this.homme + "/n" + "individuel" + 
-            this.individuel + "sport :" + this.sport;
+        return "Epreuve :" + this.nomEpreuve + '\n' + "homme :" + this.homme + "\n" + "individuel" + this.individuel + "\n" + "sport :" + this.sport;
     }
 }
