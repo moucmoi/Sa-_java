@@ -46,3 +46,35 @@ ALTER TABLE EPREUVE ADD FOREIGN KEY (NomSport) REFERENCES SPORT(NomSport);
 ALTER TABLE PARTICIPER ADD FOREIGN KEY (NomEpreuve) REFERENCES EPREUVE(NomEpreuve);
 ALTER TABLE PARTICIPER ADD FOREIGN KEY (NumAthlete) REFERENCES ATHLETE(NumAthlete);
 
+
+INSERT INTO PAYS VALUES (
+    ("USA", "USA", 0, 0, 0),
+    ("CHN", "Chine", 0, 0, 0),
+    ("JPN", "Japon", 0, 0, 0),
+    ("KEN", "Kenya", 0, 0, 0),
+    ("FRA", "France", 0, 0, 0),
+    ("MAR", "Maroc", 0, 0, 0),
+    ("DEU", "Allemagne", 0, 0, 0),
+    ("AUS", "Australie", 0, 0, 0),
+    ("BRA", "Brésil", 0, 0, 0),
+    ("TUR", "Turquie", 0, 0, 0)
+);
+
+INSERT INTO SPORT VALUES (
+    ("Natation"),
+    ("Handball"),
+    ("Volley-Ball"),
+    ("Escrime"),
+    ("Athlétisme"),
+);
+
+INSERT INTO EPREUVE VALUES (
+  ("Natation 100 brasse"),
+  ("Natation relais libre"),
+  ("Handball"),
+  ("Volley-Ball"),
+  ("Escrime fleuret"),
+  ("Escrime épée"),
+  ("Athlétisme 110 haies"),
+  ("Athlétisme relais 400m"),
+);
