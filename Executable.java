@@ -16,11 +16,11 @@ public class Executable{
         Pays Turquie=new Pays("Turquie","TUR");
 
 
-        Natation Natation=new Natation();
-        Handball Handball=new Handball();
-        VolleyBall VolleyBall=new VolleyBall();
-        Escrime Escrime=new Escrime();
-        Athletisme Athletisme=new Athletisme();
+        Sport Natation=new Sport("Natation",1,0.5,2.5);
+        Sport Handball=new Sport("HandBall",1,1.5,1.5);
+        Sport VolleyBall=new Sport("VolleyBall",1.5,1,1.5);
+        Sport Escrime=new Sport("Escrime",0.5,2.5,1);
+        Sport Athletisme=new Sport("Athletisme",0.5,1,2.5);
 
         Epreuve CentMetresH=new Epreuve("Natation 100 brasse", true, true, Natation);
         Epreuve RelaisLibreH=new Epreuve("Natation relais libre",true,false,Natation);
@@ -41,8 +41,8 @@ public class Executable{
         Epreuve QuatreCentMetresRelaiF=new Epreuve("Athlétisme 110 haies", false, false, Athletisme);
 
         Equipe e1=new Equipe("Clebs");
-        Equipe e2=new Equipe("Furies")
-        
+        Equipe e2=new Equipe("Furies");
+
         Athlete a1=new Athlete("Fonteny", "Noa", true, 100, 100, 100,France,e1);
         Athlete a2=new Athlete("Chesneau", "Marin", false, 0, 0, 0, France, e1);
         Athlete a3=new Athlete("Grandchamp", "Loris", true, 10, 10000, 50, France, e1);
@@ -65,3 +65,4 @@ public class Executable{
         }
     } */
 }
+
