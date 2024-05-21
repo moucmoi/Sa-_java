@@ -1,6 +1,7 @@
 public class Natation extends Sport{
-    public Natation(String nomSport) {
-        super(nomSport);
+    public Natation() {
+        super();
+        this.nomSport = "Natation";
     }
     
     @Override
