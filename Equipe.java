@@ -10,20 +10,29 @@ public class Equipe {
         this.lesAthletes = new ArrayList<>();
     }
 
-    public void ajouteAthlete(Athlete athlete){
+    public void ajouteAthlete(Athlete athlete) {
         this.lesAthletes.add(athlete);
     }
 
-    public String getNom(){
+    public String getNom() {
         return this.nomEquipe;
     }
 
-    public List<Athlete> getLesAthletes(){
+    public List<Athlete> getLesAthletes() {
         return this.lesAthletes;
     }
 
-    @Override
+    public int getNbAthletes() {
+        return this.lesAthletes.size();
+    }
 
+    public double CalculerScoreEquipe() {
+        for (Athlete athlete : this.lesAthletes) {
+            
+        }
+    }
+
+    @Override
     public String toString(){
         return "Equipe :" + this.nomEquipe + "/n" + "Athletes :" + this.lesAthletes;
     }
