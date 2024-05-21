@@ -49,6 +49,6 @@ public class Pays {
 
     @Override
     public String toString() {
-        return this.nomPays + " " + this.codePays;
+        return "Nom: " + this.nomPays + " Code: " + this.codePays + "\n" + " Nombre de Médailles" + " Or: " + this.nbMedailleOr + " Argent: " + this.nbMedailleArgent + " Bronze " + this.nbMedailleBronze;
     }
 }

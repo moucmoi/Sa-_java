@@ -11,7 +11,7 @@ CREATE TABLE ATHLETE (
     varchar(15) Nom;
     varchar(15) Prenom;
     varchar(1) Sexe;
-    int Force;
+    int Forces;
     int Agilite;
     int endurance;
     varchar(15) NomSport;
@@ -27,7 +27,8 @@ CREATE TABLE EPREUVE (
 );
 
 CREATE TABLE EQUIPE (
-    PRIMARY KEY varchar(15) NomEquipe;
+    PRIMARY KEY varchar(15) NumeroEquipe;
+    varchar(15) NomEquipe;
 );
 
 CREATE TABLE SPORT (
@@ -51,7 +52,7 @@ INSERT INTO PAYS VALUES (
     ("USA", "USA", 0, 0, 0),
     ("CHN", "Chine", 0, 0, 0),
     ("JPN", "Japon", 0, 0, 0),
-    ("KEN", "Kenya", 0, 0, 0),
+    ("KEN", "Kenya", 0, 0, 0), 
     ("FRA", "France", 0, 0, 0),
     ("MAR", "Maroc", 0, 0, 0),
     ("DEU", "Allemagne", 0, 0, 0),
