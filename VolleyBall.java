@@ -1,6 +1,7 @@
 public class VolleyBall extends Sport{
-    public VolleyBall(String nomSport) {
-        super(nomSport);
+    public VolleyBall() {
+        super();
+        this.nomSport = "Volley-Ball";
     }
     
     @Override

@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 public abstract class Sport{
-    private String nomSport;
-    private List<Athlete> lesAthletes;
-    private List<Epreuve> lesEpreuves;
+    protected String nomSport;
+    protected List<Athlete> lesAthletes;
+    protected List<Epreuve> lesEpreuves;
   
-    public Sport(String nomSport) {
-        this.nomSport = nomSport;
+    public Sport() {
         this.lesAthletes = new ArrayList<>();
         this.lesEpreuves = new ArrayList<>();
     }
