@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 public abstract class Sport{
-    protected String nomSport;
-    protected List<Athlete> lesAthletes;
-    protected List<Epreuve> lesEpreuves;
+    private String nomSport;
+    private List<Epreuve> lesEpreuves;
+    private double coeffForce;
+    private double coeffAgilite;
+    private double coeffEndurance;
   
     public Sport() {
-        this.lesAthletes = new ArrayList<>();
         this.lesEpreuves = new ArrayList<>();
     }
 
@@ -14,21 +15,15 @@ public abstract class Sport{
         return nomSport;
     }
 
-    public List<Athlete> getLesAthletes() {
-        return lesAthletes;
-    }
-
     public List<Epreuve> getLesEpreuves() {
         return lesEpreuves;
-    }
-
-    public void ajouteAthlete(Athlete athlete) {
-        this.lesAthletes.add(athlete);
     }
 
     public void ajouteEpreuve(Epreuve epreuve) {
         this.lesEpreuves.add(epreuve);
     }
 
-    public abstract double calculerScore(Athlete athlete);
+    public double calculerScore(Athlete athlete) {
+        return this.coeffForce*athlete.getForce() + this.coeffAgilite*athlete.getAgilite() + this.coeffEndurance*athlete.getEndurance();
+    }
 }
