@@ -7,7 +7,12 @@ public abstract class Sport{
     private double coeffAgilite;
     private double coeffEndurance;
   
-    public Sport() {
+
+    public Sport(String nomSport, double coeffForce, double coeffAgilite, double coeffEndurance) {
+        this.nomSport = nomSport;
+        this.coeffForce = coeffForce;
+        this.coeffAgilite = coeffAgilite;
+        this.coeffEndurance = coeffEndurance;
         this.lesEpreuves = new ArrayList<>();
     }
 
