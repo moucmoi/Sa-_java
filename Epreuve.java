@@ -7,7 +7,7 @@ public class Epreuve {
     private boolean homme;
     private boolean individuel;
     private Sport sport;
-    private List<Equipe> equipes;
+    private List<Equipe> lesParticipants;
 
 
     public Epreuve(String nomEpreuve, boolean homme, boolean individuel, Sport sport){
@@ -15,15 +15,15 @@ public class Epreuve {
         this.homme = homme;
         this.individuel = individuel;
         this.sport = sport;
-        this.equipes=new ArrayList<>();
+        this.lesParticipants=new ArrayList<>();
     }
 
-    public List<Equipe> getEquipes(){
-        return this.equipes;
+    public List<Equipe> getlesParticipants(){
+        return this.lesParticipants;
     }
 
     public void ajouteEquipe(Equipe newEquipe){
-        this.equipes.add(newEquipe);
+        this.lesParticipants.add(newEquipe);
     }
     public String getNom(){
         return this.nomEpreuve;
@@ -41,9 +41,9 @@ public class Epreuve {
         return this.sport;
     } 
 
-    /*public double calculerScore(){
+    public double calculerScore(Equipe Equipe){
         double res;
-    }*/
+    }
 
     @Override
 
