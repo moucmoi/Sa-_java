@@ -7,7 +7,7 @@ public class Pays {
     private int nbMedailleOr;
     private int nbMedailleArgent;
     private int nbMedailleBronze;
-    private List<Athlete> lesEquipes;
+    private List<Equipe> lesEquipes;
     
     public Pays(String nomPays, String codePays) {
         this.nomPays = nomPays;
@@ -39,11 +39,11 @@ public class Pays {
         return nbMedailleBronze;
     }
 
-    public void ajouteEquipe(Athlete newEquipe) {
+    public void ajouteEquipe(Equipe newEquipe) {
         this.lesEquipes.add(newEquipe);
     }
 
-    public List<Athlete> getLesEquipes() {
+    public List<Equipe> getLesEquipes() {
         return this.lesEquipes;
     }
 
