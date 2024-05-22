@@ -5,7 +5,6 @@ public class Equipe {
     private String nomEquipe;
     private Pays pays;
     private List<Epreuve> lesEpreuves;
-
     private List<Athlete> lesAthletes;
 
     public Equipe(String nomEquipe,Pays pays){
@@ -15,9 +14,10 @@ public class Equipe {
         this.lesEpreuves=new ArrayList<>();
     }
 
-    public void ajouteAthlete(Athlete athlete){
+    public void ajouteAthlete(Athlete athlete) {
         this.lesAthletes.add(athlete);
     }
+
 
     public void ajouteEpreuve(Epreuve epreuve){
         this.lesEpreuves.add(epreuve);
@@ -31,16 +31,12 @@ public class Equipe {
         this.pays = pays;
     }
 
-    public List<Epreuve> getLesEpreuves() {
-        return lesEpreuves;
-    }
-
     public String getNom(){
         return this.nomEquipe;
     }
 
-    public List<Athlete> getLesAthletes(){
-        return this.lesAthletes;
+    public int getNbAthletes() {
+        return this.lesAthletes.size();
     }
 
     @Override
