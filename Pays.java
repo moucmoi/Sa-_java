@@ -7,7 +7,7 @@ public class Pays {
     private int nbMedailleOr;
     private int nbMedailleArgent;
     private int nbMedailleBronze;
-    private List<Athlete> lesEquipes;
+    private List<Equipe> lesEquipes;
     
     public Pays(String nomPays, String codePays) {
         this.nomPays = nomPays;
@@ -39,18 +39,23 @@ public class Pays {
         return nbMedailleBronze;
     }
 
-    public void ajouteEquipe(Athlete newEquipe) {
+    public void ajouteEquipe(Equipe newEquipe) {
         this.lesEquipes.add(newEquipe);
     }
 
-    public List<Athlete> getLesEquipes() {
+    public List<Equipe> getLesEquipes() {
         return this.lesEquipes;
     }
-
-    //faire calculer score
+    public double calculerScore(){
+        double res=0;
+        for(Equipe equipe:this.lesEquipes){
+            res+=equipe.calculerScore();
+        }
+        return res;
+    }
 
     @Override
     public String toString() {
-        return "Nom: " + this.nomPays + " Code: " + this.codePays + "\n" + " Nombre de Médailles" + " Or: " + this.nbMedailleOr + " Argent: " + this.nbMedailleArgent + " Bronze " + this.nbMedailleBronze;
+        return "Nom: " + this.nomPays +"\n"+ " Code: " + this.codePays + "\n" + " Nombre de Médailles" +"\n"+ " Or: " + this.nbMedailleOr +"\n"+ " Argent: " + this.nbMedailleArgent +"\n"+ " Bronze " + this.nbMedailleBronze;
     }
 }
