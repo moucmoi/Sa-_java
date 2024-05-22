@@ -9,12 +9,11 @@ public class Athlete {
     private int agilite;
     private int endurance;
     private Pays pays;
-    private Equipe equipe;
     public Sport sport;
     public List<Equipe> equipes;
 
 
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Equipe equipe, Sport sport) {
+    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Sport sport) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
@@ -22,9 +21,40 @@ public class Athlete {
         this.agilite = agilite;
         this.endurance = endurance;
         this.pays = pays;
-        this.equipe = equipe;
         this.sport = sport;
         this.equipes=new ArrayList<>();
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public void setForce(int force) {
+        this.force = force;
+    }
+
+    public void setAgilite(int agilite) {
+        this.agilite = agilite;
+    }
+
+    public void setEndurance(int endurance) {
+        this.endurance = endurance;
+    }
+
+    public void setPays(Pays pays) {
+        this.pays = pays;
+    }
+
+    public void setSport(Sport sport) {
+        this.sport = sport;
     }
 
     public List<Equipe> getEquipes(){
@@ -37,10 +67,6 @@ public class Athlete {
   
     public Pays getPays() {
         return pays;
-    }
-
-    public Equipe getEquipe() {
-        return equipe;
     }
 
     public Sport getSport() {
@@ -81,7 +107,7 @@ public class Athlete {
 
     @Override
     public String toString() {
-        return this.nom + " " + this.prenom;
+        return this.nom + this.prenom;
     }
 
 
