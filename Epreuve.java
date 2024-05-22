@@ -18,6 +18,22 @@ public class Epreuve {
         this.lesParticipants=new ArrayList<>();
     }
 
+    public void setNomEpreuve(String nomEpreuve) {
+        this.nomEpreuve = nomEpreuve;
+    }
+
+    public void setHomme(boolean homme) {
+        this.homme = homme;
+    }
+
+    public void setIndividuel(boolean individuel) {
+        this.individuel = individuel;
+    }
+
+    public void setSport(Sport sport) {
+        this.sport = sport;
+    }
+    
     public List<Equipe> getlesParticipants(){
         return this.lesParticipants;
     }
