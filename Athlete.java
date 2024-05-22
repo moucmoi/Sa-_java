@@ -8,20 +8,16 @@ public class Athlete {
     private int force;
     private int agilite;
     private int endurance;
-    private Pays pays;
-    public Sport sport;
     public List<Equipe> equipes;
 
 
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Sport sport) {
+    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
-        this.pays = pays;
-        this.sport = sport;
         this.equipes=new ArrayList<>();
     }
 
@@ -49,28 +45,12 @@ public class Athlete {
         this.endurance = endurance;
     }
 
-    public void setPays(Pays pays) {
-        this.pays = pays;
-    }
-
-    public void setSport(Sport sport) {
-        this.sport = sport;
-    }
-
     public List<Equipe> getEquipes(){
         return this.equipes;
     }
 
     public void ajouteEquipe(Equipe newEquipe){
         this.equipes.add(newEquipe);
-    }
-  
-    public Pays getPays() {
-        return pays;
-    }
-
-    public Sport getSport() {
-        return sport;
     }
 
     public String getNom() {
