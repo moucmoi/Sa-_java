@@ -1,13 +1,8 @@
-import java.util.List;
-import java.util.ArrayList;
-
-
 public class Epreuve {
     private String nomEpreuve;
     private boolean homme;
     private boolean individuel;
     private Sport sport;
-    private List<Equipe> lesParticipants;
 
 
     public Epreuve(String nomEpreuve, boolean homme, boolean individuel, Sport sport){
@@ -15,7 +10,6 @@ public class Epreuve {
         this.homme = homme;
         this.individuel = individuel;
         this.sport = sport;
-        this.lesParticipants=new ArrayList<>();
     }
 
     public void setNomEpreuve(String nomEpreuve) {
@@ -34,13 +28,6 @@ public class Epreuve {
         this.sport = sport;
     }
 
-    public List<Equipe> getlesParticipants(){
-        return this.lesParticipants;
-    }
-
-    public void ajouteEquipe(Equipe newEquipe){
-        this.lesParticipants.add(newEquipe);
-    }
     public String getNom(){
         return this.nomEpreuve;
     }
