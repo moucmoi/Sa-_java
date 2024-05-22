@@ -46,8 +46,13 @@ public class Pays {
     public List<Equipe> getLesEquipes() {
         return this.lesEquipes;
     }
-
-    //faire calculer score
+    public double calculerScore(){
+        double res=0;
+        for(Equipe equipe:this.lesEquipes){
+            res+=equipe.calculerScore();
+        }
+        return res;
+    }
 
     @Override
     public String toString() {

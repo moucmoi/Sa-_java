@@ -33,7 +33,7 @@ public class Epreuve {
     public void setSport(Sport sport) {
         this.sport = sport;
     }
-    
+
     public List<Equipe> getlesParticipants(){
         return this.lesParticipants;
     }
@@ -59,8 +59,8 @@ public class Epreuve {
 
     public double calculerScore(Equipe equipe){
         double res=0;
-        for(Athlete ath:equipe.getLesAthletes()){
-            res+=sport.calculerScore(ath);
+        for(Athlete athlete:equipe.getLesAthletes()){
+            res+=sport.calculerScore(athlete);
         }
         return res;
     }

@@ -46,10 +46,10 @@ public class Equipe {
         return this.lesAthletes.size();
     }
 
-    public double calculerScore(Athlete ath){
+    public double calculerScore(){
         double res=0;
         for(Epreuve epreuve:this.lesEpreuves){
-            res+=epreuve.calculerScore(this);
+                res+=epreuve.calculerScore(this);
         }
         return res;
     }

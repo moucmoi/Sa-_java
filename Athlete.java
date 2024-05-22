@@ -100,7 +100,7 @@ public class Athlete {
     public double participer() {
         double res=0;
         for(Equipe equipe:this.equipes){
-            res+=equipe.calculerScore(this);
+            res+=equipe.calculerScore();
         }
         return res;
     }
