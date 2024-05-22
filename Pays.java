@@ -7,12 +7,12 @@ public class Pays {
     private int nbMedailleOr;
     private int nbMedailleArgent;
     private int nbMedailleBronze;
-    private List<Athlete> lesAthletes;
+    private List<Athlete> lesEquipes;
     
     public Pays(String nomPays, String codePays) {
         this.nomPays = nomPays;
         this.codePays = codePays;
-        this.lesAthletes = new ArrayList<>();
+        this.lesEquipes = new ArrayList<>();
     }
 
     public String getNomPays() {
@@ -39,13 +39,15 @@ public class Pays {
         return nbMedailleBronze;
     }
 
-    public void ajouteAthlete(Athlete newAthlete) {
-        this.lesAthletes.add(newAthlete);
+    public void ajouteEquipe(Athlete newEquipe) {
+        this.lesEquipes.add(newEquipe);
     }
 
-    public List<Athlete> getLesAthletes() {
-        return this.lesAthletes;
+    public List<Athlete> getLesEquipes() {
+        return this.lesEquipes;
     }
+
+    //faire calculer score
 
     @Override
     public String toString() {

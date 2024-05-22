@@ -11,8 +11,7 @@ public class Athlete {
     private Pays pays;
     private Equipe equipe;
     public Sport sport;
-    private List<Epreuve> epreuve;
-
+    public List<Equipe> equipes;
 
 
     public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Equipe equipe, Sport sport) {
@@ -25,7 +24,15 @@ public class Athlete {
         this.pays = pays;
         this.equipe = equipe;
         this.sport = sport;
-        this.epreuve=new ArrayList<>();
+        this.equipes=new ArrayList<>();
+    }
+
+    public List<Equipe> getEquipes(){
+        return this.equipes;
+    }
+
+    public void ajouteEquipe(Equipe newEquipe){
+        this.equipes.add(newEquipe);
     }
   
     public Pays getPays() {
@@ -38,10 +45,6 @@ public class Athlete {
 
     public Sport getSport() {
         return sport;
-    }
-
-    public List<Epreuve> getEpreuve() {
-        return epreuve;
     }
 
     public String getNom() {
@@ -66,11 +69,6 @@ public class Athlete {
 
     public int getEndurance() {
         return endurance;
-    }
-
-
-    public void ajouterEpreuve(Epreuve newEpreuve) {
-        this.epreuve.add(newEpreuve);
     }
 
     public int participer() {

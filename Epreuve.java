@@ -1,17 +1,28 @@
 
+
 public class Epreuve {
     private String nomEpreuve;
     private boolean homme;
     private boolean individuel;
     private Sport sport;
+    private List<Equipe> lesParticipants;
+
 
     public Epreuve(String nomEpreuve, boolean homme, boolean individuel, Sport sport){
         this.nomEpreuve = nomEpreuve;
         this.homme = homme;
         this.individuel = individuel;
         this.sport = sport;
+        this.lesParticipants=new ArrayList<>();
     }
 
+    public List<Equipe> getlesParticipants(){
+        return this.lesParticipants;
+    }
+
+    public void ajouteEquipe(Equipe newEquipe){
+        this.lesParticipants.add(newEquipe);
+    }
     public String getNom(){
         return this.nomEpreuve;
     }
@@ -27,6 +38,15 @@ public class Epreuve {
     public Sport getSport(){
         return this.sport;
     } 
+
+    public double calculerScore(List<Equipe> equipes){
+        double res;
+        for(Equipe equi:equipes){
+            for(Athlete ath:equi){
+                res+=sport.calculerScore(ath);
+            }
+        }
+    }
 
     @Override
 
