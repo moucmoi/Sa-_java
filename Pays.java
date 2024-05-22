@@ -54,6 +54,18 @@ public class Pays {
         return res;
     }
 
+    public void ajouteOr(){
+        this.nbMedailleOr+=1;
+    }
+
+    public void ajouteBronze(){
+        this.nbMedailleBronze+=1;
+    }
+
+    public void ajouteArgent(){
+        this.nbMedailleArgent+=1;
+    }
+
     @Override
     public String toString() {
         return "Nom: " + this.nomPays +"\n"+ " Code: " + this.codePays + "\n" + " Nombre de Médailles" +"\n"+ " Or: " + this.nbMedailleOr +"\n"+ " Argent: " + this.nbMedailleArgent +"\n"+ " Bronze " + this.nbMedailleBronze;
