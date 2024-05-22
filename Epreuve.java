@@ -41,8 +41,13 @@ public class Epreuve {
         return this.sport;
     } 
 
-    public double calculerScore(Equipe Equipe){
+    public double calculerScore(List<Equipe> equipes){
         double res;
+        for(Equipe equi:equipes){
+            for(Athlete ath:equi){
+                res+=sport.calculerScore(ath);
+            }
+        }
     }
 
     @Override
