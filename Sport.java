@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-public abstract class Sport{
+public class Sport{
     private String nomSport;
     private List<Epreuve> lesEpreuves;
     private double coeffForce;
