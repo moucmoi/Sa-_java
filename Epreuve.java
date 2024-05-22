@@ -28,6 +28,8 @@ public class Epreuve {
         return this.sport;
     } 
 
+    //faire calcul sport
+
     @Override
 
     public String toString(){
