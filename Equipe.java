@@ -18,6 +18,13 @@ public class Equipe {
         this.lesAthletes.add(athlete);
     }
 
+    public List<Epreuve> getLesEpreuves() {
+        return lesEpreuves;
+    }
+
+    public List<Athlete> getLesAthletes() {
+        return lesAthletes;
+    }
 
     public void ajouteEpreuve(Epreuve epreuve){
         this.lesEpreuves.add(epreuve);
@@ -37,6 +44,14 @@ public class Equipe {
 
     public int getNbAthletes() {
         return this.lesAthletes.size();
+    }
+
+    public double calculerScore(Athlete ath){
+        double res=0;
+        for(Epreuve epreuve:this.lesEpreuves){
+            res+=epreuve.calculerScore(this);
+        }
+        return res;
     }
 
     @Override

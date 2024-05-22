@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 
 
 public class Epreuve {
@@ -39,17 +41,15 @@ public class Epreuve {
         return this.sport;
     } 
 
-    public double calculerScore(List<Equipe> equipes){
-        double res;
-        for(Equipe equi:equipes){
-            for(Athlete ath:equi){
-                res+=sport.calculerScore(ath);
-            }
+    public double calculerScore(Equipe equipe){
+        double res=0;
+        for(Athlete ath:equipe.getLesAthletes()){
+            res+=sport.calculerScore(ath);
         }
+        return res;
     }
 
     @Override
-
     public String toString(){
         return "Epreuve :" + this.nomEpreuve + '\n' + "homme :" + this.homme + "\n" + "individuel" + this.individuel + "\n" + "sport :" + this.sport;
     }

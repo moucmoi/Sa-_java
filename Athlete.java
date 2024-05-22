@@ -71,8 +71,12 @@ public class Athlete {
         return endurance;
     }
 
-    public int participer() {
-        return 3;
+    public double participer() {
+        double res=0;
+        for(Equipe equipe:this.equipes){
+            res+=equipe.calculerScore(this);
+        }
+        return res;
     }
 
     @Override
