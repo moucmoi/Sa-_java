@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Athlete {
+public class Athlete implements Comparable<Athlete>{
     private String nom;
     private String prenom;
     private String sexe;
@@ -83,6 +83,11 @@ public class Athlete {
             res+=equipe.calculerScore();
         }
         return res;
+    }
+
+    @Override
+    public int compareTo(Athlete a){
+        return (int)this.participer()-(int)a.participer();
     }
 
     @Override

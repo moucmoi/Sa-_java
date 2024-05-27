@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Pays {
+public class Pays implements Comparable<Pays>{
     private String nomPays;
     private String codePays;
     private int nbMedailleOr;
@@ -64,6 +64,11 @@ public class Pays {
 
     public void ajouteArgent(){
         this.nbMedailleArgent+=1;
+    }
+
+    @Override
+    public int compareTo(Pays p){
+        return (int)this.calculerScore()-(int)p.calculerScore();
     }
 
     @Override

@@ -1,7 +1,8 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Equipe {
+public class Equipe implements Comparable<Equipe>{
     private String nomEquipe;
     private Pays pays;
     private List<Epreuve> lesEpreuves;
@@ -52,6 +53,11 @@ public class Equipe {
                 res+=epreuve.calculerScore(this);
         }
         return res;
+    }
+
+    @Override
+    public int compareTo(Equipe e){
+        return (int)this.calculerScore()-(int)e.calculerScore();
     }
 
     @Override
