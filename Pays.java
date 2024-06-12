@@ -54,7 +54,7 @@ public class Pays implements Comparable<Pays>{
         for(Equipe equipe:this.lesEquipes){
             res+=equipe.calculerScore();
         }
-        return res;
+        return res+nbMedailleOr+nbMedailleArgent/2+nbMedailleBronze/4;
     }
 
     public void ajouteOr(){
