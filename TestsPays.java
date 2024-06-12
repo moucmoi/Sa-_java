@@ -56,9 +56,7 @@ public class TestsPays {
             Assertions.assertEquals(france.calculerScore(), ((112.5+95)+(127.5+115)));
             Assertions.assertEquals(france.calculerScore(), ((80+125)+(85+125)));
         }
-
-        "Nom: " + this.nomPays +"\n"+ " Code: " + this.codePays + "\n" + " Nombre de Médailles" +"\n"+ " Or: " + this.nbMedailleOr +"\n"+ " Argent: " + this.nbMedailleArgent +"\n"+ " Bronze " + this.nbMedailleBronze;
-    
+        
         @Test
         public void TestToString() {
             Assertions.assertEquals(france.toString(), "Nom: France\n Code: FRA\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
