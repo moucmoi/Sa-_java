@@ -92,7 +92,7 @@ public class Athlete implements Comparable<Athlete>{
 
     @Override
     public String toString() {
-        return this.nom + this.prenom;
+        return this.nom +" "+ this.prenom;
     }
 
 
