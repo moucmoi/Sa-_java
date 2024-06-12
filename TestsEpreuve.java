@@ -53,8 +53,6 @@ public class TestsEpreuve {
             Assertions.assertEquals(volleyBallH.calculerScore(e2), (85+125));
         }
 
-        "Epreuve : " + this.nomEpreuve + '\n' + " homme : " + this.homme + "\n" + " individuel : " + this.individuel + "\n" + " sport : " + this.sport;
-
         @Test
         public void TestToString() {
             Assertions.assertEquals(handballH.toString(), "Epreuve : Handball\n homme : true\n individuel : false\n sport : handball");
