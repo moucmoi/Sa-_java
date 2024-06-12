@@ -13,6 +13,9 @@ public class Pays implements Comparable<Pays>{
         this.nomPays = nomPays;
         this.codePays = codePays;
         this.lesEquipes = new ArrayList<>();
+        this.nbMedailleBronze = 0;
+        this.nbMedailleArgent = 0;
+        this.nbMedailleOr = 0;
     }
 
     public String getNomPays() {
