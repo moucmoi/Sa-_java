@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 public class Sport{
@@ -7,7 +8,6 @@ public class Sport{
     private double coeffAgilite;
     private double coeffEndurance;
   
-
     public Sport(String nomSport, double coeffForce, double coeffAgilite, double coeffEndurance) {
         this.nomSport = nomSport;
         this.coeffForce = coeffForce;
@@ -26,6 +26,34 @@ public class Sport{
 
     public void ajouteEpreuve(Epreuve epreuve) {
         this.lesEpreuves.add(epreuve);
+    }
+
+    public void setNomSport(String nomSport) {
+        this.nomSport = nomSport;
+    }
+
+    public double getCoeffForce() {
+        return coeffForce;
+    }
+
+    public void setCoeffForce(double coeffForce) {
+        this.coeffForce = coeffForce;
+    }
+
+    public double getCoeffAgilite() {
+        return coeffAgilite;
+    }
+
+    public void setCoeffAgilite(double coeffAgilite) {
+        this.coeffAgilite = coeffAgilite;
+    }
+
+    public double getCoeffEndurance() {
+        return coeffEndurance;
+    }
+
+    public void setCoeffEndurance(double coeffEndurance) {
+        this.coeffEndurance = coeffEndurance;
     }
 
     public double calculerScore(Athlete athlete) {

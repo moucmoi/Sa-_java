@@ -1,47 +1,56 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Athlete {
+public class Athlete implements Comparable<Athlete>{
     private String nom;
     private String prenom;
     private String sexe;
     private int force;
     private int agilite;
     private int endurance;
-    private Pays pays;
-    private Equipe equipe;
-    public Sport sport;
-    private List<Epreuve> epreuve;
+    public List<Equipe> equipes;
 
 
-
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Pays pays, Equipe equipe, Sport sport) {
+    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
-        this.pays = pays;
-        this.equipe = equipe;
-        this.sport = sport;
-        this.epreuve=new ArrayList<>();
-    }
-  
-    public Pays getPays() {
-        return pays;
+        this.equipes=new ArrayList<>();
     }
 
-    public Equipe getEquipe() {
-        return equipe;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public Sport getSport() {
-        return sport;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public List<Epreuve> getEpreuve() {
-        return epreuve;
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public void setForce(int force) {
+        this.force = force;
+    }
+
+    public void setAgilite(int agilite) {
+        this.agilite = agilite;
+    }
+
+    public void setEndurance(int endurance) {
+        this.endurance = endurance;
+    }
+
+    public List<Equipe> getEquipes(){
+        return this.equipes;
+    }
+
+    public void ajouteEquipe(Equipe newEquipe){
+        this.equipes.add(newEquipe);
     }
 
     public String getNom() {
@@ -68,18 +77,22 @@ public class Athlete {
         return endurance;
     }
 
-
-    public void ajouterEpreuve(Epreuve newEpreuve) {
-        this.epreuve.add(newEpreuve);
+    public double participer() {
+        double res=0;
+        for(Equipe equipe:this.equipes){
+            res+=equipe.calculerScore();
+        }
+        return res;
     }
 
-    public int participer() {
-        return 3;
+    @Override
+    public int compareTo(Athlete a){
+        return (int)this.participer()-(int)a.participer();
     }
 
     @Override
     public String toString() {
-        return this.nom + " " + this.prenom;
+        return this.nom + this.prenom;
     }
 
 

@@ -1,6 +1,3 @@
-import java.sql.*;
-
-
 public class Executable{
     public static void main(String[] args) {
         
@@ -27,7 +24,7 @@ public class Executable{
         Epreuve HandballH=new Epreuve("Handball", true, false,Handball);
         Epreuve  VolleyBallH=new Epreuve("Volley-Ball",true,false,VolleyBall);
         Epreuve EscrimeFleuretH=new Epreuve("Escrime fleuret",true, true, Escrime);
-        Epreuve EscrimeEpeeH=new Epreuve("Escrime fleuret",true, true, Escrime);
+        Epreuve EscrimeEpeeH=new Epreuve("Escrime fleuret ",true, true, Escrime);
         Epreuve CentMetreHaiesH=new Epreuve("Athlétisme 110 haies", true, true, Athletisme);
         Epreuve QuatreCentMetresRelaiH=new Epreuve("Athlétisme 110 haies", true, false, Athletisme);
         
@@ -40,29 +37,52 @@ public class Executable{
         Epreuve CentMetreHaiesF=new Epreuve("Athlétisme 110 haies", false, true, Athletisme);
         Epreuve QuatreCentMetresRelaiF=new Epreuve("Athlétisme 110 haies", false, false, Athletisme);
 
-        Equipe e1=new Equipe("Clebs");
-        Equipe e2=new Equipe("Furies");
+        Equipe e1=new Equipe("Equipe1",France);
+        Equipe e2=new Equipe("Equipe2",Maroc);
 
-        Athlete a1=new Athlete("Fonteny", "Noa", true, 100, 100, 100,France,e1);
-        Athlete a2=new Athlete("Chesneau", "Marin", false, 0, 0, 0, France, e1);
-        Athlete a3=new Athlete("Grandchamp", "Loris", true, 10, 10000, 50, France, e1);
-        Athlete a4=new Athlete("Yayaoui", "Mohamed-Amine", true, 10, 10, 10, Maroc, e2);
+        Athlete Noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5);
+        Athlete Marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12);
+        Athlete Loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20);
+        Athlete Amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10);
+
+        e1.ajouteAthlete(Noa);
+        e1.ajouteAthlete(Marin);
+        e2.ajouteAthlete(Loris);
+        e2.ajouteAthlete(Amine);
+        France.ajouteEquipe(e1);
+        Maroc.ajouteEquipe(e2);
+
+        Noa.ajouteEquipe(e1);
+        Marin.ajouteEquipe(e1);
+        Amine.ajouteEquipe(e2);
+        Loris.ajouteEquipe(e2);
 
 
+        e1.ajouteEpreuve(QuatreCentMetresRelaiH);
+        e1.ajouteEpreuve(CentMetresH);
+        e1.ajouteEpreuve(RelaisLibreH);
+        e1.ajouteEpreuve(HandballH);
+        e1.ajouteEpreuve(VolleyBallH);
+        e1.ajouteEpreuve(EscrimeEpeeH);
+        e1.ajouteEpreuve(EscrimeFleuretH);
+        e1.ajouteEpreuve(CentMetreHaiesH);
+
+        e2.ajouteEpreuve(QuatreCentMetresRelaiH);
+        e2.ajouteEpreuve(CentMetresH);
+        e2.ajouteEpreuve(RelaisLibreH);
+        e2.ajouteEpreuve(HandballH);
+        e2.ajouteEpreuve(VolleyBallH);
+        e2.ajouteEpreuve(EscrimeEpeeH);
+        e2.ajouteEpreuve(EscrimeFleuretH);
+        e2.ajouteEpreuve(CentMetreHaiesH);
+
+        System.out.println(Noa.participer());
+        System.out.println(Marin.participer());
+        System.out.println(Amine.participer());
+        System.out.println(Loris.participer());
+
+        System.out.println(France.calculerScore());
+        System.out.println(Maroc.calculerScore());
     }
-   
-   
-   
-    /* public static void main(String[] args) throws SQLException{
-        Connection c;
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            c=DriverManager.getConnection("jdbc:mysql://servinfo-maria:3306/mabd","monlog","monpass");
-        }
-        catch (SQLException ex){
-            System.out.println("Msg:"+ex.getMessage()+
-            ex.getErrorCode());
-        }
-    } */
 }
 
