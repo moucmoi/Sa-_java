@@ -54,9 +54,9 @@ public class TestsPays {
         @Test
         public void TestCalculerScore() {
             Assertions.assertEquals(france.calculerScore(), ((112.5+95)+(127.5+115)));
-            Assertions.assertEquals(france.calculerScore(), ((80+125)+(85+125)));
+            Assertions.assertEquals(chine.calculerScore(), ((80+125)+(85+125)));
         }
-        
+
         @Test
         public void TestToString() {
             Assertions.assertEquals(france.toString(), "Nom: France\n Code: FRA\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
