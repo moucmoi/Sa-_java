@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 
-public class TestsPays {
+public class TestsEpreuve {
     private static Pays france;
     private static Pays chine;
     private static Athlete a1;
@@ -45,23 +45,18 @@ public class TestsPays {
         handballH=new Epreuve("Handball", true, false,handball);
         volleyBallH=new Epreuve("Volley-Ball",true,false,volleyBall);
 
-        e1.ajouteEpreuve(handballH);
-        e1.ajouteEpreuve(volleyBallH);
-
-        e2.ajouteEpreuve(handballH);
-        e2.ajouteEpreuve(volleyBallH);
-
         @Test
         public void TestCalculerScore() {
-            Assertions.assertEquals(france.calculerScore(), ((112.5+95)+(127.5+115)));
-            Assertions.assertEquals(chine.calculerScore(), ((80+125)+(85+125)));
+            Assertions.assertEquals(handballH.calculerScore(e1), (112.5+95));
+            Assertions.assertEquals(volleyBallH.calculerScore(e1), (127.5+115));
+            Assertions.assertEquals(handballH.calculerScore(e2), (80+125));
+            Assertions.assertEquals(volleyBallH.calculerScore(e2), (85+125));
         }
 
         @Test
         public void TestToString() {
-            Assertions.assertEquals(france.toString(), "Nom: France\n Code: FRA\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
-            Assertions.assertEquals(chine.toString(), "Nom: Chine\n Code: CHN\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
+            Assertions.assertEquals(handballH.toString(), "Epreuve : Handball\n homme : true\n individuel : false\n sport : handball");
+            Assertions.assertEquals(volleyBallH.toString(), "Epreuve : Volley-Ball\n homme : true\n individuel : false\n sport : voleyBall");
         }
-    
     }
 }

@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
-
-public class TestsPays {
+public class TestsEquipe {
     private static Pays france;
     private static Pays chine;
     private static Athlete a1;
@@ -16,8 +15,6 @@ public class TestsPays {
     private static Epreuve handballH;
     private static Epreuve volleyBallH;
     
-    
-
     @BeforeAll // initialisation faite en premier lieu
     static void init() {
         france=new Pays("France","FRA");
@@ -50,18 +47,11 @@ public class TestsPays {
 
         e2.ajouteEpreuve(handballH);
         e2.ajouteEpreuve(volleyBallH);
-
-        @Test
-        public void TestCalculerScore() {
-            Assertions.assertEquals(france.calculerScore(), ((112.5+95)+(127.5+115)));
-            Assertions.assertEquals(chine.calculerScore(), ((80+125)+(85+125)));
-        }
-
-        @Test
-        public void TestToString() {
-            Assertions.assertEquals(france.toString(), "Nom: France\n Code: FRA\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
-            Assertions.assertEquals(chine.toString(), "Nom: Chine\n Code: CHN\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
-        }
-    
     }
+
+    @Test
+        public void TestCalculerScore() {
+            Assertions.assertEquals(e1.calculerScore(), ((112.5+95)+(127.5+115)));
+            Assertions.assertEquals(e2.calculerScore(), ((80+125)+(85+125)));
+        }
 }
