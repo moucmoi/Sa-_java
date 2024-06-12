@@ -62,6 +62,6 @@ public class Equipe implements Comparable<Equipe>{
 
     @Override
     public String toString(){
-        return "Equipe : " + this.nomEquipe + "/n" + " Athletes : " + this.lesAthletes;
+        return "Equipe : " + this.nomEquipe + "\n" + " Athletes : " + this.lesAthletes;
     }
 }
