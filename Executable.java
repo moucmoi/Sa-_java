@@ -39,24 +39,99 @@ public class Executable{
 
         Equipe e1=new Equipe("Equipe1",france);
         Equipe e2=new Equipe("Equipe2",maroc);
+        Equipe e3=new Equipe("Equipe3",allemagne);
+        Equipe e4=new Equipe("Equipe4",etatsUnis);
+        Equipe e5=new Equipe("Equipe5",chine);
+        Equipe e6=new Equipe("Equipe6",japon);
+        Equipe e7=new Equipe("Equipe7",kenya);
+        Equipe e8=new Equipe("Equipe8",australie);
+        Equipe e9=new Equipe("Equipe9",bresil);
+        Equipe e10=new Equipe("Equipe10",turquie);
 
         Athlete noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5);
         Athlete marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12);
         Athlete loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20);
-        Athlete amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10);
-
         e1.ajouteAthlete(noa);
         e1.ajouteAthlete(marin);
-        e2.ajouteAthlete(loris);
+        e1.ajouteAthlete(loris);
+
+        Athlete amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10);
+        Athlete imad=new Athlete("Assou", "Imad", "H", 10, 5, 15);
         e2.ajouteAthlete(amine);
+        e2.ajouteAthlete(imad);
+
+        Athlete jade=new Athlete("Laurent", "Jade", "F", 3, 20, 3);
+        Athlete sarah=new Athlete("Faure", "Sarah", "F", 8, 2, 16);
+        e3.ajouteAthlete(jade);
+        e3.ajouteAthlete(sarah);
+
+        Athlete sosuke=new Athlete("Kondo", "Sosuke", "H", 5, 18, 9);
+        Athlete leon=new Athlete("Hartmann", "Leon", "H", 2, 7, 20);
+        e4.ajouteAthlete(sosuke);
+        e4.ajouteAthlete(leon);
+
+        Athlete ryota=new Athlete("Shibata", "Ryota", "H", 17, 7, 4);
+        Athlete zhu=new Athlete("Lin", "Zhu", "H", 12, 18, 3);
+        e5.ajouteAthlete(ryota);
+        e5.ajouteAthlete(zhu);
+
+        Athlete david=new Athlete("Weber", "David", "H", 15, 1, 4);
+        Athlete arthur=new Athlete("Perez", "Arthur", "H", 12, 2, 14);
+        e6.ajouteAthlete(david);
+        e6.ajouteAthlete(arthur);
+
+        Athlete hugo=new Athlete("Muller", "Hugo", "H", 15, 15, 2);
+        Athlete nathan=new Athlete("Michel", "Nathan", "H", 10, 4, 6);
+        e7.ajouteAthlete(hugo);
+        e7.ajouteAthlete(nathan);
+
+        Athlete sophie=new Athlete("Schulz", "Sophie", "F", 6, 10, 1);
+        Athlete rin=new Athlete("Yamaguchi", "Rin", "F", 17, 9, 9);
+        e8.ajouteAthlete(sophie);
+        e8.ajouteAthlete(rin);
+
+        Athlete theo=new Athlete("Richard", "Théo", "h", 14, 2, 1);
+        Athlete min=new Athlete("Sato", "Min", "H", 20, 8, 10);
+        e9.ajouteAthlete(theo);
+        e9.ajouteAthlete(min);
+
+        Athlete lucas=new Athlete("Werner", "Lucas", "h", 19, 12, 4);
+        Athlete johan=new Athlete("Gao", "Johan", "H", 8, 2, 15);
+        e10.ajouteAthlete(lucas);
+        e10.ajouteAthlete(johan);
+
         france.ajouteEquipe(e1);
         maroc.ajouteEquipe(e2);
+        allemagne.ajouteEquipe(e3);
+        etatsUnis.ajouteEquipe(e4);
+        chine.ajouteEquipe(e5);
+        japon.ajouteEquipe(e6);
+        kenya.ajouteEquipe(e7);
+        australie.ajouteEquipe(e8);
+        bresil.ajouteEquipe(e9);
+        turquie.ajouteEquipe(e10);
 
         noa.ajouteEquipe(e1);
         marin.ajouteEquipe(e1);
+        loris.ajouteEquipe(e1);
         amine.ajouteEquipe(e2);
-        loris.ajouteEquipe(e2);
-
+        imad.ajouteEquipe(e2);
+        jade.ajouteEquipe(e3);
+        sarah.ajouteEquipe(e3);
+        sosuke.ajouteEquipe(e4);
+        leon.ajouteEquipe(e4);
+        ryota.ajouteEquipe(e5);
+        zhu.ajouteEquipe(e5);
+        arthur.ajouteEquipe(e6);
+        david.ajouteEquipe(e6);
+        hugo.ajouteEquipe(e7);
+        nathan.ajouteEquipe(e7);
+        sophie.ajouteEquipe(e8);
+        rin.ajouteEquipe(e8);
+        theo.ajouteEquipe(e9);
+        min.ajouteEquipe(e9);
+        lucas.ajouteEquipe(e10);
+        johan.ajouteEquipe(e10);
 
         e1.ajouteEpreuve(quatreCentMetresRelaiH);
         e1.ajouteEpreuve(centMetresH);
@@ -76,13 +151,111 @@ public class Executable{
         e2.ajouteEpreuve(escrimeFleuretH);
         e2.ajouteEpreuve(centMetreHaiesH);
 
+        e3.ajouteEpreuve(quatreCentMetresRelaiF);
+        e3.ajouteEpreuve(centMetresF);
+        e3.ajouteEpreuve(relaisLibreF);
+        e3.ajouteEpreuve(handballF);
+        e3.ajouteEpreuve(volleyBallF);
+        e3.ajouteEpreuve(escrimeEpeeF);
+        e3.ajouteEpreuve(escrimeFleuretF);
+        e3.ajouteEpreuve(centMetreHaiesF);
+
+        e4.ajouteEpreuve(quatreCentMetresRelaiH);
+        e4.ajouteEpreuve(centMetresH);
+        e4.ajouteEpreuve(relaisLibreH);
+        e4.ajouteEpreuve(handballH);
+        e4.ajouteEpreuve(volleyBallH);
+        e4.ajouteEpreuve(escrimeEpeeH);
+        e4.ajouteEpreuve(escrimeFleuretH);
+        e4.ajouteEpreuve(centMetreHaiesH);
+
+        e5.ajouteEpreuve(quatreCentMetresRelaiH);
+        e5.ajouteEpreuve(centMetresH);
+        e5.ajouteEpreuve(relaisLibreH);
+        e5.ajouteEpreuve(handballH);
+        e5.ajouteEpreuve(volleyBallH);
+        e5.ajouteEpreuve(escrimeEpeeH);
+        e5.ajouteEpreuve(escrimeFleuretH);
+        e5.ajouteEpreuve(centMetreHaiesH);
+
+        e6.ajouteEpreuve(quatreCentMetresRelaiH);
+        e6.ajouteEpreuve(centMetresH);
+        e6.ajouteEpreuve(relaisLibreH);
+        e6.ajouteEpreuve(handballH);
+        e6.ajouteEpreuve(volleyBallH);
+        e6.ajouteEpreuve(escrimeEpeeH);
+        e6.ajouteEpreuve(escrimeFleuretH);
+        e6.ajouteEpreuve(centMetreHaiesH);
+
+        e7.ajouteEpreuve(quatreCentMetresRelaiH);
+        e7.ajouteEpreuve(centMetresH);
+        e7.ajouteEpreuve(relaisLibreH);
+        e7.ajouteEpreuve(handballH);
+        e7.ajouteEpreuve(volleyBallH);
+        e7.ajouteEpreuve(escrimeEpeeH);
+        e7.ajouteEpreuve(escrimeFleuretH);
+        e7.ajouteEpreuve(centMetreHaiesH);
+
+        e8.ajouteEpreuve(quatreCentMetresRelaiF);
+        e8.ajouteEpreuve(centMetresF);
+        e8.ajouteEpreuve(relaisLibreF);
+        e8.ajouteEpreuve(handballF);
+        e8.ajouteEpreuve(volleyBallF);
+        e8.ajouteEpreuve(escrimeEpeeF);
+        e8.ajouteEpreuve(escrimeFleuretF);
+        e8.ajouteEpreuve(centMetreHaiesF);
+
+        e9.ajouteEpreuve(quatreCentMetresRelaiH);
+        e9.ajouteEpreuve(centMetresH);
+        e9.ajouteEpreuve(relaisLibreH);
+        e9.ajouteEpreuve(handballH);
+        e9.ajouteEpreuve(volleyBallH);
+        e9.ajouteEpreuve(escrimeEpeeH);
+        e9.ajouteEpreuve(escrimeFleuretH);
+        e9.ajouteEpreuve(centMetreHaiesH);
+
+        e10.ajouteEpreuve(quatreCentMetresRelaiH);
+        e10.ajouteEpreuve(centMetresH);
+        e10.ajouteEpreuve(relaisLibreH);
+        e10.ajouteEpreuve(handballH);
+        e10.ajouteEpreuve(volleyBallH);
+        e10.ajouteEpreuve(escrimeEpeeH);
+        e10.ajouteEpreuve(escrimeFleuretH);
+        e10.ajouteEpreuve(centMetreHaiesH);
+
+
         System.out.println(noa.participer());
         System.out.println(marin.participer());
-        System.out.println(amine.participer());
         System.out.println(loris.participer());
+        System.out.println(amine.participer());
+        System.out.println(imad.participer());
+        System.out.println(jade.participer());
+        System.out.println(sarah.participer());
+        System.out.println(sosuke.participer());
+        System.out.println(leon.participer());
+        System.out.println(ryota.participer());
+        System.out.println(zhu.participer());
+        System.out.println(arthur.participer());
+        System.out.println(david.participer());
+        System.out.println(hugo.participer());
+        System.out.println(nathan.participer());
+        System.out.println(sophie.participer());
+        System.out.println(rin.participer());
+        System.out.println(theo.participer());
+        System.out.println(min.participer());
+        System.out.println(lucas.participer());
+        System.out.println(johan.participer());
 
         System.out.println(france.calculerScore());
         System.out.println(maroc.calculerScore());
+        System.out.println(allemagne.calculerScore());
+        System.out.println(etatsUnis.calculerScore());
+        System.out.println(chine.calculerScore());
+        System.out.println(japon.calculerScore());
+        System.out.println(kenya.calculerScore());
+        System.out.println(australie.calculerScore());
+        System.out.println(bresil.calculerScore());
+        System.out.println(turquie.calculerScore());
     }
 }
 
