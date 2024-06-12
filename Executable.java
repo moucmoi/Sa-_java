@@ -8,89 +8,89 @@ import java.util.Collections;
 public class Executable{
     public static void main(String[] args) {
         
-        Pays France=new Pays("France","FRA");
-        Pays EtatsUnis=new Pays("USA","USA");
-        Pays Chine=new Pays("Chine","CHN");
-        Pays Japon=new Pays("Japon","JPN");
-        Pays Kenya=new Pays("Kenya","KEN");
-        Pays Maroc=new Pays("Maroc","MAR");
-        Pays Allemagne=new Pays("Allemagne","DEU");
-        Pays Australie=new Pays("Australie","AUS");
-        Pays Bresil=new Pays("Brésil","BRA");
-        Pays Turquie=new Pays("Turquie","TUR");
-        List<Pays> pays=Arrays.asList(France,EtatsUnis,Chine,Japon,Kenya,Maroc,Allemagne,Australie,Bresil,Turquie);
+  
+
+        Pays france=new Pays("France","FRA");
+        Pays etatsUnis=new Pays("USA","USA");
+        Pays chine=new Pays("Chine","CHN");
+        Pays japon=new Pays("Japon","JPN");
+        Pays kenya=new Pays("Kenya","KEN");
+        Pays maroc=new Pays("Maroc","MAR");
+        Pays allemagne=new Pays("Allemagne","DEU");
+        Pays australie=new Pays("Australie","AUS");
+        Pays bresil=new Pays("Brésil","BRA");
+        Pays turquie=new Pays("Turquie","TUR");
+       List<Pays> pays=Arrays.asList(france,etatsUnis,chine,japon,kenya,maroc,allemagne,australie,bresil,turquie);
 
 
-        Sport Natation=new Sport("Natation",1,0.5,2.5);
-        Sport Handball=new Sport("HandBall",1,1.5,1.5);
-        Sport VolleyBall=new Sport("VolleyBall",1.5,1,1.5);
-        Sport Escrime=new Sport("Escrime",0.5,2.5,1);
-        Sport Athletisme=new Sport("Athletisme",0.5,1,2.5);
+        Sport natation=new Sport("Natation",1,0.5,2.5);
+        Sport handball=new Sport("HandBall",1,1.5,1.5);
+        Sport volleyBall=new Sport("VolleyBall",1.5,1,1.5);
+        Sport escrime=new Sport("Escrime",0.5,2.5,1);
+        Sport athletisme=new Sport("Athletisme",0.5,1,2.5);
 
-        Epreuve CentMetresH=new Epreuve("Natation 100 brasse", true, true, Natation);
-        Epreuve RelaisLibreH=new Epreuve("Natation relais libre",true,false,Natation);
-        Epreuve HandballH=new Epreuve("Handball", true, false,Handball);
-        Epreuve VolleyBallH=new Epreuve("Volley-Ball",true,false,VolleyBall);
-        Epreuve EscrimeFleuretH=new Epreuve("Escrime fleuret",true, true, Escrime);
-        Epreuve EscrimeEpeeH=new Epreuve("Escrime fleuret ",true, true, Escrime);
-        Epreuve CentMetreHaiesH=new Epreuve("Athlétisme 110 haies", true, true, Athletisme);
-        Epreuve QuatreCentMetresRelaiH=new Epreuve("Athlétisme 110 haies", true, false, Athletisme);
+        Epreuve centMetresH=new Epreuve("Natation 100 brasse", true, true, natation);
+        Epreuve relaisLibreH=new Epreuve("Natation relais libre",true,false,natation);
+        Epreuve handballH=new Epreuve("Handball", true, false,handball);
+        Epreuve volleyBallH=new Epreuve("Volley-Ball",true,false,volleyBall);
+        Epreuve escrimeFleuretH=new Epreuve("Escrime fleuret",true, true, escrime);
+        Epreuve escrimeEpeeH=new Epreuve("Escrime fleuret ",true, true, escrime);
+        Epreuve centMetreHaiesH=new Epreuve("Athletisme 110 haies", true, true, athletisme);
+        Epreuve quatreCentMetresRelaiH=new Epreuve("Athletisme 110 haies", true, false, athletisme);
         
-        Epreuve CentMetresF=new Epreuve("Natation 100 brasse", false, true, Natation);
-        Epreuve RelaisLibreF=new Epreuve("Natation relais libre",false,false,Natation);
-        Epreuve HandballF=new Epreuve("Handball", false, false,Handball);
-        Epreuve  VolleyBallF=new Epreuve("Volley-Ball",false,false,VolleyBall);
-        Epreuve EscrimeFleuretF=new Epreuve("Escrime fleuret",false, true, Escrime);
-        Epreuve EscrimeEpeeF=new Epreuve("Escrime fleuret",false, true, Escrime);
-        Epreuve CentMetreHaiesF=new Epreuve("Athlétisme 110 haies", false, true, Athletisme);
-        Epreuve QuatreCentMetresRelaiF=new Epreuve("Athlétisme 110 haies", false, false, Athletisme);
+        Epreuve centMetresF=new Epreuve("Natation 100 brasse", false, true, natation);
+        Epreuve relaisLibreF=new Epreuve("Natation relais libre",false,false,natation);
+        Epreuve handballF=new Epreuve("Handball", false, false,handball);
+        Epreuve volleyBallF=new Epreuve("Volley-Ball",false,false,volleyBall);
+        Epreuve escrimeFleuretF=new Epreuve("Escrime fleuret",false, true, escrime);
+        Epreuve escrimeEpeeF=new Epreuve("Escrime fleuret",false, true, escrime);
+        Epreuve centMetreHaiesf=new Epreuve("Athletisme 110 haies", false, true, athletisme);
+        Epreuve quatreCentMetresRelaiF=new Epreuve("Athletisme 110 haies", false, false, athletisme);
 
-        Equipe e1=new Equipe("Equipe1",France);
-        Equipe e2=new Equipe("Equipe2",Maroc);
+        Equipe e1=new Equipe("Equipe1",france);
+        Equipe e2=new Equipe("Equipe2",maroc);
 
-        Athlete Noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5);
-        Athlete Marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12);
-        Athlete Loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20);
-        Athlete Amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10);
+        Athlete noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5);
+        Athlete marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12);
+        Athlete loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20);
+        Athlete amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10);
 
-        e1.ajouteAthlete(Noa);
-        e1.ajouteAthlete(Marin);
-        e2.ajouteAthlete(Loris);
-        e2.ajouteAthlete(Amine);
-        France.ajouteEquipe(e1);
-        Maroc.ajouteEquipe(e2);
+        e1.ajouteAthlete(noa);
+        e1.ajouteAthlete(marin);
+        e2.ajouteAthlete(loris);
+        e2.ajouteAthlete(amine);
+        france.ajouteEquipe(e1);
+        maroc.ajouteEquipe(e2);
 
-        Noa.ajouteEquipe(e1);
-        Marin.ajouteEquipe(e1);
-        Amine.ajouteEquipe(e2);
-        Loris.ajouteEquipe(e2);
+        noa.ajouteEquipe(e1);
+        marin.ajouteEquipe(e1);
+        amine.ajouteEquipe(e2);
+        loris.ajouteEquipe(e2);
 
 
-        e1.ajouteEpreuve(QuatreCentMetresRelaiH);
-        e1.ajouteEpreuve(CentMetresH);
-        e1.ajouteEpreuve(RelaisLibreH);
-        e1.ajouteEpreuve(HandballH);
-        e1.ajouteEpreuve(VolleyBallH);
-        e1.ajouteEpreuve(EscrimeEpeeH);
-        e1.ajouteEpreuve(EscrimeFleuretH);
-        e1.ajouteEpreuve(CentMetreHaiesH);
+        e1.ajouteEpreuve(quatreCentMetresRelaiH);
+        e1.ajouteEpreuve(centMetresH);
+        e1.ajouteEpreuve(relaisLibreH);
+        e1.ajouteEpreuve(handballH);
+        e1.ajouteEpreuve(volleyBallH);
+        e1.ajouteEpreuve(escrimeEpeeH);
+        e1.ajouteEpreuve(escrimeFleuretH);
+        e1.ajouteEpreuve(centMetreHaiesH);
 
-        e2.ajouteEpreuve(QuatreCentMetresRelaiH);
-        e2.ajouteEpreuve(CentMetresH);
-        e2.ajouteEpreuve(RelaisLibreH);
-        e2.ajouteEpreuve(HandballH);
-        e2.ajouteEpreuve(VolleyBallH);
-        e2.ajouteEpreuve(EscrimeEpeeH);
-        e2.ajouteEpreuve(EscrimeFleuretH);
-        e2.ajouteEpreuve(CentMetreHaiesH);
+        e2.ajouteEpreuve(quatreCentMetresRelaiH);
+        e2.ajouteEpreuve(centMetresH);
+        e2.ajouteEpreuve(relaisLibreH);
+        e2.ajouteEpreuve(handballH);
+        e2.ajouteEpreuve(volleyBallH);
+        e2.ajouteEpreuve(escrimeEpeeH);
+        e2.ajouteEpreuve(escrimeFleuretH);
+        e2.ajouteEpreuve(centMetreHaiesH);
 
-        System.out.println(Noa.participer());
-        System.out.println(Marin.participer());
-        System.out.println(Amine.participer());
-        System.out.println(Loris.participer());
+        System.out.println(noa.participer());
+        System.out.println(marin.participer());
+        System.out.println(amine.participer());
+        System.out.println(loris.participer());
 
-        System.out.println(France.calculerScore());
-        System.out.println(Maroc.calculerScore());
 
         System.out.println("Bonjour");
         System.out.println("Pour répondre aux question il faut mettre le numéro de la question");
