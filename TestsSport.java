@@ -54,20 +54,18 @@ public class TestsSport {
 
     @Test
     public void testCalculerScore() {
-        Assertions.assertEquals(natation.calculerScore(a1), 65)
-        Assertions.assertEquals(handball.calculerScore(a1), 55)
-        Assertions.assertEquals(volleyBall.calculerScore(a1), 55)
-        Assertions.assertEquals(escrime.calculerScore(a1), 50)
-        Assertions.assertEquals(athletisme.calculerScore(a1), 65)
+        Assertions.assertEquals(natation.calculerScore(a1), 65);
+        Assertions.assertEquals(handball.calculerScore(a1), 55);
+        Assertions.assertEquals(volleyBall.calculerScore(a1), 55);
+        Assertions.assertEquals(escrime.calculerScore(a1), 50);
+        Assertions.assertEquals(athletisme.calculerScore(a1), 65);
 
-        Assertions.assertEquals(natation.calculerScore(a2), 50)
-        Assertions.assertEquals(handball.calculerScore(a2), 50)
-        Assertions.assertEquals(volleyBall.calculerScore(a2), 55)
-        Assertions.assertEquals(escrime.calculerScore(a2), 45)
-        Assertions.assertEquals(athletisme.calculerScore(a2), 45)
+        Assertions.assertEquals(natation.calculerScore(a2), 50);
+        Assertions.assertEquals(handball.calculerScore(a2), 50);
+        Assertions.assertEquals(volleyBall.calculerScore(a2), 55);
+        Assertions.assertEquals(escrime.calculerScore(a2), 45);
+        Assertions.assertEquals(athletisme.calculerScore(a2), 45);
         
     }
 
 }
-TestsSport.java
-
