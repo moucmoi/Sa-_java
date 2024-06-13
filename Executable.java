@@ -273,14 +273,15 @@ public class Executable{
         System.out.println("Pour répondre aux question il faut mettre le numéro de la question");
         System.out.println(" _________________________________________\n"+
                            "|========================================|\n"+
-                           "|Sur quoi veux tu avoir des information ?|\n"+
+                           "|           Que veux tu faire ?          |\n"+
                            "|========================================|\n"+
                            "|                                        |\n"+
-                           "|   1 - Les sports                       |\n"+
-                           "|   2 - Les équipes                      |\n"+
-                           "|   3 - Les pays                         |\n"+
-                           "|   4 - Les athletes                     |\n"+
-                           "|   5 - Quitter                          |\n"+
+                           "|   1 - Avoir des infos sur les sports   |\n"+
+                           "|   2 - Avoir des infos sur les équipes  |\n"+
+                           "|   3 - Avoir des infos sur les pays     |\n"+
+                           "|   4 - Avoir les infos sur les athletes |\n"+
+                           "|   5 - Inserer des données             |\n"+
+                           "|   6 - Quitter                          |\n"+
                            "|                                        |\n"+
                            "|                                        |\n"+
                            "|________________________________________|\n");
