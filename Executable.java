@@ -29,23 +29,25 @@ public class Executable{
         Sport escrime=new Sport("Escrime",0.5,2.5,1);
         Sport athletisme=new Sport("Athletisme",0.5,1,2.5);
 
-        Epreuve centMetresH=new Epreuve("Natation 100 brasse", true, true, natation);
-        Epreuve relaisLibreH=new Epreuve("Natation relais libre",true,false,natation);
-        Epreuve handballH=new Epreuve("Handball", true, false,handball);
-        Epreuve volleyBallH=new Epreuve("Volley-Ball",true,false,volleyBall);
-        Epreuve escrimeFleuretH=new Epreuve("Escrime fleuret",true, true, escrime);
-        Epreuve escrimeEpeeH=new Epreuve("Escrime fleuret ",true, true, escrime);
-        Epreuve centMetreHaiesH=new Epreuve("Athletisme 110 haies", true, true, athletisme);
-        Epreuve quatreCentMetresRelaiH=new Epreuve("Athletisme 110 haies", true, false, athletisme);
+        Epreuve centMetresH=new Epreuve("Natation 100 brasse homme", true, true, natation);
+        Epreuve relaisLibreH=new Epreuve("Natation relais libre homme",true,false,natation);
+        Epreuve handballH=new Epreuve("Handball homme", true, false,handball);
+        Epreuve volleyBallH=new Epreuve("Volley-Ball homme",true,false,volleyBall);
+        Epreuve escrimeFleuretH=new Epreuve("Escrime fleuret homme",true, true, escrime);
+        Epreuve escrimeEpeeH=new Epreuve("Escrime fleuret homme",true, true, escrime);
+        Epreuve centMetreHaiesH=new Epreuve("Athletisme 110 haies homme", true, true, athletisme);
+        Epreuve quatreCentMetresRelaiH=new Epreuve("Athletisme 110 haies homme", true, false, athletisme);
         
-        Epreuve centMetresF=new Epreuve("Natation 100 brasse", false, true, natation);
-        Epreuve relaisLibreF=new Epreuve("Natation relais libre",false,false,natation);
-        Epreuve handballF=new Epreuve("Handball", false, false,handball);
-        Epreuve volleyBallF=new Epreuve("Volley-Ball",false,false,volleyBall);
-        Epreuve escrimeFleuretF=new Epreuve("Escrime fleuret",false, true, escrime);
-        Epreuve escrimeEpeeF=new Epreuve("Escrime fleuret",false, true, escrime);
-        Epreuve centMetreHaiesF=new Epreuve("Athletisme 110 haies", false, true, athletisme);
-        Epreuve quatreCentMetresRelaiF=new Epreuve("Athletisme 110 haies", false, false, athletisme);
+        Epreuve centMetresF=new Epreuve("Natation 100 brasse femme", false, true, natation);
+        Epreuve relaisLibreF=new Epreuve("Natation relais libre femme",false,false,natation);
+        Epreuve handballF=new Epreuve("Handball femme", false, false,handball);
+        Epreuve volleyBallF=new Epreuve("Volley-Ball femme",false,false,volleyBall);
+        Epreuve escrimeFleuretF=new Epreuve("Escrime fleuret femme",false, true, escrime);
+        Epreuve escrimeEpeeF=new Epreuve("Escrime fleuret femme",false, true, escrime);
+        Epreuve centMetreHaiesF=new Epreuve("Athletisme 110 haies femme", false, true, athletisme);
+        Epreuve quatreCentMetresRelaiF=new Epreuve("Athletisme 110 haies femme", false, false, athletisme);
+
+        
 
         Equipe e1=new Equipe("Equipe1",france);
         Equipe e2=new Equipe("Equipe2",maroc);
@@ -61,6 +63,24 @@ public class Executable{
         Athlete noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5);
         Athlete marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12);
         Athlete loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20);
+
+        natation.ajouteEpreuve(centMetresF);
+        natation.ajouteEpreuve(centMetresH);
+        natation.ajouteEpreuve(relaisLibreF);
+        natation.ajouteEpreuve(relaisLibreH);
+        handball.ajouteEpreuve(handballF);
+        handball.ajouteEpreuve(handballH);
+        volleyBall.ajouteEpreuve(volleyBallH);
+        volleyBall.ajouteEpreuve(volleyBallF);
+        escrime.ajouteEpreuve(escrimeEpeeF);
+        escrime.ajouteEpreuve(escrimeEpeeH);
+        escrime.ajouteEpreuve(escrimeFleuretF);
+        escrime.ajouteEpreuve(escrimeFleuretH);
+        athletisme.ajouteEpreuve(quatreCentMetresRelaiF);
+        athletisme.ajouteEpreuve(quatreCentMetresRelaiH);
+        athletisme.ajouteEpreuve(centMetreHaiesH);
+        athletisme.ajouteEpreuve(centMetreHaiesF);
+        
         e1.ajouteAthlete(noa);
         e1.ajouteAthlete(marin);
         e1.ajouteAthlete(loris);
@@ -280,8 +300,7 @@ public class Executable{
                            "|   2 - Avoir des infos sur les équipes  |\n"+
                            "|   3 - Avoir des infos sur les pays     |\n"+
                            "|   4 - Avoir les infos sur les athletes |\n"+
-                           "|   5 - Inserer des données             |\n"+
-                           "|   6 - Quitter                          |\n"+
+                           "|   5 - Quitter                          |\n"+
                            "|                                        |\n"+
                            "|                                        |\n"+
                            "|________________________________________|\n");
@@ -357,7 +376,7 @@ public class Executable{
                                "|   1 - Connaître le classement des équipes    |\n"+
                                "|   2 - Savoir le nombre de point des équipes  |\n"+
                                "|   3 - Connaître les membre d'une équipe      |\n"+
-                               "|   5 - Quitter                                |\n"+
+                               "|   4 - Quitter                                |\n"+
                                "|                                              |\n"+
                                "|                                              |\n"+
                                "|______________________________________________|\n");
@@ -484,7 +503,7 @@ public class Executable{
                     if(p.getNomPays().equals(repQuelPays2)){
                         for(Equipe e:p.getLesEquipes()){
                             for(Athlete a:e.getLesAthletes())
-                                rep+=a.getNom()+"\n";
+                                rep+=a+"\n";
                         }
                     }
                 }
