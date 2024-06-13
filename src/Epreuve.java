@@ -4,86 +4,84 @@ public class Epreuve {
     private boolean individuel;
     private Sport sport;
 
-
-    public Epreuve(String nomEpreuve, boolean homme, boolean individuel, Sport sport){
-        /**Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurence */
+    /**Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurence */
+    public Epreuve(String nomEpreuve, boolean homme, boolean individuel, Sport sport){ 
         this.nomEpreuve = nomEpreuve;
         this.homme = homme;
         this.individuel = individuel;
         this.sport = sport;
     }
 
-
+    /**
+     * change le nom de l'epreuve
+     * @param nomEpreuve le nom de l'epreuve 
+     */
     public void setNomEpreuve(String nomEpreuve){
-        /**
-         * change le nom de l'epreuve
-         * @param le nom de l'epreuve 
-         */
         this.nomEpreuve = nomEpreuve;
     }
 
+    /**
+     * change le sexe de l'epreuve
+     * @param homme boolean indiquant si l'épreuve est homme ou femme 
+     */
     public void setHomme(boolean homme) {
-        /**
-         * change le sexe de l'epreuve
-         * @param le sexe de l'epreuve 
-         */
         this.homme = homme;
     }
 
+    /**
+     * change l'individualité de l'epreuve
+     * @param individuel boolean indiquant si l'épreuve est individuelle ou non
+     */
     public void setIndividuel(boolean individuel) {
-        /**
-         * change le l'individualité de l'epreuve
-         * @param le individualité de l'epreuve 
-         */
         this.individuel = individuel;
     }
 
+    /**
+     * change le sport de l'epreuve
+     * @param sport le sport de l'epreuve 
+     */
     public void setSport(Sport sport) {
-        /**
-         * change le sport de l'epreuve
-         * @param le sport de l'epreuve 
-         */
         this.sport = sport;
     }
 
+    /**
+     * donne le nom de l'epreuve
+     * @return le nom de l'epreuve
+     */
     public String getNom(){
-        /**
-         * donne le nom de l'epreuve
-         * @return le nom de l'epreuve
-         */
         return this.nomEpreuve;
     }
 
+    /**
+     * donne le sexe de l'epreuve
+     * @return true si l'épreuve est homme, false si elle est femme
+     */
     public boolean getHomme(){
-        /**
-         * donne le sexe de l'epreuve
-         * @return le sexe de l'epreuve
-         */
         return this.homme;
     }
 
-    public boolean getIndividuel(){
-        /**
-         * donne le l'individualité de l'epreuve
-         * @return le individualité de l'epreuve
-         */
+    /**
+     * donne l'individualité de l'epreuve
+     * @return l'individualité de l'epreuve
+     */
+    public boolean getIndividuel(){ 
         return this.individuel;
     }
 
+    /**
+     * donne le sport de l'epreuve
+     * @return le sport de l'epreuve
+     */
     public Sport getSport(){
-        /**
-         * donne le sport de l'epreuve
-         * @return le sport de l'epreuve
-         */
         return this.sport;
     } 
 
+    /**
+     * calcul le sport de l'epreuve
+     * @param equipe une équipe
+     * @return le score total de l'epreuve
+     */
     public double calculerScore(Equipe equipe){
-        /**
-         * calcul le sport de l'epreuve
-         * @param une équipe
-         * @return le score total de l'epreuve
-         */
         double res=0;
         for(Athlete athlete:equipe.getLesAthletes()){
             res+=sport.calculerScore(athlete);
@@ -91,12 +89,12 @@ public class Epreuve {
         return res;
     }
 
+    /**
+     * donne une représentaion de l'epreuve
+     * @return une représentation de l'epreuve
+     */
     @Override
     public String toString(){
-        /**
-         * donne une représentaion de l'epreuve
-         * @return une représentaion de l'epreuve
-         */
         return "Epreuve : " + this.nomEpreuve + '\n' + " homme : " + this.homme + "\n" + " individuel : " + this.individuel + "\n" + " sport : " + this.sport;
     }
 }
