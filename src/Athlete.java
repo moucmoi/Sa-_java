@@ -11,6 +11,7 @@ public class Athlete implements Comparable<Athlete>{
     public List<Equipe> equipes;
 
 
+    /*Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurence **/
     public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance) {
         this.nom = nom;
         this.prenom = prenom;
@@ -21,10 +22,12 @@ public class Athlete implements Comparable<Athlete>{
         this.equipes=new ArrayList<>();
     }
 
+    /*Fonction qui change le nom de l'athlete**/
     public void setNom(String nom) {
         this.nom = nom;
     }
 
+    /*Fonction qui change le prenom **/
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
@@ -93,7 +96,6 @@ public class Athlete implements Comparable<Athlete>{
     @Override
     public String toString() {
         return this.nom + " " + this.prenom;
+
     }
-
-
 }

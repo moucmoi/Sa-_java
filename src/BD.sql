@@ -33,7 +33,7 @@ CREATE TABLE EQUIPE (
 
 CREATE TABLE SPORT (
     PRIMARY KEY varchar(15) NomSport;
-);
+);  
 
 CREATE TABLE PARTICIPER (
     PRIMARY KEY varchar(15) NomEpreuve; 

@@ -11,6 +11,7 @@ public class Epreuve {
         this.individuel = individuel;
         this.sport = sport;
     }
+*
 
     public void setNomEpreuve(String nomEpreuve) {
         this.nomEpreuve = nomEpreuve;
