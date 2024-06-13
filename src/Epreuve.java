@@ -54,15 +54,15 @@ public class Epreuve {
 
     /**
      * donne le sexe de l'epreuve
-     * @return le sexe de l'epreuve
+     * @return true si l'épreuve est homme, false si elle est femme
      */
     public boolean getHomme(){
         return this.homme;
     }
 
     /**
-     * donne le l'individualité de l'epreuve
-     * @return le individualité de l'epreuve
+     * donne l'individualité de l'epreuve
+     * @return l'individualité de l'epreuve
      */
     public boolean getIndividuel(){ 
         return this.individuel;
@@ -91,7 +91,7 @@ public class Epreuve {
 
     /**
      * donne une représentaion de l'epreuve
-     * @return une représentaion de l'epreuve
+     * @return une représentation de l'epreuve
      */
     @Override
     public String toString(){
