@@ -34,7 +34,7 @@ public class Executable{
         Epreuve volleyBallF=new Epreuve("Volley-Ball",false,false,volleyBall);
         Epreuve escrimeFleuretF=new Epreuve("Escrime fleuret",false, true, escrime);
         Epreuve escrimeEpeeF=new Epreuve("Escrime fleuret",false, true, escrime);
-        Epreuve centMetreHaiesf=new Epreuve("Athletisme 110 haies", false, true, athletisme);
+        Epreuve centMetreHaiesF=new Epreuve("Athletisme 110 haies", false, true, athletisme);
         Epreuve quatreCentMetresRelaiF=new Epreuve("Athletisme 110 haies", false, false, athletisme);
 
         Equipe e1=new Equipe("Equipe1",france);
