@@ -8,83 +8,87 @@ public class Equipe implements Comparable<Equipe>{
     private List<Epreuve> lesEpreuves;
     private List<Athlete> lesAthletes;
 
+    /**
+     * Constructeur demandant un nom et un pays
+     * @param nomEquipe le nom de l'équipe
+     * @param pays le nom du pays de l'équipe
+     */
     public Equipe(String nomEquipe,Pays pays){
-        /*Constructeur demandant un nom et un pays**/
         this.nomEquipe = nomEquipe;
         this.pays=pays;
         this.lesAthletes = new ArrayList<>();
         this.lesEpreuves=new ArrayList<>();
     }
 
+    /**
+     * ajoute un athlete dans la liste d'athlete
+     * @param athlete un athlete
+     */
     public void ajouteAthlete(Athlete athlete) {
-        /**
-         * ajoute un athlete dans la liste d'athlete
-         * @param un athlete
-         */
         this.lesAthletes.add(athlete);
     }
 
+    /**
+     * donne la liste des epreuves
+     * @return liste des epreuves
+     */
     public List<Epreuve> getLesEpreuves() {
-        /**
-         * donne la liste des epreuves
-         * @return liste des epreuves
-         */
         return lesEpreuves;
     }
 
+    /**
+     * donne de la liste des athletes
+     * @return liste des athlete
+     */
     public List<Athlete> getLesAthletes() {
-        /**
-         * donne de la liste des athletes
-         * @return liste des athlete
-         */
         return lesAthletes;
     }
 
+    /**
+     * ajoute une epreuve dans la liste d'epreuve
+     * @param epreuve une epreuve
+     */
     public void ajouteEpreuve(Epreuve epreuve){
-        /**
-         * ajoute une epreuve dans la liste d'epreuve
-         * @param une epreuve
-         */
         this.lesEpreuves.add(epreuve);
     }
 
+    /**
+     * donne le pays de l'epreuve
+     * @return un pays
+     */
     public Pays getPays() {
-        /**
-         * donne le pays de l'epreuve
-         * @return un pays
-         */
         return pays;
     }
 
+    /**
+     * change le pays d'un pays
+     * @param pays un pays
+     */
     public void setPays(Pays pays) {
-        /**
-         * change le pays d'un pays
-         * @param un pays
-         */
         this.pays = pays;
     }
 
+    /**
+     * donne le nom de l'équipe
+     * @return le nom de l'équipe
+     */
     public String getNom(){
-        /**
-         * donne le nom de l'equipe
-         * @return le nom de l'equipe
-         */
         return this.nomEquipe;
     }
 
+    /**
+     * donne le nombre d'athlete 
+     * @return le nombre d'athlete
+     */
     public int getNbAthletes() {
-        /**
-         * donne le nombre d'athlete 
-         * @return le nombre d'athlete
-         */
         return this.lesAthletes.size();
     }
 
+    /**
+     * donne le score de l'équipe
+     * @return le score de l'équipe
+     */
     public double calculerScore(){
-        /**
-         * donne le score de l'equipe
-         * @return le score de l'equipe
-         */
         double res=0;
         for(Epreuve epreuve:this.lesEpreuves){
                 res+=epreuve.calculerScore(this);
@@ -92,22 +96,22 @@ public class Equipe implements Comparable<Equipe>{
         return res;
     }
 
+    /**
+     * compare une équipe avec une autre
+     * @param e une équipe
+     * @return un int qui dit si l'équipe a plus de score que d'autre
+     */
     @Override
     public int compareTo(Equipe e){
-        /**
-         * compare une equipe avec une autre
-         * @param une equipe
-         * @return un int qui dit si l'equipe a plus de score que d'autre
-         */
         return (int)this.calculerScore()-(int)e.calculerScore();
     }
 
+    /**
+     * représentation de l'équipe
+     * @return une représentation de l'équipe
+     */
     @Override
     public String toString(){
-        /**
-         * représentation de l'equipe
-         * @return une représentation de l'equipe
-         */
         return "Equipe : " + this.nomEquipe + "\n" + " Athletes : " + this.lesAthletes;
     }
 }
