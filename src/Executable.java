@@ -543,6 +543,7 @@ public class Executable{
                 System.out.println("Ta réponse :");
                 String  repScanAthlete2=scanAthlete2.nextLine();
                 Epreuve epreuv;
+                epreuv = null;
                 for(Pays p:pays)
                     for(Equipe e:p.getLesEquipes()){
                         for(Epreuve ep:e.getLesEpreuves()){
