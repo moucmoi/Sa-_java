@@ -23,13 +23,13 @@ public class TestsPays {
         france=new Pays("France","FRA");
         chine=new Pays("Chine","CHN");
 
-        a1 = new Athlete("Testeur", "Test", "H", 50, 10, 20);
-        a2 = new Athlete("Testeur2", "Test2", "F", 20, 10, 30);
-        a3 = new Athlete("Testeur3", "Test3", "H", 5, 5, 75);
-        a4 = new Athlete("Testeur4", "Test4", "F", 60, 30, 5);
-
         e1=new Equipe("Equipe1",france);
         e2=new Equipe("Equipe2",chine);
+
+        a1 = new Athlete("Testeur", "Test", "H", 50, 10, 20,e1);
+        a2 = new Athlete("Testeur2", "Test2", "F", 20, 10, 30, e2);
+        a3 = new Athlete("Testeur3", "Test3", "H", 5, 5, 75, e2);
+        a4 = new Athlete("Testeur4", "Test4", "F", 60, 30, 5, e1);
 
         e1.ajouteAthlete(a4);
         e1.ajouteAthlete(a1);
@@ -51,6 +51,7 @@ public class TestsPays {
         e2.ajouteEpreuve(handballH);
         e2.ajouteEpreuve(volleyBallH);
 
+    }
         @Test
         public void TestCalculerScore() {
             Assertions.assertEquals(france.calculerScore(), ((112.5+95)+(127.5+115)));
@@ -62,6 +63,4 @@ public class TestsPays {
             Assertions.assertEquals(france.toString(), "Nom: France\n Code: FRA\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
             Assertions.assertEquals(chine.toString(), "Nom: Chine\n Code: CHN\n Nombre de Médailles\n Or: 0\n Argent: 0\n Bronze 0");
         }
-    
     }
-}
