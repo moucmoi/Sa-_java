@@ -60,9 +60,9 @@ public class Executable{
         Equipe e9=new Equipe("Equipe9",bresil);
         Equipe e10=new Equipe("Equipe10",turquie);
 
-        Athlete noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5);
-        Athlete marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12);
-        Athlete loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20);
+        Athlete noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5, e1);
+        Athlete marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12, e1);
+        Athlete loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20, e1);
 
         natation.ajouteEpreuve(centMetresF);
         natation.ajouteEpreuve(centMetresH);
@@ -85,48 +85,48 @@ public class Executable{
         e1.ajouteAthlete(marin);
         e1.ajouteAthlete(loris);
 
-        Athlete amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10);
-        Athlete imad=new Athlete("Assou", "Imad", "H", 10, 5, 15);
+        Athlete amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10, e2);
+        Athlete imad=new Athlete("Assou", "Imad", "H", 10, 5, 15, e2);
         e2.ajouteAthlete(amine);
         e2.ajouteAthlete(imad);
 
-        Athlete jade=new Athlete("Laurent", "Jade", "F", 3, 20, 3);
-        Athlete sarah=new Athlete("Faure", "Sarah", "F", 8, 2, 16);
+        Athlete jade=new Athlete("Laurent", "Jade", "F", 3, 20, 3, e3);
+        Athlete sarah=new Athlete("Faure", "Sarah", "F", 8, 2, 16, e3);
         e3.ajouteAthlete(jade);
         e3.ajouteAthlete(sarah);
 
-        Athlete sosuke=new Athlete("Kondo", "Sosuke", "H", 5, 18, 9);
-        Athlete leon=new Athlete("Hartmann", "Leon", "H", 2, 7, 20);
+        Athlete sosuke=new Athlete("Kondo", "Sosuke", "H", 5, 18, 9, e4);
+        Athlete leon=new Athlete("Hartmann", "Leon", "H", 2, 7, 20, e4);
         e4.ajouteAthlete(sosuke);
         e4.ajouteAthlete(leon);
 
-        Athlete ryota=new Athlete("Shibata", "Ryota", "H", 17, 7, 4);
-        Athlete zhu=new Athlete("Lin", "Zhu", "H", 12, 18, 3);
+        Athlete ryota=new Athlete("Shibata", "Ryota", "H", 17, 7, 4, e5);
+        Athlete zhu=new Athlete("Lin", "Zhu", "H", 12, 18, 3, e5);
         e5.ajouteAthlete(ryota);
         e5.ajouteAthlete(zhu);
 
-        Athlete david=new Athlete("Weber", "David", "H", 15, 1, 4);
-        Athlete arthur=new Athlete("Perez", "Arthur", "H", 12, 2, 14);
+        Athlete david=new Athlete("Weber", "David", "H", 15, 1, 4, e6);
+        Athlete arthur=new Athlete("Perez", "Arthur", "H", 12, 2, 14, e6);
         e6.ajouteAthlete(david);
         e6.ajouteAthlete(arthur);
 
-        Athlete hugo=new Athlete("Muller", "Hugo", "H", 15, 15, 2);
-        Athlete nathan=new Athlete("Michel", "Nathan", "H", 10, 4, 6);
+        Athlete hugo=new Athlete("Muller", "Hugo", "H", 15, 15, 2, e7);
+        Athlete nathan=new Athlete("Michel", "Nathan", "H", 10, 4, 6, e7);
         e7.ajouteAthlete(hugo);
         e7.ajouteAthlete(nathan);
 
-        Athlete sophie=new Athlete("Schulz", "Sophie", "F", 6, 10, 1);
-        Athlete rin=new Athlete("Yamaguchi", "Rin", "F", 17, 9, 9);
+        Athlete sophie=new Athlete("Schulz", "Sophie", "F", 6, 10, 1, e8);
+        Athlete rin=new Athlete("Yamaguchi", "Rin", "F", 17, 9, 9, e8);
         e8.ajouteAthlete(sophie);
         e8.ajouteAthlete(rin);
 
-        Athlete theo=new Athlete("Richard", "Théo", "h", 14, 2, 1);
-        Athlete min=new Athlete("Sato", "Min", "H", 20, 8, 10);
+        Athlete theo=new Athlete("Richard", "Théo", "h", 14, 2, 1, e9);
+        Athlete min=new Athlete("Sato", "Min", "H", 20, 8, 10, e9);
         e9.ajouteAthlete(theo);
         e9.ajouteAthlete(min);
 
-        Athlete lucas=new Athlete("Werner", "Lucas", "h", 19, 12, 4);
-        Athlete johan=new Athlete("Gao", "Johan", "H", 8, 2, 15);
+        Athlete lucas=new Athlete("Werner", "Lucas", "h", 19, 12, 4, e10);
+        Athlete johan=new Athlete("Gao", "Johan", "H", 8, 2, 15, e10);
         e10.ajouteAthlete(lucas);
         e10.ajouteAthlete(johan);
 
@@ -140,28 +140,6 @@ public class Executable{
         australie.ajouteEquipe(e8);
         bresil.ajouteEquipe(e9);
         turquie.ajouteEquipe(e10);
-
-        noa.ajouteEquipe(e1);
-        marin.ajouteEquipe(e1);
-        loris.ajouteEquipe(e1);
-        amine.ajouteEquipe(e2);
-        imad.ajouteEquipe(e2);
-        jade.ajouteEquipe(e3);
-        sarah.ajouteEquipe(e3);
-        sosuke.ajouteEquipe(e4);
-        leon.ajouteEquipe(e4);
-        ryota.ajouteEquipe(e5);
-        zhu.ajouteEquipe(e5);
-        arthur.ajouteEquipe(e6);
-        david.ajouteEquipe(e6);
-        hugo.ajouteEquipe(e7);
-        nathan.ajouteEquipe(e7);
-        sophie.ajouteEquipe(e8);
-        rin.ajouteEquipe(e8);
-        theo.ajouteEquipe(e9);
-        min.ajouteEquipe(e9);
-        lucas.ajouteEquipe(e10);
-        johan.ajouteEquipe(e10);
 
         e1.ajouteEpreuve(quatreCentMetresRelaiH);
         e1.ajouteEpreuve(centMetresH);
@@ -254,27 +232,27 @@ public class Executable{
         e10.ajouteEpreuve(centMetreHaiesH);
 
 
-        System.out.println(noa.participer());
-        System.out.println(marin.participer());
-        System.out.println(loris.participer());
-        System.out.println(amine.participer());
-        System.out.println(imad.participer());
-        System.out.println(jade.participer());
-        System.out.println(sarah.participer());
-        System.out.println(sosuke.participer());
-        System.out.println(leon.participer());
-        System.out.println(ryota.participer());
-        System.out.println(zhu.participer());
-        System.out.println(arthur.participer());
-        System.out.println(david.participer());
-        System.out.println(hugo.participer());
-        System.out.println(nathan.participer());
-        System.out.println(sophie.participer());
-        System.out.println(rin.participer());
-        System.out.println(theo.participer());
-        System.out.println(min.participer());
-        System.out.println(lucas.participer());
-        System.out.println(johan.participer());
+        System.out.println(noa.participer(centMetresH));
+        System.out.println(marin.participer(centMetresH));
+        System.out.println(loris.participer(centMetresH));
+        System.out.println(amine.participer(centMetresH));
+        System.out.println(imad.participer(centMetresH));
+        System.out.println(jade.participer(centMetresH));
+        System.out.println(sarah.participer(centMetresH));
+        System.out.println(sosuke.participer(centMetresH));
+        System.out.println(leon.participer(centMetresH));
+        System.out.println(ryota.participer(centMetresH));
+        System.out.println(zhu.participer(centMetresH));
+        System.out.println(arthur.participer(centMetresH));
+        System.out.println(david.participer(centMetresH));
+        System.out.println(hugo.participer(centMetresH));
+        System.out.println(nathan.participer(centMetresH));
+        System.out.println(sophie.participer(centMetresH));
+        System.out.println(rin.participer(centMetresH));
+        System.out.println(theo.participer(centMetresH));
+        System.out.println(min.participer(centMetresH));
+        System.out.println(lucas.participer(centMetresH));
+        System.out.println(johan.participer(centMetresH));
 
 
         System.out.println(france.calculerScore());

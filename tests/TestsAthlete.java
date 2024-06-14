@@ -1,7 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
-public class TestsEquipe {
+
+public class TestsAthlete {
     private static Pays france;
     private static Pays chine;
     private static Athlete a1;
@@ -20,13 +21,13 @@ public class TestsEquipe {
         france=new Pays("France","FRA");
         chine=new Pays("Chine","CHN");
 
-        a1 = new Athlete("Testeur", "Test", "H", 50, 10, 20);
-        a2 = new Athlete("Testeur2", "Test2", "F", 20, 10, 30);
-        a3 = new Athlete("Testeur3", "Test3", "H", 5, 5, 75);
-        a4 = new Athlete("Testeur4", "Test4", "F", 60, 30, 5);
-
         e1=new Equipe("Equipe1",france);
         e2=new Equipe("Equipe2",chine);
+
+        a1 = new Athlete("Testeur", "Test", "H", 50, 10, 20,e1);
+        a2 = new Athlete("Testeur2", "Test2", "F", 20, 10, 30,e2);
+        a3 = new Athlete("Testeur3", "Test3", "H", 5, 5, 75,e2);
+        a4 = new Athlete("Testeur4", "Test4", "F", 60, 30, 5,e1);
 
         e1.ajouteAthlete(a4);
         e1.ajouteAthlete(a1);
@@ -47,11 +48,27 @@ public class TestsEquipe {
 
         e2.ajouteEpreuve(handballH);
         e2.ajouteEpreuve(volleyBallH);
-    }
 
-    @Test
-        public void TestCalculerScore() {
-            Assertions.assertEquals(e1.calculerScore(), ((112.5+95)+(127.5+115)));
-            Assertions.assertEquals(e2.calculerScore(), ((80+125)+(85+125)));
+    }
+        @Test
+        public void TestParticiper() {
+            Assertions.assertEquals(a1.participer(handballH), 95);
+            Assertions.assertEquals(a2.participer(handballH), 80);
+            Assertions.assertEquals(a3.participer(handballH), 125);
+            Assertions.assertEquals(a4.participer(handballH), 112.5);
+
+            Assertions.assertEquals(a1.participer(volleyBallH), 115);
+            Assertions.assertEquals(a2.participer(volleyBallH), 85);
+            Assertions.assertEquals(a3.participer(volleyBallH), 125);
+            Assertions.assertEquals(a4.participer(volleyBallH), 127.5);
+
+        }
+
+        @Test
+        public void TestToString() {
+            Assertions.assertEquals(a1.toString(), "Testeur Test");
+            Assertions.assertEquals(a2.toString(), "Testeur2 Test2");
+            Assertions.assertEquals(a3.toString(), "Testeur3 Test3");
+            Assertions.assertEquals(a4.toString(), "Testeur4 Test4");
         }
 }

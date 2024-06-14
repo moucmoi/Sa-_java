@@ -1,6 +1,9 @@
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Classe Sport
+ */
 public class Sport{
     private String nomSport;
     private List<Epreuve> lesEpreuves;

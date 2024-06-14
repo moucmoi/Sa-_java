@@ -1,6 +1,8 @@
 import java.util.List;
-import java.util.ArrayList;
 
+/**
+ * Classe Athlete
+ */
 public class Athlete implements Comparable<Athlete>{
     private String nom;
     private String prenom;
@@ -8,7 +10,7 @@ public class Athlete implements Comparable<Athlete>{
     private int force;
     private int agilite;
     private int endurance;
-    public List<Equipe> equipes;
+    private Equipe equipe;
 
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurance
@@ -18,15 +20,16 @@ public class Athlete implements Comparable<Athlete>{
      * @param force la force de l'athlète
      * @param agilite l'agilité de l'athlète
      * @param endurance l'endurance de l'athlète
+     * @param equipe l'équipe de l'athlète
      */
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance) {
+    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Equipe equipe) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
-        this.equipes=new ArrayList<>();
+        this.equipe= equipe;
     }
 
     /**
@@ -81,16 +84,8 @@ public class Athlete implements Comparable<Athlete>{
      * Méthode pour obtenir les équipes dans lesquels sont l'athlète
      * @return la liste des équipes
      */
-    public List<Equipe> getEquipes(){
-        return this.equipes;
-    }
-
-    /**
-     * Méthode qui ajoute une équipe à l'athlète
-     * @param newEquipe
-     */
-    public void ajouteEquipe(Equipe newEquipe){
-        this.equipes.add(newEquipe);
+    public Equipe getEquipe(){
+        return this.equipe;
     }
 
     /**
@@ -143,23 +138,27 @@ public class Athlete implements Comparable<Athlete>{
 
     /**
      * Fonction qui calcule le score d'un athlete
+     * @param epreuve l'épreuve pour laquelle on calcule le score de l'athlète
      * @return le score de l'athlète
      */
-    public double participer() {
-        double res=0;
-        for(Equipe equipe:this.equipes){
-            res+=equipe.calculerScore();
+    public double participer(Epreuve epreuve) {
+        List<Epreuve> lesEpreuves = this.equipe.getLesEpreuves();
+        if (lesEpreuves.contains(epreuve)) {
+            Sport sport = epreuve.getSport();
+            return sport.calculerScore(this);
         }
-        return res;
+        return 0;
     }
+
 
     /**
      * comparateur naturel d'Athlete
-     * @param p un autre Athlete
+     * @param a un autre Athlete
+     * @return l'int pour la comparaison
      */
     @Override
     public int compareTo(Athlete a){
-        return (int)this.participer()-(int)a.participer();
+        return (int)(this.force+this.agilite+this.endurance)-(int)a.force+a.agilite+a.endurance;
     }
 
     /**
