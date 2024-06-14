@@ -1,6 +1,8 @@
 import java.util.List;
 import java.util.ArrayList;
-
+/**
+ * Classe Equipe
+ */
 public class Equipe implements Comparable<Equipe>{
     private String nomEquipe;
     private Pays pays;

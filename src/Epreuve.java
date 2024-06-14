@@ -1,3 +1,6 @@
+/**
+ * Classe Epreuve
+ */
 public class Epreuve {
     private String nomEpreuve;
     private boolean homme;

@@ -1,5 +1,8 @@
 import java.util.List;
 
+/**
+ * Classe Athlete
+ */
 public class Athlete implements Comparable<Athlete>{
     private String nom;
     private String prenom;
@@ -7,7 +10,7 @@ public class Athlete implements Comparable<Athlete>{
     private int force;
     private int agilite;
     private int endurance;
-    public Equipe equipe;
+    private Equipe equipe;
 
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurance
