@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
 
 public class Athlete implements Comparable<Athlete>{
     private String nom;
@@ -18,6 +17,7 @@ public class Athlete implements Comparable<Athlete>{
      * @param force la force de l'athlète
      * @param agilite l'agilité de l'athlète
      * @param endurance l'endurance de l'athlète
+     * @param equipe l'équipe de l'athlète
      */
     public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Equipe equipe) {
         this.nom = nom;
@@ -135,6 +135,7 @@ public class Athlete implements Comparable<Athlete>{
 
     /**
      * Fonction qui calcule le score d'un athlete
+     * @param epreuve l'épreuve pour laquelle on calcule le score de l'athlète
      * @return le score de l'athlète
      */
     public double participer(Epreuve epreuve) {
@@ -149,7 +150,8 @@ public class Athlete implements Comparable<Athlete>{
 
     /**
      * comparateur naturel d'Athlete
-     * @param p un autre Athlete
+     * @param a un autre Athlete
+     * @return l'int pour la comparaison
      */
     @Override
     public int compareTo(Athlete a){

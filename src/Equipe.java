@@ -1,6 +1,5 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Equipe implements Comparable<Equipe>{
     private String nomEquipe;

@@ -73,7 +73,7 @@ public class Pays implements Comparable<Pays>{
 
     /**
      * Ajoute une équipe au pays
-     * @param equipe l'Equipe à ajouter
+     * @param newEquipe l'Equipe à ajouter
      */
     public void ajouteEquipe(Equipe newEquipe) {
         this.lesEquipes.add(newEquipe);

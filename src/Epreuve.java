@@ -4,7 +4,14 @@ public class Epreuve {
     private boolean individuel;
     private Sport sport;
 
-    /**Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurence */
+    /**
+     * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurence 
+     * @param nomEpreuve le nom de l'épreuve
+     * @param homme un boolean indiquant si l'épreuve est masculine ou féminine, true si masculine, false si féminine
+     * @param individuel un boolean indiquant si l'épreuve est individuelle ou non, true si individuelle, false si à plusieurs
+     * @param sport le sport qui contient l'épreuve
+     */
+
     public Epreuve(String nomEpreuve, boolean homme, boolean individuel, Sport sport){ 
         this.nomEpreuve = nomEpreuve;
         this.homme = homme;
