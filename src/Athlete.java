@@ -145,12 +145,15 @@ public class Athlete implements Comparable<Athlete>{
      * Fonction qui calcule le score d'un athlete
      * @return le score de l'athlète
      */
-    public double participer() {
-        double res=0;
-        for(Equipe equipe:this.equipes){
-            res+=equipe.calculerScore();
+    public double participer(Equipe equipe, Epreuve epreuve) {
+        if (this.equipes.contains(equipe)) {
+            List<Epreuve> lesEpreuves = equipe.getLesEpreuves();
+            if (lesEpreuves.contains(epreuve)) {
+                Sport sport = epreuve.getSport();
+                return sport.calculerScore(this);
+            }
         }
-        return res;
+        return 0;
     }
 
     /**
@@ -159,7 +162,7 @@ public class Athlete implements Comparable<Athlete>{
      */
     @Override
     public int compareTo(Athlete a){
-        return (int)this.participer()-(int)a.participer();
+        return (int)(this.force+this.agilite+this.endurance)-(int)a.force+a.agilite+a.endurance;
     }
 
     /**
