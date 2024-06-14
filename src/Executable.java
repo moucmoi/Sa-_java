@@ -493,19 +493,18 @@ public class Executable{
             }
         }
         if(rep1.equals("4")){
-            System.out.println(" ___________________________________________________\n"+
-                               "|===================================================|\n"+
-                               "|        Que veux tu savoir sur les athletes ?      |\n"+
-                               "|===================================================|\n"+
-                               "|                                                   |\n"+
-                               "|   1 - Connaître le classement des athletes        |\n"+
-                               "|   2 - Savoir le nombre de point des athletes      |\n"+
-                               "|   3 - Connaître les équipes d'un athlete          |\n"+
-                               "|   4 - Connaître le pays d'un athlete              |\n"+
-                               "|   5 - Quitter                                     |\n"+
-                               "|                                                   |\n"+
-                               "|                                                   |\n"+
-                               "|___________________________________________________|\n");
+            System.out.println(" _____________________________________________________\n"+
+                               "|=====================================================|\n"+
+                               "|        Que veux tu savoir sur les athletes ?        |\n"+
+                               "|=====================================================|\n"+
+                               "|                                                     |\n"+
+                               "|   1 - Connaître le classement des athletes          |\n"+
+                               "|   2 - Savoir le score des athletes dans une epreuve |\n"+
+                               "|   3 - Connaître le pays d'un athlete                |\n"+
+                               "|   4 - Quitter                                       |\n"+
+                               "|                                                     |\n"+
+                               "|                                                     |\n"+
+                               "|_____________________________________________________|\n");
             Scanner scanAthlete =new Scanner(System.in);
             System.out.println("Ta réponse :");
             String  repScanAthlete=scanAthlete.nextLine();
@@ -529,14 +528,33 @@ public class Executable{
             if(repScanAthlete.equals("2")){
                 String rep="";
                 List<Athlete> listeAthletes=new ArrayList<>();
+                List<Equipe> listeEquipes=new ArrayList<>();
                 for(Pays p:pays){
                     for(Equipe e:p.getLesEquipes()){
+                        listeEquipes.add(e);
                         for(Athlete a:e.getLesAthletes())
                             listeAthletes.add(a);
                     }
                 }
+                boolean a=true;
+
+                System.out.println("Sur quel epreuve veux-tu connaître les score des athletes");
+                Scanner scanAthlete2 =new Scanner(System.in);
+                System.out.println("Ta réponse :");
+                String  repScanAthlete2=scanAthlete2.nextLine();
+                Epreuve epreuv;
+                epreuv = null;
+                for(Pays p:pays)
+                    for(Equipe e:p.getLesEquipes()){
+                        for(Epreuve ep:e.getLesEpreuves()){
+                            if(ep.getNom().equals(repScanAthlete2)){
+                                epreuv=ep;
+                            }
+                        }
+                    }
+                
                 for(Athlete at:listeAthletes){
-                    rep+="L'athlete "+at.getNom()+" a "+at.participer()+ " points"+"\n";
+                    rep+="L'athlete "+at.getNom()+" a "+at.participer(epreuv)+ " points"+"\n";
                 }
                 System.out.println(rep);
                 System.exit(0);
@@ -550,34 +568,12 @@ public class Executable{
                             listeAthletes.add(a);
                     }
                 }
-                Scanner quelAthlete=new Scanner(System.in);
-                System.out.println("De quel athlete veux tu connaître les équipes ?");
-                String  repQuelAthlete=quelAthlete.nextLine();
-                for(Athlete at:listeAthletes){
-                    if(at.getNom().equals(repQuelAthlete)){
-                        for(Equipe eq:at.getEquipes()){
-                            rep+=eq.getNom()+"\n";
-                        }
-                    }
-                }
-                System.out.println(rep);
-                System.exit(0);
-            }
-            if(repScanAthlete.equals("4")){
-                String rep="";
-                List<Athlete> listeAthletes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        for(Athlete a:e.getLesAthletes())
-                            listeAthletes.add(a);
-                    }
-                }
                 Scanner quelAthlete2=new Scanner(System.in);
                 System.out.println("De quel athlete veux tu connaître le pays ?");
                 String  repQuelAthlete2=quelAthlete2.nextLine();
                 for(Athlete at:listeAthletes){
                     if(at.getNom().equals(repQuelAthlete2)){
-                        System.out.println(at.getEquipes().get(0).getPays().getNomPays());
+                        System.out.println(at.getEquipe().getPays().getNomPays());
                     }
                 }
             }
