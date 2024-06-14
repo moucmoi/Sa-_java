@@ -8,7 +8,7 @@ public class Athlete implements Comparable<Athlete>{
     private int force;
     private int agilite;
     private int endurance;
-    public List<Equipe> equipes;
+    public Equipe equipe;
 
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurance
@@ -19,14 +19,14 @@ public class Athlete implements Comparable<Athlete>{
      * @param agilite l'agilité de l'athlète
      * @param endurance l'endurance de l'athlète
      */
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance) {
+    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Equipe equipe) {
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
-        this.equipes=new ArrayList<>();
+        this.equipe= equipe;
     }
 
     /**
@@ -81,16 +81,8 @@ public class Athlete implements Comparable<Athlete>{
      * Méthode pour obtenir les équipes dans lesquels sont l'athlète
      * @return la liste des équipes
      */
-    public List<Equipe> getEquipes(){
-        return this.equipes;
-    }
-
-    /**
-     * Méthode qui ajoute une équipe à l'athlète
-     * @param newEquipe
-     */
-    public void ajouteEquipe(Equipe newEquipe){
-        this.equipes.add(newEquipe);
+    public Equipe getEquipe(){
+        return this.equipe;
     }
 
     /**
@@ -145,16 +137,15 @@ public class Athlete implements Comparable<Athlete>{
      * Fonction qui calcule le score d'un athlete
      * @return le score de l'athlète
      */
-    public double participer(Equipe equipe, Epreuve epreuve) {
-        if (this.equipes.contains(equipe)) {
-            List<Epreuve> lesEpreuves = equipe.getLesEpreuves();
-            if (lesEpreuves.contains(epreuve)) {
-                Sport sport = epreuve.getSport();
-                return sport.calculerScore(this);
-            }
+    public double participer(Epreuve epreuve) {
+        List<Epreuve> lesEpreuves = this.equipe.getLesEpreuves();
+        if (lesEpreuves.contains(epreuve)) {
+            Sport sport = epreuve.getSport();
+            return sport.calculerScore(this);
         }
         return 0;
     }
+
 
     /**
      * comparateur naturel d'Athlete
