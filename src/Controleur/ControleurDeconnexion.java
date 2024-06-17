@@ -1,5 +1,7 @@
+import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.ButtonType;
 
 public class ControleurDeconnexion implements EventHandler<ActionEvent> {
 
@@ -9,6 +11,6 @@ public class ControleurDeconnexion implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        // A implémenter
+        Optional<ButtonType> reponse = this.VueAppliJO.popUpDeconnexion().showAndWait();
     }
 }
