@@ -4,6 +4,7 @@ import java.util.ArrayList;
  * Classe Equipe
  */
 public class Equipe implements Comparable<Equipe>{
+    private int numEquipe;
     private String nomEquipe;
     private Pays pays;
     private List<Epreuve> lesEpreuves;
@@ -11,10 +12,12 @@ public class Equipe implements Comparable<Equipe>{
 
     /**
      * Constructeur demandant un nom et un pays
+     * @param numEquipe le numéro de l'équipe
      * @param nomEquipe le nom de l'équipe
      * @param pays le nom du pays de l'équipe
      */
-    public Equipe(String nomEquipe,Pays pays){
+    public Equipe(int numEquipe, String nomEquipe,Pays pays){
+        this.numEquipe = numEquipe;
         this.nomEquipe = nomEquipe;
         this.pays=pays;
         this.lesAthletes = new ArrayList<>();
@@ -27,6 +30,14 @@ public class Equipe implements Comparable<Equipe>{
      */
     public void ajouteAthlete(Athlete athlete) {
         this.lesAthletes.add(athlete);
+    }
+
+    /**
+     * donne le numéro de l'équipe
+     * @return le numéro de l'équipe
+     */
+    public int getNum() {
+        return this.numEquipe;
     }
 
     /**
@@ -75,6 +86,14 @@ public class Equipe implements Comparable<Equipe>{
      */
     public String getNom(){
         return this.nomEquipe;
+    }
+
+    /**
+     * change le numéro de l'équipe
+     * @param num le nouveau numéro de l'équipe
+     */
+    public void setNum(int num) {
+        this.numEquipe = num;
     }
 
     /**
