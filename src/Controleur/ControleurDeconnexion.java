@@ -4,10 +4,12 @@ import javafx.event.EventHandler;
 import javafx.scene.control.ButtonType;
 
 public class ControleurDeconnexion implements EventHandler<ActionEvent> {
+
     private VueAppliJO vueJO;
 
     public ControleurDeconnexion(VueAppliJO vueJO) {
         this.vueJO = vueJO;
+
     }
 
     public void handle(ActionEvent actionEvent) {
