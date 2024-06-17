@@ -49,20 +49,20 @@ public class Executable{
 
         
 
-        Equipe e1=new Equipe("Equipe1",france);
-        Equipe e2=new Equipe("Equipe2",maroc);
-        Equipe e3=new Equipe("Equipe3",allemagne);
-        Equipe e4=new Equipe("Equipe4",etatsUnis);
-        Equipe e5=new Equipe("Equipe5",chine);
-        Equipe e6=new Equipe("Equipe6",japon);
-        Equipe e7=new Equipe("Equipe7",kenya);
-        Equipe e8=new Equipe("Equipe8",australie);
-        Equipe e9=new Equipe("Equipe9",bresil);
-        Equipe e10=new Equipe("Equipe10",turquie);
+        Equipe e1=new Equipe(1, "Equipe1",france);
+        Equipe e2=new Equipe(2, "Equipe2",maroc);
+        Equipe e3=new Equipe(3, "Equipe3",allemagne);
+        Equipe e4=new Equipe(4, "Equipe4",etatsUnis);
+        Equipe e5=new Equipe(5, "Equipe5",chine);
+        Equipe e6=new Equipe(6, "Equipe6",japon);
+        Equipe e7=new Equipe(7, "Equipe7",kenya);
+        Equipe e8=new Equipe(8, "Equipe8",australie);
+        Equipe e9=new Equipe(9, "Equipe9",bresil);
+        Equipe e10=new Equipe(10, "Equipe10",turquie);
 
-        Athlete noa=new Athlete("Fonteny", "Noa", "H",10 , 15, 5, e1);
-        Athlete marin=new Athlete("Chesneau", "Marin", "H", 12,2 , 12, e1);
-        Athlete loris=new Athlete("Grandchamp", "Loris", "H", 10, 5, 20, e1);
+        Athlete noa=new Athlete(1, "Fonteny", "Noa", "H",10 , 15, 5, e1);
+        Athlete marin=new Athlete(2, "Chesneau", "Marin", "H", 12,2 , 12, e1);
+        Athlete loris=new Athlete(3, "Grandchamp", "Loris", "H", 10, 5, 20, e1);
 
         natation.ajouteEpreuve(centMetresF);
         natation.ajouteEpreuve(centMetresH);
@@ -85,48 +85,48 @@ public class Executable{
         e1.ajouteAthlete(marin);
         e1.ajouteAthlete(loris);
 
-        Athlete amine=new Athlete("Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10, e2);
-        Athlete imad=new Athlete("Assou", "Imad", "H", 10, 5, 15, e2);
+        Athlete amine=new Athlete(4, "Yahyaoui", "Mohamed-Amine", "H", 10, 10, 10, e2);
+        Athlete imad=new Athlete(5, "Assou", "Imad", "H", 10, 5, 15, e2);
         e2.ajouteAthlete(amine);
         e2.ajouteAthlete(imad);
 
-        Athlete jade=new Athlete("Laurent", "Jade", "F", 3, 20, 3, e3);
-        Athlete sarah=new Athlete("Faure", "Sarah", "F", 8, 2, 16, e3);
+        Athlete jade=new Athlete(6, "Laurent", "Jade", "F", 3, 20, 3, e3);
+        Athlete sarah=new Athlete(7, "Faure", "Sarah", "F", 8, 2, 16, e3);
         e3.ajouteAthlete(jade);
         e3.ajouteAthlete(sarah);
 
-        Athlete sosuke=new Athlete("Kondo", "Sosuke", "H", 5, 18, 9, e4);
-        Athlete leon=new Athlete("Hartmann", "Leon", "H", 2, 7, 20, e4);
+        Athlete sosuke=new Athlete(8, "Kondo", "Sosuke", "H", 5, 18, 9, e4);
+        Athlete leon=new Athlete(9, "Hartmann", "Leon", "H", 2, 7, 20, e4);
         e4.ajouteAthlete(sosuke);
         e4.ajouteAthlete(leon);
 
-        Athlete ryota=new Athlete("Shibata", "Ryota", "H", 17, 7, 4, e5);
-        Athlete zhu=new Athlete("Lin", "Zhu", "H", 12, 18, 3, e5);
+        Athlete ryota=new Athlete(10, "Shibata", "Ryota", "H", 17, 7, 4, e5);
+        Athlete zhu=new Athlete(11, "Lin", "Zhu", "H", 12, 18, 3, e5);
         e5.ajouteAthlete(ryota);
         e5.ajouteAthlete(zhu);
 
-        Athlete david=new Athlete("Weber", "David", "H", 15, 1, 4, e6);
-        Athlete arthur=new Athlete("Perez", "Arthur", "H", 12, 2, 14, e6);
+        Athlete david=new Athlete(12, "Weber", "David", "H", 15, 1, 4, e6);
+        Athlete arthur=new Athlete(13, "Perez", "Arthur", "H", 12, 2, 14, e6);
         e6.ajouteAthlete(david);
         e6.ajouteAthlete(arthur);
 
-        Athlete hugo=new Athlete("Muller", "Hugo", "H", 15, 15, 2, e7);
-        Athlete nathan=new Athlete("Michel", "Nathan", "H", 10, 4, 6, e7);
+        Athlete hugo=new Athlete(14, "Muller", "Hugo", "H", 15, 15, 2, e7);
+        Athlete nathan=new Athlete(15, "Michel", "Nathan", "H", 10, 4, 6, e7);
         e7.ajouteAthlete(hugo);
         e7.ajouteAthlete(nathan);
 
-        Athlete sophie=new Athlete("Schulz", "Sophie", "F", 6, 10, 1, e8);
-        Athlete rin=new Athlete("Yamaguchi", "Rin", "F", 17, 9, 9, e8);
+        Athlete sophie=new Athlete(16, "Schulz", "Sophie", "F", 6, 10, 1, e8);
+        Athlete rin=new Athlete(17, "Yamaguchi", "Rin", "F", 17, 9, 9, e8);
         e8.ajouteAthlete(sophie);
         e8.ajouteAthlete(rin);
 
-        Athlete theo=new Athlete("Richard", "Théo", "h", 14, 2, 1, e9);
-        Athlete min=new Athlete("Sato", "Min", "H", 20, 8, 10, e9);
+        Athlete theo=new Athlete(18, "Richard", "Théo", "h", 14, 2, 1, e9);
+        Athlete min=new Athlete(19, "Sato", "Min", "H", 20, 8, 10, e9);
         e9.ajouteAthlete(theo);
         e9.ajouteAthlete(min);
 
-        Athlete lucas=new Athlete("Werner", "Lucas", "h", 19, 12, 4, e10);
-        Athlete johan=new Athlete("Gao", "Johan", "H", 8, 2, 15, e10);
+        Athlete lucas=new Athlete(20, "Werner", "Lucas", "h", 19, 12, 4, e10);
+        Athlete johan=new Athlete(21, "Gao", "Johan", "H", 8, 2, 15, e10);
         e10.ajouteAthlete(lucas);
         e10.ajouteAthlete(johan);
 
