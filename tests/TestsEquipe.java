@@ -20,13 +20,13 @@ public class TestsEquipe {
         france=new Pays("France","FRA");
         chine=new Pays("Chine","CHN");
 
-        e1=new Equipe("Equipe1",france);
-        e2=new Equipe("Equipe2",chine);
+        e1=new Equipe(1, "Equipe1",france);
+        e2=new Equipe(2, "Equipe2",chine);
 
-        a1 = new Athlete("Testeur", "Test", "H", 50, 10, 20, e1);
-        a2 = new Athlete("Testeur2", "Test2", "F", 20, 10, 30, e2);
-        a3 = new Athlete("Testeur3", "Test3", "H", 5, 5, 75, e2);
-        a4 = new Athlete("Testeur4", "Test4", "F", 60, 30, 5, e1);
+        a1 = new Athlete(1, "Testeur", "Test", "H", 50, 10, 20, e1);
+        a2 = new Athlete(2, "Testeur2", "Test2", "F", 20, 10, 30, e2);
+        a3 = new Athlete(3, "Testeur3", "Test3", "H", 5, 5, 75, e2);
+        a4 = new Athlete(4, "Testeur4", "Test4", "F", 60, 30, 5, e1);
 
 
         e1.ajouteAthlete(a4);

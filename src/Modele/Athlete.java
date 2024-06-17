@@ -4,6 +4,7 @@ import java.util.List;
  * Classe Athlete
  */
 public class Athlete implements Comparable<Athlete>{
+    private int numAthlete;
     private String nom;
     private String prenom;
     private String sexe;
@@ -14,6 +15,7 @@ public class Athlete implements Comparable<Athlete>{
 
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurance
+     * @param nonumAthletem le numéro de l'athlète
      * @param nom le nom de l'athlète
      * @param prenom le prenom de l'athlète
      * @param sexe le sexe de l'athlète
@@ -22,7 +24,8 @@ public class Athlete implements Comparable<Athlete>{
      * @param endurance l'endurance de l'athlète
      * @param equipe l'équipe de l'athlète
      */
-    public Athlete(String nom, String prenom, String sexe, int force, int agilite, int endurance, Equipe equipe) {
+    public Athlete(int numAthlete, String nom, String prenom, String sexe, int force, int agilite, int endurance, Equipe equipe) {
+        this.numAthlete = numAthlete;
         this.nom = nom;
         this.prenom = prenom;
         this.sexe = sexe;
@@ -30,6 +33,15 @@ public class Athlete implements Comparable<Athlete>{
         this.agilite = agilite;
         this.endurance = endurance;
         this.equipe= equipe;
+        
+    }
+
+    /**
+     * Méthode qui change le nom de l'athlete
+     * @param nonumAthletem le numéro de l'athlète
+     */
+    public void setNumAthlete(int numAthlete) {
+        this.numAthlete = numAthlete;
     }
 
     /**
@@ -90,10 +102,18 @@ public class Athlete implements Comparable<Athlete>{
 
     /**
      * Getter du nom
+     * @return le numéro de l'athlète
+     */
+    public int getNumAthlete() {
+        return this.numAthlete;
+    }
+
+    /**
+     * Getter du nom
      * @return le nom de l'athlète
      */
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     /**
@@ -101,7 +121,7 @@ public class Athlete implements Comparable<Athlete>{
      * @return le prénom de l'athlète
      */
     public String getPrenom() {
-        return prenom;
+        return this.prenom;
     }
 
     /**
@@ -109,7 +129,7 @@ public class Athlete implements Comparable<Athlete>{
      * @return le sexe de l'athlète
      */
     public String getSexe() {
-        return sexe;
+        return this.sexe;
     }
 
     /**
@@ -117,7 +137,7 @@ public class Athlete implements Comparable<Athlete>{
      * @return la force de l'athlète
      */
     public int getForce() {
-        return force;
+        return this.force;
     }
 
     /**
@@ -125,7 +145,7 @@ public class Athlete implements Comparable<Athlete>{
      * @return l'agilité de l'athlète
      */
     public int getAgilite() {
-        return agilite;
+        return this.agilite;
     }
 
     /**
@@ -133,7 +153,7 @@ public class Athlete implements Comparable<Athlete>{
      * @return l'endurance de l'athlète
      */
     public int getEndurance() {
-        return endurance;
+        return this.endurance;
     }
 
     /**
