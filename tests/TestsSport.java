@@ -22,10 +22,10 @@ public class TestsSport {
         athletisme=new Sport("Athletisme",0.5,1,2.5);
         france=new Pays("France","FRA");
 
-        e1=new Equipe("Equipe1",france);
+        e1=new Equipe(1, "Equipe1",france);
 
-        a1 = new Athlete("Testeur", "Test", "H", 10, 10, 20, e1);
-        a2 = new Athlete("Testeur2", "Test2", "F", 20, 10, 10, e1);
+        a1 = new Athlete(1, "Testeur", "Test", "H", 10, 10, 20, e1);
+        a2 = new Athlete(2, "Testeur2", "Test2", "F", 20, 10, 10, e1);
     }
 
     @Test

@@ -33,6 +33,7 @@ public class Athlete implements Comparable<Athlete>{
         this.agilite = agilite;
         this.endurance = endurance;
         this.equipe= equipe;
+        
     }
 
     /**
