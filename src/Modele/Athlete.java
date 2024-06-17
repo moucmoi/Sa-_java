@@ -1,4 +1,3 @@
-package Modele;
 import java.util.List;
 
 /**

@@ -1,4 +1,3 @@
-package Modele;
 /**
  * Classe Epreuve
  */
