@@ -16,7 +16,7 @@ public class TestsSport {
     @BeforeAll // initialisation faite en premier lieu
     static void init() { 
         natation=new Sport("Natation",1,0.5,2.5);
-        handball=new Sport("HandBall",1,1.5,1.5);
+        handball=new Sport("Handball",1,1.5,1.5);
         volleyBall=new Sport("VolleyBall",1.5,1,1.5);
         escrime=new Sport("Escrime",0.5,2.5,1);
         athletisme=new Sport("Athletisme",0.5,1,2.5);
