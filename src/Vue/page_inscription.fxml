@@ -98,12 +98,12 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Retour">
+                  <Button fx:id="retour" mnemonicParsing="false" text="Retour">
                      <HBox.margin>
                         <Insets right="50.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Inscription" />
+                  <Button fx:id="inscription" mnemonicParsing="false" text="Inscription" />
                </children>
             </HBox>
          </children>
