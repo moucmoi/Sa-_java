@@ -3,9 +3,10 @@ import javafx.event.EventHandler;
 
 public class ControleurRetour implements EventHandler<ActionEvent> {
 
+    private VueAppliJO vueJO;
 
-    public ControleurRetour() {
-        // A implémenter
+    public ControleurRetour(VueAppliJO vueJO) {
+        this.vueJO = vueJO;
     }
 
     public void handle(ActionEvent actionEvent) {
