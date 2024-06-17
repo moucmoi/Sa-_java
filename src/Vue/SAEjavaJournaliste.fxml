@@ -21,7 +21,7 @@
          <children>
             <HBox prefHeight="45.0" prefWidth="600.0">
                <children>
-                  <MenuButton mnemonicParsing="false" prefHeight="24.0" prefWidth="71.0" text="filtre">
+                  <MenuButton fx:id="filtre" mnemonicParsing="false" prefHeight="24.0" prefWidth="71.0" text="filtre">
                     <items>
                       <MenuItem mnemonicParsing="false" text="croissant" />
                       <MenuItem mnemonicParsing="false" text="decroissant" />
@@ -35,14 +35,14 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" prefHeight="16.0" prefWidth="46.0">
+                  <Button fx:id="recherche" mnemonicParsing="false" prefHeight="16.0" prefWidth="46.0">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../iut45/Etudiants/o22302631/Images/Loupe.svg.png" />
+                              <Image url="@../Images/Loupe.svg.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -59,7 +59,7 @@
                         <Insets bottom="5.0" left="50.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" text="Infos pays">
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;" text="Info Pays">
                      <HBox.margin>
                         <Insets left="30.0" top="5.0" />
                      </HBox.margin>
@@ -76,12 +76,15 @@
                         <Insets bottom="5.0" left="50.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" text="Infos pays">
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;" text="Info Pays">
                      <HBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
+                        <Insets left="30.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
             <HBox prefHeight="28.0" prefWidth="600.0">
                <children>
@@ -90,9 +93,9 @@
                         <Insets bottom="5.0" left="50.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" text="Infos pays">
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;" text="Info Pays">
                      <HBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
+                        <Insets left="30.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -104,9 +107,9 @@
                         <Insets bottom="5.0" left="50.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" text="Infos pays">
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;" text="Info Pays">
                      <HBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
+                        <Insets left="30.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -118,9 +121,9 @@
                         <Insets bottom="5.0" left="50.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" text="Infos pays">
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;" text="Info Pays">
                      <HBox.margin>
-                        <Insets bottom="5.0" left="30.0" />
+                        <Insets left="30.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -132,9 +135,9 @@
                         <Insets bottom="5.0" left="50.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" text="Infos pays">
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="488.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;" text="Info Pays">
                      <HBox.margin>
-                        <Insets left="30.0" />
+                        <Insets left="30.0" top="5.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -147,27 +150,46 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;">
                <children>
-                  <Label alignment="CENTER" prefHeight="87.0" prefWidth="481.0" text="            IUT'Olympiques" textAlignment="CENTER">
+                  <Button fx:id="deconnexion" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/876779.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" top="25.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="87.0" prefWidth="470.0" text="        IUT'Olympiques" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../iut45/Etudiants/o22302631/Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </ImageView>
+                  <Button fx:id="home" mnemonicParsing="false" prefHeight="89.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
             <ToolBar prefHeight="34.0" prefWidth="599.0" style="-fx-border-color: black;">
               <items>
-                <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" text="Pays" />
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" text="Athlète" />
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" text="Sport" />
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" text="Epreuve" />
+                <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Pays" />
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Sport" />
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
               </items>
             </ToolBar>
          </children>
