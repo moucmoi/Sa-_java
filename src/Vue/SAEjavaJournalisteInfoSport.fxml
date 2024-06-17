@@ -35,12 +35,16 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </TextField>
+
                   <Button fx:id="recher" mnemonicParsing="false" prefHeight="16.0" prefWidth="46.0">
+
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
                      <graphic>
+
                         <ImageView fx:id="recherche" fitHeight="19.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+
                            <image>
                               <Image url="@../../../../../iut45/Etudiants/o22302631/Images/Loupe.svg.png" />
                            </image>
@@ -126,10 +130,12 @@
             </HBox>
             <ToolBar prefHeight="34.0" prefWidth="599.0" style="-fx-border-color: black;">
               <items>
+
                 <Button fx:id="pays" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Pays" />
                   <Button fx:id="athlete" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
                   <Button fx:id="sport" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Sport" />
                   <Button fx:id="epreuve" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
+
               </items>
             </ToolBar>
          </children>

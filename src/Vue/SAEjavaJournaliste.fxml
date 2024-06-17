@@ -42,7 +42,7 @@
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../iut45/Etudiants/o22302631/Images/Loupe.svg.png" />
+                              <Image url="@../Images/Loupe.svg.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -154,7 +154,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../iut45/Etudiants/o22302631/Images/876779.png" />
+                              <Image url="@../Images/876779.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -171,7 +171,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../iut45/Etudiants/o22302631/Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
+                              <Image url="@../Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -186,11 +186,9 @@
             </HBox>
             <ToolBar prefHeight="34.0" prefWidth="599.0" style="-fx-border-color: black;">
               <items>
-
-                <Button fx:id="pays" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Pays" />
-                  <Button fx:id="athlete" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
-                  <Button fx:id="sport" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Sport" />
-
+                <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Pays" />
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Sport" />
                   <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
               </items>
             </ToolBar>
