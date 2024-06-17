@@ -39,8 +39,8 @@ public class TestsEpreuve {
         france.ajouteEquipe(e1);
         chine.ajouteEquipe(e2);
 
-        handball=new Sport("HandBall",1,1.5,1.5);
-        volleyBall=new Sport("VolleyBall",1.5,1,1.5);
+        handball=new Sport("Handball",1,1.5,1.5);
+        volleyBall=new Sport("Volley-ball",1.5,1,1.5);
 
         handballH=new Epreuve("Handball", true, false,handball);
         volleyBallH=new Epreuve("Volley-Ball",true,false,volleyBall);
@@ -56,7 +56,7 @@ public class TestsEpreuve {
 
         @Test
         public void TestToString() {
-            Assertions.assertEquals(handballH.toString(), "Epreuve : Handball\n homme : true\n individuel : false\n sport : handball");
-            Assertions.assertEquals(volleyBallH.toString(), "Epreuve : Volley-Ball\n homme : true\n individuel : false\n sport : voleyBall");
+            Assertions.assertEquals(handballH.toString(), "Epreuve : Handball\n homme : true\n individuel : false\n sport : Handball");
+            Assertions.assertEquals(volleyBallH.toString(), "Epreuve : Volley-Ball\n homme : true\n individuel : false\n sport : Volley-ball");
         }
     }
