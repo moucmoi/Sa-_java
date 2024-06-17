@@ -113,4 +113,9 @@ public class Sport{
     public double calculerScore(Athlete athlete) {
         return this.coeffForce*athlete.getForce() + this.coeffAgilite*athlete.getAgilite() + this.coeffEndurance*athlete.getEndurance();
     }
+
+    @Override
+    public String toString() {
+        return this.nomSport;
+    }
 }
