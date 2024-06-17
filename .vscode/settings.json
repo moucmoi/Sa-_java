@@ -1,7 +1,7 @@
 {
 
     "java.project.sourcePaths": [
-        "src",".","bin","img","tests","lib"
+        "src",".","bin","img","tests","lib", "src/BD", "src/Modele", "src/Vue", "src/Controleur"
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
