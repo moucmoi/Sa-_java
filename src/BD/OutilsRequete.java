@@ -102,14 +102,16 @@ public class OutilsRequete {
 
 
     public List<Epreuve> listerEpreuve() throws SQLException {
-        List<Epreuve> liste=new ArrayList<>();
+        List<Epreuve> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete="SELECT * FROM EPREUVE";
+        String requete="SELECT * FROM EPREUVE NATURAL JOIN SPORT";
         rs=st.executeQuery(requete);
         while(rs.next()){
-            liste.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.get("nom_sport"))));
+            listeRetour.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"))));
         }
+        rs.close();
+        return listeRetour;
     }
 
 }
