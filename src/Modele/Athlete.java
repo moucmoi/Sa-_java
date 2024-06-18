@@ -11,6 +11,11 @@ public class Athlete implements Comparable<Athlete>{
     private int force;
     private int agilite;
     private int endurance;
+    private int nbOr;
+    private int nbArgent;
+    private int nbBronze;
+
+
     private Equipe equipe;
 
     /**
@@ -33,6 +38,9 @@ public class Athlete implements Comparable<Athlete>{
         this.agilite = agilite;
         this.endurance = endurance;
         this.equipe= equipe;
+        this.nbOr=0;
+        this.nbArgent=0;
+        this.nbBronze=0;
         
     }
 
@@ -170,7 +178,17 @@ public class Athlete implements Comparable<Athlete>{
         return 0;
     }
 
-
+    public void ajouterMedaille(String medaille){
+        if (medaille.equals("Or")){
+            this.nbOr++;
+        }
+        if(medaille.equals("Argent")){
+            this.nbArgent++;
+        }
+        if(medaille.equals("Bronze")){
+            this.nbBronze++;
+        }
+    }
     /**
      * comparateur naturel d'Athlete
      * @param a un autre Athlete
