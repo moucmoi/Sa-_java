@@ -7,10 +7,21 @@ public class OutilsRequete {
     Statement st;
     Statement st2;
 
+    /**
+     * Constructeur d'OutilsRequete
+     * @param connexionMySQL la classe pour se connecter sur le serveur
+     * @throws ClassNotFoundException
+     */
     public OutilsRequete(ConnexionMySQL connexionMySQL) throws ClassNotFoundException {
         this.laConnexion = connexionMySQL;
     }
 
+    /**
+     * Liste les médailles d'un pays dans l'ordre [or, argent, bronze]
+     * @param pays le pays pour lequel on regarde ses médailles
+     * @return La liste des médailles en Integer sous forme [or, argent, bronze]
+     * @throws SQLException exception SQL
+     */
     public List<Integer> listerMedaillesPays(Pays pays) throws SQLException {
         List<Integer> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -25,6 +36,11 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Liste les Pays de la base de données
+     * @return La liste des pays de la base de données
+     * @throws SQLException exception SQL
+     */
     public List<Pays> listerPays() throws SQLException {
         List<Pays> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -43,6 +59,11 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Liste les Equipe de la base de données
+     * @return La liste des équipes de la base de données
+     * @throws SQLException exception SQL
+     */
     public List<Equipe> listerEquipe() throws SQLException {
         List<Equipe> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -56,6 +77,12 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Permet d'obtenir un Pays précis grâce à son code (unique)
+     * @param codePays le code du pays (unique)
+     * @return le pays 
+     * @throws SQLException exception SQL
+     */
     public Pays obtenirPays(String codePays) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
@@ -64,6 +91,12 @@ public class OutilsRequete {
         return new Pays(rs.getString("code_pays"), rs.getString("nom_pays"), rs.getInt("nb_medaille_or"), rs.getInt("nb_medaille_argent"), rs.getInt("nb_medaille_bronze"));
     }
 
+    /**
+     * Liste les équipes pour un pays précis
+     * @param codePays le code du pays (unique)
+     * @return la liste des équipes pour le pays
+     * @throws SQLException exception SQL
+     */
     public List<Equipe> listerEquipePourPays(String codePays) throws SQLException {
         List<Equipe> listeRetour = new ArrayList<>();
         this.st2 = this.laConnexion.createStatement();
@@ -77,6 +110,11 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Liste les athlètes de la base de données
+     * @return la liste des athlètes de la base des données
+     * @throws SQLException exception SQL
+     */
     public List<Athlete> listerAthletes() throws SQLException {
         List<Athlete> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -90,6 +128,12 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Permet d'obtenir une équipe précise grâce à numEquipe (unique)
+     * @param numEquipe le numéro de l'équipe (unique)
+     * @return l'équipe
+     * @throws SQLException exception SQL
+     */
     public Equipe obtenirEquipe(int numEquipe) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
@@ -98,7 +142,11 @@ public class OutilsRequete {
         return new Equipe(rs.getInt("code_equipe"), rs.getString("nom_equipe"), obtenirPays(rs.getString("code_pays")));
     }
 
-
+    /**
+     * Liste les épreuves de la base de données
+     * @return la liste des épreuves de la base de données
+     * @throws SQLException exception SQL
+     */
     public List<Epreuve> listerEpreuve() throws SQLException {
         List<Epreuve> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -112,6 +160,11 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Liste les Sports de la base de données
+     * @return la liste des sports de la base de données
+     * @throws SQLException exception SQL
+     */
     public List<Sport> listerSport() throws SQLException {
         List<Sport> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -130,6 +183,12 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Liste les épreuves pour un sport précis
+     * @param nomSport le nom du sport (unique)
+     * @return la liste des épreuves du sport
+     * @throws SQLException exception SQL
+     */
     public List<Epreuve> listerEpreuvePourSport(String nomSport) throws SQLException {
         List<Epreuve> listeRetour = new ArrayList<>();
         this.st2 = this.laConnexion.createStatement();
