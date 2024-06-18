@@ -30,8 +30,6 @@ public class ConnexionMySQL {
 			e.printStackTrace();
 		}
 		
-		
-		
 	}
 	public void close() throws SQLException {
 		this.mysql.close();
