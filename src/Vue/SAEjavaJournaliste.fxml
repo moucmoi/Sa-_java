@@ -42,7 +42,7 @@
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="./img/Loupe.png" />
+                              <Image url="@../../img/Loupe.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
