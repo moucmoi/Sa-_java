@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -15,16 +16,11 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="48.0" prefWidth="598.0">
-               <children>
-                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="500.0" text="                      Nom Epreuve" />
-                  <Button fx:id="enregistrer" mnemonicParsing="false" prefHeight="12.0" prefWidth="133.0" style="-fx-background-color: WHITE; -fx-border-color: black; -fx-border-radius: 5;" text="ENREGISTRER">
-                     <HBox.margin>
-                        <Insets left="5.0" right="2.0" top="5.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+            <Label alignment="CENTER" prefHeight="36.0" prefWidth="620.0" text="Nom Epreuve">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
             <HBox prefHeight="204.0" prefWidth="598.0">
                <children>
                   <VBox prefHeight="204.0" prefWidth="200.0" style="-fx-border-color: black;">
@@ -109,7 +105,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../img/ParisJO.png" />
+                              <Image url="@../../img.ParisJO.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -122,6 +118,14 @@
                   </Button>
                </children>
             </HBox>
+            <ToolBar prefHeight="34.0" prefWidth="599.0" style="-fx-border-color: black;">
+               <items>
+                  <Button fx:id="pays" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Pays" />
+                  <Button fx:id="athlete" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
+                  <Button fx:id="sport" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Sport" />
+                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Epreuve" />
+               </items>
+            </ToolBar>
          </children>
       </VBox>
    </top>
