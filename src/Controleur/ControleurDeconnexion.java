@@ -7,12 +7,15 @@ public class ControleurDeconnexion implements EventHandler<ActionEvent> {
 
     private VueAppliJO vueJO;
 
-    public ControleurDeconnexion() {
-        // A implémenter
-        this.vueJO = new VueAppliJO();
+    public ControleurDeconnexion(VueAppliJO vueJO) {
+        this.vueJO = vueJO;
+
     }
 
     public void handle(ActionEvent actionEvent) {
         Optional<ButtonType> reponse = this.vueJO.popUpDeconnexion().showAndWait();
+        if (reponse.isPresent() && reponse.get().equals(ButtonType.YES)){
+            this.vueJO.PageAccueil();
+        }
     }
 }

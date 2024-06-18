@@ -23,7 +23,7 @@
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="364.0" prefWidth="217.0" style="-fx-border-color: black; -fx-border-radius: 25;" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Connexion">
+            <Label text="Inscription">
                <font>
                   <Font size="20.0" />
                </font>
@@ -58,11 +58,43 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Label>
-                  <PasswordField prefHeight="24.0" prefWidth="100.0" />
+                  <PasswordField prefHeight="24.0" prefWidth="108.0">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin></PasswordField>
                </children>
                <VBox.margin>
                   <Insets right="10.0" />
                </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="16.0" prefWidth="100.0" text="Confirmer le">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="mot de passe">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <PasswordField prefHeight="24.0" prefWidth="96.0">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -71,7 +103,7 @@
                         <Insets right="50.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="connexion" mnemonicParsing="false" text="Connexion" />
+                  <Button fx:id="inscription" mnemonicParsing="false" text="Inscription" />
                </children>
             </HBox>
          </children>

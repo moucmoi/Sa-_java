@@ -17,7 +17,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="58.0" prefWidth="137.0" scaleShape="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Connexion">
+            <Button fx:id="page_connexion" alignment="CENTER" mnemonicParsing="false" prefHeight="58.0" prefWidth="137.0" scaleShape="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Connexion">
                <VBox.margin>
                   <Insets bottom="25.0" left="70.0" top="50.0" />
                </VBox.margin>
@@ -34,7 +34,7 @@
                      </light>
                   </Lighting>
                </effect></Button>
-            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Inscription">
+            <Button fx:id="page_inscription" mnemonicParsing="false" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Inscription">
                <VBox.margin>
                   <Insets bottom="25.0" left="70.0" top="25.0" />
                </VBox.margin></Button>
@@ -44,7 +44,7 @@
    <right>
       <ImageView fitHeight="172.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../../../../Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
+            <Image url="@../../img/ParisJO.png" />
          </image>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
