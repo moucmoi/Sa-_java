@@ -11,9 +11,13 @@ public class VueAppliJO extends Application {
 
     private Scene mainScene;
     private Scene Accueil;
+    private BorderPane rootAccueil;
     private Scene pageConnexion;
+    private BorderPane rootConnexion;
     private Scene pageInscription;
     private Scene pageAccueilAdmin;
+
+    private Stage stageVue;
 
 
     private BorderPane root;
@@ -30,26 +34,35 @@ public class VueAppliJO extends Application {
     }
 
     public void PageAccueil() {
-        
+        this.stageVue.setScene(mainScene);
+    }
+
+    public void pageConnexion() {
+        this.stageVue.setScene(pageConnexion);
+    }
+
+    public void pageInscription() {
+        this.stageVue.setScene(pageInscription);
     }
 
     @Override
     public void start(Stage stage) throws Exception{
+        this.stageVue = stage;
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
-        this.root = loader.load();
-        this.mainScene = new Scene(root);
+        this.rootAccueil = loader.load();
+        this.mainScene = new Scene(rootAccueil); 
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");
 
-        /*ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
+        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
         bPageC.setOnAction(crtlBA);
-        bPageI.setOnAction(crtlBA);*/
+        bPageI.setOnAction(crtlBA);
 
 
         this.loader = new FXMLLoader(this.getClass().getResource("page_connexion.fxml"));
-        this.root = loader.load();
-        this.pageConnexion = new Scene(root);
+        this.rootConnexion = loader.load();
+        this.pageConnexion = new Scene(rootConnexion);
 
         Button bRetourC = (Button) mainScene.lookup("#retour");
         Button bConnexion = (Button) mainScene.lookup("#connexion");
@@ -77,16 +90,14 @@ public class VueAppliJO extends Application {
         Button bRetourA = (Button) mainScene.lookup("#retour");
         /*bRetourA.setOnAction(crtlRetour);*/
 
-
-        stage.setScene(mainScene);
-        stage.setTitle("- Jeux IUT'Olympiques -");
-        stage.show();
+        
+        this.stageVue.setScene(mainScene);
+        this.stageVue.setTitle("- Jeux IUT'Olympiques -");
+        this.stageVue.show();
     }
+
 
     public static void main(String[] args) {
         launch(args);
     }
 }
-
-
-
