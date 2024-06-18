@@ -17,10 +17,13 @@ public class Athlete implements Comparable<Athlete>{
 
 
     private Equipe equipe;
+    private int nbOr;
+    private int nbArgent;
+    private int nbBronze; 
 
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurance
-     * @param nonumAthletem le numéro de l'athlète
+     * @param numAthlete le numéro de l'athlète
      * @param nom le nom de l'athlète
      * @param prenom le prenom de l'athlète
      * @param sexe le sexe de l'athlète
@@ -41,9 +44,37 @@ public class Athlete implements Comparable<Athlete>{
         this.nbOr=0;
         this.nbArgent=0;
         this.nbBronze=0;
-        
+
     }
 
+    /**
+     * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité, l'endurance et les médailles
+     * @param numAthlete le numéro de l'athlète
+     * @param nom le nom de l'athlète
+     * @param prenom le prenom de l'athlète
+     * @param sexe le sexe de l'athlète
+     * @param force la force de l'athlète
+     * @param agilite l'agilité de l'athlète
+     * @param endurance l'endurance de l'athlète
+     * @param equipe l'équipe de l'athlète
+     * @param nbOr le nombre de médailles d'or
+     * @param nbArgent le nombre de médailles d'argent
+     * @param nbBronze le nombre de médailles de bronze
+     */
+    public Athlete(int numAthlete, String nom, String prenom, String sexe, int force, int agilite, int endurance, Equipe equipe, int nbOr, int nbArgent, int nbBronze) {
+        this.numAthlete = numAthlete;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+        this.force = force;
+        this.agilite = agilite;
+        this.endurance = endurance;
+        this.equipe= equipe;
+        this.nbOr= nbOr;
+        this.nbArgent= nbArgent;
+        this.nbBronze= nbBronze;
+    }
+    
     /**
      * Méthode qui change le nom de l'athlete
      * @param nonumAthletem le numéro de l'athlète
