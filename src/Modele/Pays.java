@@ -26,6 +26,23 @@ public class Pays implements Comparable<Pays>{
     }
 
     /**
+     * Constructeur de la classe avec les médailles en paramètres
+     * @param nomPays le nom du pays
+     * @param codePays le code du pays
+     * @param nb_medaille_or le nombre de médailles d'or
+     * @param nb_medaille_argent le nombre de médailles d'argent
+     * @param nb_medaille_bronze le nombre de médailles de bronze
+     */
+    public Pays(String nomPays, String codePays, int nb_medaille_or, int nb_medaille_argent, int nb_medaille_bronze) {
+        this.nomPays = nomPays;
+        this.codePays = codePays;
+        this.lesEquipes = new ArrayList<>();
+        this.nbMedailleBronze = nb_medaille_bronze;
+        this.nbMedailleArgent = nb_medaille_argent;
+        this.nbMedailleOr = nb_medaille_or;
+    }
+
+    /**
      * Retourne le nom du pays 
      * @return le nom du pays
      */
