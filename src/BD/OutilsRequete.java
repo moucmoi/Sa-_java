@@ -81,12 +81,12 @@ public class OutilsRequete {
         List<Athlete> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-            String requete = "SELECT * FROM EQUIPE ;";
-            rs = st.executeQuery(requete);
-            while (rs.next()){
-				listeRetour.add(new Athlete(rs.getInt("num_equipe"), rs.getString("nom_athlete"),rs.getString("prenom_athlete"), rs.getString("sexe"),  rs.getInt("force"), rs.getInt("agilite"), rs.getInt("endurance"),obtenirEquipe(rs.getInt("num_equipe"))));
-			}
-			rs.close();
+        String requete = "SELECT * FROM ATHLETE ;";
+        rs = st.executeQuery(requete);
+        while (rs.next()){
+            listeRetour.add(new Athlete(rs.getInt("num_athlete"), rs.getString("nom_athlete"),rs.getString("prenom_athlete"), rs.getString("sexe"),  rs.getInt("force"), rs.getInt("agilite"), rs.getInt("endurance"),obtenirEquipe(rs.getInt("num_equipe"))));
+        }
+        rs.close();
         return listeRetour;
     }
 
@@ -97,5 +97,18 @@ public class OutilsRequete {
         rs = st.executeQuery(requete);
         return new Equipe(rs.getInt("code_equipe"), rs.getString("nom_equipe"), obtenirPays(rs.getString("code_pays")));
     }
+
+
+    public List<Epreuve> listerEpreuve() throws SQLException {
+        List<Epreuve> liste=new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete="SELECT * FROM EPREUVE";
+        rs=st.executeQuery(requete);
+        while(rs.next()){
+            liste.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.get("nom_sport"))));
+        }
+    }
+
 }
 
