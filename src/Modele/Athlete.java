@@ -165,6 +165,30 @@ public class Athlete implements Comparable<Athlete>{
     }
 
     /**
+     * Retourne le nombre de médaille en or du pays
+     * @return nombre de médaille en or du pays
+     */
+    public int getOr() {
+        return this.nbOr;
+    }
+
+    /**
+     * Retourne le nombre de médaille en argent du pays
+     * @return nombre de médaille en argent du pays
+     */
+    public int getArgent() {
+        return this.nbArgent;
+    }
+
+    /**
+     * Retourne le nombre de médaille en bronze du pays
+     * @return nombre de médaille en bronze du pays
+     */
+    public int getBronze() {
+        return this.nbBronze;
+    }
+
+    /**
      * Fonction qui calcule le score d'un athlete
      * @param epreuve l'épreuve pour laquelle on calcule le score de l'athlète
      * @return le score de l'athlète
