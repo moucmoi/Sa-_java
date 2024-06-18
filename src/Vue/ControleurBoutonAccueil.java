@@ -10,7 +10,5 @@ public class ControleurBoutonAccueil implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        // A implémenter
-        //getSource
     }
 }
