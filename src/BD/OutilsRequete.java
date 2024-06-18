@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
+import java.sql.*;
 import java.sql.*;
 
 public class OutilsRequete {
@@ -103,6 +105,7 @@ public class OutilsRequete {
      * @return La liste des équipes de la base de données
      * @throws SQLException exception SQL
      */
+
     public List<Equipe> listerEquipe() throws SQLException {
         List<Equipe> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
@@ -110,6 +113,7 @@ public class OutilsRequete {
             String requete = "SELECT * FROM EQUIPE ;";
             rs = st.executeQuery(requete);
             while (rs.next()){
+
                 Equipe equipeEnCours = new Equipe(rs.getInt("num_equipe"), rs.getString("nom_equipe"),obtenirPays(rs.getString("code_pays")));
                 List<Epreuve> listeEpreuveEnCours = listerEpreuvePourEquipe(rs.getInt("num_equipe"));
                 for (Epreuve epreuve : listeEpreuveEnCours) {
@@ -131,6 +135,7 @@ public class OutilsRequete {
      * @return le pays 
      * @throws SQLException exception SQL
      */
+
     public Pays obtenirPays(String codePays) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
@@ -145,6 +150,7 @@ public class OutilsRequete {
      * @return la liste des équipes pour le pays
      * @throws SQLException exception SQL
      */
+
     public List<Equipe> listerEquipePourPays(String codePays) throws SQLException {
         List<Equipe> listeRetour = new ArrayList<>();
         this.st2 = this.laConnexion.createStatement();
@@ -157,6 +163,7 @@ public class OutilsRequete {
 			rs.close();
         return listeRetour;
     }
+
 
     /**
      * Liste les athlètes de la base de données
@@ -256,3 +263,4 @@ public class OutilsRequete {
             String requete = "INSERT INTO UTILISATEUR VALUES(" ;
     }
 }
+

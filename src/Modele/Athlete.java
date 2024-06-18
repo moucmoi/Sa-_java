@@ -11,6 +11,11 @@ public class Athlete implements Comparable<Athlete>{
     private int force;
     private int agilite;
     private int endurance;
+    private int nbOr;
+    private int nbArgent;
+    private int nbBronze;
+
+
     private Equipe equipe;
     private int nbOr;
     private int nbArgent;
@@ -39,6 +44,7 @@ public class Athlete implements Comparable<Athlete>{
         this.nbOr=0;
         this.nbArgent=0;
         this.nbBronze=0;
+
     }
 
     /**
