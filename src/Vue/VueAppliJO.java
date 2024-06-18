@@ -33,12 +33,20 @@ public class VueAppliJO extends Application {
         return alert;
     }
 
-    public void pageAccueil() {
-        this.stageVue.setScene(pageConnexion);
+
+    public void PageAccueil() {
+        this.stageVue.setScene(mainScene);
+
     }
 
     public void pageConnexion() {
         this.stageVue.setScene(pageConnexion);
+
+    }
+
+    public void pageInscription() {
+        this.stageVue.setScene(pageInscription);
+
     }
 
     @Override
@@ -50,6 +58,7 @@ public class VueAppliJO extends Application {
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");
+
         ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
         bPageC.setOnAction(crtlBA);
         bPageI.setOnAction(crtlBA);

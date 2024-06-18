@@ -10,6 +10,12 @@ public class ControleurBoutonAccueil implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        
+
+        if (actionEvent.getSource().getText().contains()) {
+            this.vueJO.pageConnexion();
+        }
+        if (actionEvent.getSource().getText().contains()) {
+            this.vueJO.pageInscription();
+        }
     }
 }
