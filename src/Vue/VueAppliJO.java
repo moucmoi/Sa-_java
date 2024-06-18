@@ -10,12 +10,17 @@ import javafx.stage.Stage;
 public class VueAppliJO extends Application {
 
     private Scene mainScene;
-    private Scene connexionScene;
+    private Scene Accueil;
+    private Scene pageConnexion;
+    private Scene pageInscription;
+    private Scene pageAccueilAdmin;
+
+
     private BorderPane root;
     private FXMLLoader loader;
   
     public VueAppliJO() {
-
+        super();
     }
 
     public Alert popUpDeconnexion(){
@@ -25,56 +30,63 @@ public class VueAppliJO extends Application {
     }
 
     public void PageAccueil() {
-        this.scene.setRoot();
+        
     }
 
     @Override
-    public void start(Stage stage) {
-        /*loader = new FXMLLoader(this.getClass().getResource("PageAccueil.fxml"));
+    public void start(Stage stage) throws Exception{
+        loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         root = loader.load();
-        mainScene = new Scene(root);*/
+        mainScene = new Scene(root);
+
+        Button bPageC = (Button) mainScene.lookup("#page_connexion");
+        Button bPageI = (Button) mainScene.lookup("#page_inscription");
+
+        /*ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
+        bPageC.setOnAction(crtlBA);
+        bPageI.setOnAction(crtlBA);*/
+
 
         loader = new FXMLLoader(this.getClass().getResource("page_connexion.fxml"));
         root = loader.load();
-        connexionScene = new Scene(root);
+        pageConnexion = new Scene(root);
 
+        Button bRetourC = (Button) mainScene.lookup("#retour");
         Button bConnexion = (Button) mainScene.lookup("#connexion");
-        Button bInscription = (Button) mainScene.lookup("#inscription");
 
-        ControleurBoutonAccueil ctrlBA = new ControleurBoutonAccueil(this);
-        bConnexion.setOnAction(ctrlBA);
-        bInscription.setOnAction(ctrlBA);
+        /*ControleurRetour crtlRetour = new ControleurRetour(this);
+        bRetourC.setOnAction(crtlRetour);
+        ControleurConnexion crtlCo = new ControleurConnexion(this);
+        bConnexion.setOnAction(crtlCo);*/
 
-        stage.setScene(connexionScene);
-        stage.setTitle("...");
+
+
+        loader = new FXMLLoader(this.getClass().getResource("page_inscription.fmxl"));
+        root = loader.load();
+        pageInscription = new Scene(root);
+
+        Button bRetourI = (Button) mainScene.lookup("#retour");
+
+        /*bRetourI.setOnAction(crtlRetour);*/
+
+
+        loader = new FXMLLoader(this.getClass().getResource("page_admin-accueil.fmxl"));
+        root = loader.load();
+        pageAccueilAdmin = new Scene(root);
+
+        Button bRetourA = (Button) mainScene.lookup("#retour");
+        /*bRetourA.setOnAction(crtlRetour);*/
+
+
+        stage.setScene(Accueil);
+        stage.setTitle("- Jeux IUT'Olympiques -");
         stage.show();
     }
-}
-
-/*import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.fxml.FXMLLoader;
-
-public class importBouton extends Application {
-    Scene mainScene;
-    BorderPane root;
-    FXMLLoader loader;
-  
-    @Override
-    public void init(){    
-    }
-    
-    @Override
-    public void start(Stage stage) throws Exception {
-        
 
     public static void main(String[] args) {
         launch(args);
-}  
-}*/
+    }
+}
 
 
 
