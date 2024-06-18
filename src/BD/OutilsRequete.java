@@ -27,7 +27,7 @@ public class OutilsRequete {
         List<Integer> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM PAYS WHERE code_pays =" + pays.getCodePays();
+        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM PAYS WHERE code_pays =" + pays.getCodePays() + ";";
         rs = st.executeQuery(requete);
         listeRetour.add(rs.getInt("nb_medaille_or"));
         listeRetour.add(rs.getInt("nb_medaille_argent"));
@@ -199,7 +199,7 @@ public class OutilsRequete {
         List<Epreuve> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete="SELECT * FROM EPREUVE NATURAL JOIN SPORT";
+        String requete="SELECT * FROM EPREUVE NATURAL JOIN SPORT;";
         rs=st.executeQuery(requete);
         while(rs.next()){
             listeRetour.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"))));
@@ -217,7 +217,7 @@ public class OutilsRequete {
         List<Sport> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete="SELECT * SPORT";
+        String requete="SELECT * SPORT;";
         rs=st.executeQuery(requete);
         while(rs.next()){
             Sport sportEnCours = new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"));
@@ -249,5 +249,10 @@ public class OutilsRequete {
 			rs.close();
         return listeRetour;
     }
-}
 
+    public void inscription(String nomUtilisateur, String motDePasse) throws SQLException {
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+            String requete = "INSERT INTO UTILISATEUR VALUES(" ;
+    }
+}
