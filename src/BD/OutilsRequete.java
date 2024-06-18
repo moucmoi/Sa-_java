@@ -114,5 +114,36 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    public List<Sport> listerSport() throws SQLException {
+        List<Sport> listeRetour = new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete="SELECT * SPORT";
+        rs=st.executeQuery(requete);
+        while(rs.next()){
+            Sport sportEnCours = new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"));
+            List<Epreuve> lesEpreuvesEnCours = listerEpreuvePourSport(rs.getString("nom_sport"));
+            for (Epreuve epreuve : lesEpreuvesEnCours) {
+                sportEnCours.ajouteEpreuve(epreuve);
+            }
+            listeRetour.add(sportEnCours);
+        }
+        rs.close();
+        return listeRetour;
+    }
+
+    public List<Epreuve> listerEpreuvePourSport(String nomSport) throws SQLException {
+        List<Epreuve> listeRetour = new ArrayList<>();
+        this.st2 = this.laConnexion.createStatement();
+        ResultSet rs = null;
+            String requete = "SELECT * FROM EPREUVE NATURAL JOIN SPORT WHERE nom_sport = " + nomSport + ";";
+            rs = st2.executeQuery(requete);
+            while (rs.next()){
+				listeRetour.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"))));
+			}
+			rs.close();
+        return listeRetour;
+    }
+
 }
 
