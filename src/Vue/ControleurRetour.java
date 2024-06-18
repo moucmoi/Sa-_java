@@ -10,7 +10,6 @@ public class ControleurRetour implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-
         this.vueJO.pageAccueil();
     }
 }

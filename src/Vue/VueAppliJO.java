@@ -32,21 +32,17 @@ public class VueAppliJO extends Application {
         alert.setTitle("Attention");
         return alert;
     }
-
-
-    public void PageAccueil() {
+  
+    public void pageAccueil() {
         this.stageVue.setScene(mainScene);
-
     }
 
     public void pageConnexion() {
         this.stageVue.setScene(pageConnexion);
-
     }
 
     public void pageInscription() {
         this.stageVue.setScene(pageInscription);
-
     }
 
     @Override
@@ -93,7 +89,6 @@ public class VueAppliJO extends Application {
 
         // Button bRetourA = (Button) mainScene.lookup("#retour");
         // bRetourA.setOnAction(crtlRetour);
-
 
         this.stageVue.setScene(mainScene);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
