@@ -35,9 +35,9 @@ public class VueAppliJO extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
-        root = loader.load();
-        mainScene = new Scene(root);
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
+        this.root = loader.load();
+        this.mainScene = new Scene(root);
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");
@@ -47,9 +47,9 @@ public class VueAppliJO extends Application {
         bPageI.setOnAction(crtlBA);*/
 
 
-        loader = new FXMLLoader(this.getClass().getResource("page_connexion.fxml"));
-        root = loader.load();
-        pageConnexion = new Scene(root);
+        this.loader = new FXMLLoader(this.getClass().getResource("page_connexion.fxml"));
+        this.root = loader.load();
+        this.pageConnexion = new Scene(root);
 
         Button bRetourC = (Button) mainScene.lookup("#retour");
         Button bConnexion = (Button) mainScene.lookup("#connexion");
@@ -61,24 +61,24 @@ public class VueAppliJO extends Application {
 
 
 
-        loader = new FXMLLoader(this.getClass().getResource("page_inscription.fmxl"));
-        root = loader.load();
-        pageInscription = new Scene(root);
+        this.loader = new FXMLLoader(this.getClass().getResource("page_inscription.fxml"));
+        this.root = loader.load();
+        this.pageInscription = new Scene(root);
 
         Button bRetourI = (Button) mainScene.lookup("#retour");
 
         /*bRetourI.setOnAction(crtlRetour);*/
 
 
-        loader = new FXMLLoader(this.getClass().getResource("page_admin-accueil.fmxl"));
-        root = loader.load();
-        pageAccueilAdmin = new Scene(root);
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
+        this.root = loader.load();
+        this.pageAccueilAdmin = new Scene(root);
 
         Button bRetourA = (Button) mainScene.lookup("#retour");
         /*bRetourA.setOnAction(crtlRetour);*/
 
 
-        stage.setScene(Accueil);
+        stage.setScene(mainScene);
         stage.setTitle("- Jeux IUT'Olympiques -");
         stage.show();
     }
