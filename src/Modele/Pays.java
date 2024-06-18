@@ -119,25 +119,17 @@ public class Pays implements Comparable<Pays>{
     }
 
     /**
-     * Ajoute une médaille d'or au pays
+     * met à jour le nombre de médaille du pays
      */
-    public void ajouteOr(){
-        this.nbMedailleOr+=1;
-    }
-
-    /**
-     * Ajoute une médaille de bronze au pays
-     */
-    public void ajouteBronze(){
-        this.nbMedailleBronze+=1;
-    }
-
-    /**
-     * Ajoute une médaille d'argent au pays
-     */
-    public void ajouteArgent(){
-        this.nbMedailleArgent+=1;
-    }
+    public void majMedaille(){
+        for(Equipe e:this.lesEquipes){
+            for (Athlete a:e.getLesAthletes()){
+                this.nbMedailleOr+=a.getOr();
+                this.nbMedailleArgent+=a.getArgent();
+                this.nbMedailleBronze+=a.getBronze();
+            }
+        }
+    }    
 
     /**
      * comparateur naturel du pays

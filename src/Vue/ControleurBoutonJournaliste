@@ -12,8 +12,8 @@ public class ControleurBoutonJournaliste implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        textBouton = .getSource().getText();
-        if textBouton.equals("....") {
+         textBouton = this.vueJO.getSource().getText();
+        if (textBouton.equals("....")) {
             
         }
         

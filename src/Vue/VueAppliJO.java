@@ -22,7 +22,7 @@ public class VueAppliJO extends Application {
 
     private BorderPane root;
     private FXMLLoader loader;
-  
+
     public VueAppliJO() {
         super();
     }
@@ -32,7 +32,7 @@ public class VueAppliJO extends Application {
         alert.setTitle("Attention");
         return alert;
     }
-
+  
     public void pageAccueil() {
         this.stageVue.setScene(mainScene);
     }
@@ -67,10 +67,10 @@ public class VueAppliJO extends Application {
         Button bRetourC = (Button) mainScene.lookup("#retour");
         Button bConnexion = (Button) mainScene.lookup("#connexion");
 
-        /*ControleurRetour crtlRetour = new ControleurRetour(this);
+        ControleurRetour crtlRetour = new ControleurRetour(this);
         bRetourC.setOnAction(crtlRetour);
-        ControleurConnexion crtlCo = new ControleurConnexion(this);
-        bConnexion.setOnAction(crtlCo);*/
+        // ControleurConnexion crtlCo = new ControleurConnexion(this);
+        // bConnexion.setOnAction(crtlCo);
 
 
 
@@ -80,17 +80,16 @@ public class VueAppliJO extends Application {
 
         Button bRetourI = (Button) mainScene.lookup("#retour");
 
-        /*bRetourI.setOnAction(crtlRetour);*/
+        // bRetourI.setOnAction(crtlRetour);
 
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.root = loader.load();
         this.pageAccueilAdmin = new Scene(root);
 
-        Button bRetourA = (Button) mainScene.lookup("#retour");
-        /*bRetourA.setOnAction(crtlRetour);*/
+        // Button bRetourA = (Button) mainScene.lookup("#retour");
+        // bRetourA.setOnAction(crtlRetour);
 
-        
         this.stageVue.setScene(mainScene);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
         this.stageVue.show();
