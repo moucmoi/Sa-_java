@@ -1,51 +1,53 @@
 CREATE TABLE PAYS (
-    PRIMARY KEY varchar(3) CodePays;
-    varchar(15) NomPays;
-    int nbMedailleOr;
-    int nbMedailleArgent;
-    int nbMedailleBronze;
+    PRIMARY KEY varchar(3) code_pays;
+    varchar(15) nom_pays;
+    int nb_medaille_or;
+    int nb_medaille_argent;
+    int nb_medaille_bronze;
 );
 
 CREATE TABLE ATHLETE (
-    PRIMARY KEY varchar(15) NumAthlete;
-    varchar(15) Nom;
-    varchar(15) Prenom;
-    varchar(1) Sexe;
-    int Forces;
-    int Agilite;
+    PRIMARY KEY varchar(15) num_athlete;
+    varchar(15) nom;
+    varchar(15) prenom;
+    varchar(1) sexe;
+    int force;
+    int agilite;
     int endurance;
-    varchar(15) NomSport;
-    varchar(15) NomEquipe;
-    varchar(3) CodePays;
+    varchar(15) nom_equipe;
 );
 
 CREATE TABLE EPREUVE (
-    PRIMARY KEY varchar(15) NomEpreuve;
-    boolean Homme;
-    boolean Individuel;
-    varchar(15) NomSport;
+    PRIMARY KEY varchar(15) nom_epreuve;
+    boolean homme;
+    boolean individuel;
+    varchar(15) nom_sport;
 );
 
 CREATE TABLE EQUIPE (
-    PRIMARY KEY varchar(15) NumeroEquipe;
-    varchar(15) NomEquipe;
+    PRIMARY KEY varchar(15) numero_equipe;
+    varchar(15) nom_equipe;
+    varchar(15) nom_pays;
 );
 
 CREATE TABLE SPORT (
-    PRIMARY KEY varchar(15) NomSport;
+    PRIMARY KEY varchar(15) nom_sport;
+    float coeff_force;
+    float coeff_agilite;
+    float coeff_endurance;
 );  
 
 CREATE TABLE PARTICIPER (
-    PRIMARY KEY varchar(15) NomEpreuve; 
-    PRIMARY KEY varchar(15) NumAthlete;
+    PRIMARY KEY varchar(15) nom_epreuve; 
+    PRIMARY KEY varchar(15) num_athlete;
 );
 
-ALTER TABLE ATHLETE ADD FOREIGN KEY (NomSport) REFERENCES SPORT(NomSport);
-ALTER TABLE ATHLETE ADD FOREIGN KEY (NomEquipe) REFERENCES EQUIPE(NomEquipe);
-ALTER TABLE ATHLETE ADD FOREIGN KEY (CodePays) REFERENCES PAYS(CodePays);
-ALTER TABLE EPREUVE ADD FOREIGN KEY (NomSport) REFERENCES SPORT(NomSport);
-ALTER TABLE PARTICIPER ADD FOREIGN KEY (NomEpreuve) REFERENCES EPREUVE(NomEpreuve);
-ALTER TABLE PARTICIPER ADD FOREIGN KEY (NumAthlete) REFERENCES ATHLETE(NumAthlete);
+ALTER TABLE ATHLETE ADD FOREIGN KEY (nom_equipe) REFERENCES EQUIPE(nom_equipe);
+ALTER TABLE EPREUVE ADD FOREIGN KEY (nom_sport) REFERENCES SPORT(nom_sport);
+ALTER TABLE PARTICIPER ADD FOREIGN KEY (nom_epreuve) REFERENCES EPREUVE(nom_epreuve);
+ALTER TABLE PARTICIPER ADD FOREIGN KEY (num_athlete) REFERENCES ATHLETE(num_athlete);
+ALTER TABLE EQUIPE ADD FOREIGN KEY (nom_pays) REFERENCES PAYS(nom_pays);
+
 
 
 INSERT INTO PAYS VALUES (
