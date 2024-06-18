@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.ArrayList;
 import java.util.List;
-import java.sql.*;
 import java.sql.*;
 
 public class OutilsRequete {
@@ -86,7 +84,7 @@ public class OutilsRequete {
         String requete = "SELECT * FROM ATHLETE ;";
         rs = st.executeQuery(requete);
         while (rs.next()){
-            listeRetour.add(new Athlete(rs.getInt("num_athlete"), rs.getString("nom_athlete"),rs.getString("prenom_athlete"), rs.getString("sexe"),  rs.getInt("force"), rs.getInt("agilite"), rs.getInt("endurance"),obtenirEquipe(rs.getInt("num_equipe"))));
+            listeRetour.add(new Athlete(rs.getInt("num_athlete"), rs.getString("nom_athlete"),rs.getString("prenom_athlete"), rs.getString("sexe"),  rs.getInt("force"), rs.getInt("agilite"), rs.getInt("endurance"),obtenirEquipe(rs.getInt("num_equipe")), rs.getInt("medaille_or"), rs.getInt("medaille_argent"), rs.getInt("medaille_bronze")));
         }
         rs.close();
         return listeRetour;
@@ -144,6 +142,5 @@ public class OutilsRequete {
 			rs.close();
         return listeRetour;
     }
-
 }
 
