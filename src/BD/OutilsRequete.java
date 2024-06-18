@@ -76,4 +76,26 @@ public class OutilsRequete {
 			rs.close();
         return listeRetour;
     }
+
+    public List<Athlete> listerAthletes() throws SQLException {
+        List<Athlete> listeRetour = new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+            String requete = "SELECT * FROM EQUIPE ;";
+            rs = st.executeQuery(requete);
+            while (rs.next()){
+				listeRetour.add(new Athlete(rs.getInt("num_equipe"), rs.getString("nom_athlete"),rs.getString("prenom_athlete"), rs.getString("sexe"),  rs.getInt("force"), rs.getInt("agilite"), rs.getInt("endurance"),obtenirEquipe(rs.getInt("num_equipe"))));
+			}
+			rs.close();
+        return listeRetour;
+    }
+
+    public Equipe obtenirEquipe(int numEquipe) throws SQLException {
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete = "SELECT * FROM EQUIPE WHERE num_equipe = " + numEquipe + ";";
+        rs = st.executeQuery(requete);
+        return new Equipe(rs.getInt("code_equipe"), rs.getString("nom_equipe"), obtenirPays(rs.getString("code_pays")));
+    }
 }
+
