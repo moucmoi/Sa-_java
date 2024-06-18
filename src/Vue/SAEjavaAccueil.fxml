@@ -22,7 +22,7 @@
                   <Insets bottom="25.0" left="70.0" top="50.0" />
                </VBox.margin>
                <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
+                  <Cursor fx:constant="DEFAULT" />
                </cursor>
                <effect>
                   <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.0">
