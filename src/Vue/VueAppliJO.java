@@ -33,7 +33,7 @@ public class VueAppliJO extends Application {
         return alert;
     }
 
-    public void PageAccueil() {
+    public void pageAccueil() {
         this.stageVue.setScene(mainScene);
     }
 

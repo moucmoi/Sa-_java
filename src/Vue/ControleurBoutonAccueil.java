@@ -1,5 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 
 public class ControleurBoutonAccueil implements EventHandler<ActionEvent> {
   
@@ -10,10 +11,12 @@ public class ControleurBoutonAccueil implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        if (actionEvent.getSource().getText().contains()) {
+        Button boutonclique = (Button) actionEvent.getSource();
+        String textBouton = boutonclique.getText();
+        if (textBouton.contains("Connexion")) {
             this.vueJO.pageConnexion();
         }
-        if (actionEvent.getSource().getText().contains()) {
+        if (textBouton.contains("Inscription")) {
             this.vueJO.pageInscription();
         }
     }
