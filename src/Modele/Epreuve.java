@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Classe Epreuve
  */
@@ -99,6 +101,37 @@ public class Epreuve {
         return res;
     }
 
+    public int idMax(List<Double> liste){
+        Double max=null;
+        int id=0;
+        for(int i=0; i<liste.size();i++){
+            if(max.equals(null)||liste.get(i)>max){
+                max=liste.get(i);
+                id=i;
+            }
+        }
+        return id;
+    }
+
+    public List<Equipe> simulerEpreuve(List<Equipe> liste){
+        List<Equipe> rep=new ArrayList<>();
+        List<Double> listeScore=new ArrayList<>();
+        for(Equipe e:liste){
+            Double score=0.0;
+            for(Athlete a:e.getLesAthletes()){
+                score+=a.participer(this);
+            }
+            listeScore.add(score);
+        }
+        for(int i=0;i<listeScore.size();i++){
+            int meilleur=idMax(listeScore);
+            rep.add(liste.get(meilleur));
+            liste.remove(meilleur);
+            listeScore.remove(meilleur);
+        }
+        return rep;
+    }
+
     /**
      * donne une représentaion de l'epreuve
      * @return une représentation de l'epreuve
@@ -107,4 +140,8 @@ public class Epreuve {
     public String toString(){
         return "Epreuve : " + this.nomEpreuve + '\n' + " homme : " + this.homme + "\n" + " individuel : " + this.individuel + "\n" + " sport : " + this.sport;
     }
+
+    
+
+
 }
