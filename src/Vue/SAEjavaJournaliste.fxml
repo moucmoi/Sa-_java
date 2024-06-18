@@ -42,7 +42,7 @@
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/Loupe.svg.png" />
+                              <Image url="./img/Loupe.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
@@ -154,7 +154,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/876779.png" />
+                              <Image url="@../../img/Deconnexion.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -171,7 +171,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
+                              <Image url="@../../img/ParisJO.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />

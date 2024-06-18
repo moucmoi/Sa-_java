@@ -44,7 +44,7 @@
    <right>
       <ImageView fitHeight="172.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
+            <Image url="@../../img/ParisJO.png" />
          </image>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
