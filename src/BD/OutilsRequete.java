@@ -5,6 +5,7 @@ import java.sql.*;
 public class OutilsRequete {
     ConnexionMySQL laConnexion;
     Statement st;
+    Statement st2;
 
     public OutilsRequete(ConnexionMySQL connexionMySQL) throws ClassNotFoundException {
         this.laConnexion = connexionMySQL;
@@ -28,10 +29,15 @@ public class OutilsRequete {
         List<Pays> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-            String requete = "SELECT * FROM PAYS";
+            String requete = "SELECT * FROM PAYS ;";
             rs = st.executeQuery(requete);
             while (rs.next()){
-				listeRetour.add(new Pays(rs.getString("nom_pays"), rs.getString("code_pays"),rs.getInt("nb_medaille_or"),rs.getInt("nb_medaille_argent"),rs.getInt("nb_medaille_bronze")));
+                Pays paysEnCours = new Pays(rs.getString("nom_pays"), rs.getString("code_pays"),rs.getInt("nb_medaille_or"),rs.getInt("nb_medaille_argent"),rs.getInt("nb_medaille_bronze"));
+                List<Equipe> lesEquipesEnCours = listerEquipePourPays(rs.getString("code_pays"));
+                for (Equipe equipe : lesEquipesEnCours) {
+                    paysEnCours.ajouteEquipe(equipe);
+                }
+				listeRetour.add(paysEnCours);
 			}
 			rs.close();
         return listeRetour;
@@ -41,7 +47,7 @@ public class OutilsRequete {
         List<Equipe> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-            String requete = "SELECT * FROM EQUIPE";
+            String requete = "SELECT * FROM EQUIPE ;";
             rs = st.executeQuery(requete);
             while (rs.next()){
 				listeRetour.add(new Equipe(rs.getInt("num_equipe"), rs.getString("nom_equipe"),obtenirPays(rs.getString("code_pays"))));
@@ -53,8 +59,21 @@ public class OutilsRequete {
     public Pays obtenirPays(String codePays) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT * FROM PAYS WHERE code_pays = " + codePays;
+        String requete = "SELECT * FROM PAYS WHERE code_pays = " + codePays + ";";
         rs = st.executeQuery(requete);
         return new Pays(rs.getString("code_pays"), rs.getString("nom_pays"), rs.getInt("nb_medaille_or"), rs.getInt("nb_medaille_argent"), rs.getInt("nb_medaille_bronze"));
+    }
+
+    public List<Equipe> listerEquipePourPays(String codePays) throws SQLException {
+        List<Equipe> listeRetour = new ArrayList<>();
+        this.st2 = this.laConnexion.createStatement();
+        ResultSet rs = null;
+            String requete = "SELECT * FROM EQUIPE WHERE code_pays = " + codePays + ";";
+            rs = st2.executeQuery(requete);
+            while (rs.next()){
+				listeRetour.add(new Equipe(rs.getInt("num_equipe"), rs.getString("nom_equipe"),obtenirPays(rs.getString("code_pays"))));
+			}
+			rs.close();
+        return listeRetour;
     }
 }
