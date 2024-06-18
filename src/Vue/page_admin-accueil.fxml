@@ -16,7 +16,7 @@
          <children>
             <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="deconnexion" fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../img/Deconnexion.png" />
                      </image>
@@ -37,6 +37,7 @@
             <Button mnemonicParsing="false" prefHeight="87.0" prefWidth="76.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
                <graphic>
                   <ImageView fitHeight="77.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="home" fitHeight="77.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../img/ParisJO.png" />
                      </image>
@@ -58,6 +59,7 @@
                </HBox.margin>
             </TextField>
             <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="46.0">
+            <Button fx:id="recherche" mnemonicParsing="false" prefHeight="41.0" prefWidth="40.0">
                <HBox.margin>
                   <Insets top="100.0" />
                </HBox.margin>
