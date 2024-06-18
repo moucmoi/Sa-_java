@@ -36,4 +36,25 @@ public class OutilsRequete {
 			rs.close();
         return listeRetour;
     }
+
+    public List<Equipe> listerEquipe() throws SQLException {
+        List<Equipe> listeRetour = new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+            String requete = "SELECT * FROM EQUIPE";
+            rs = st.executeQuery(requete);
+            while (rs.next()){
+				listeRetour.add(new Equipe(rs.getInt("num_equipe"), rs.getString("nom_equipe"),obtenirPays(rs.getString("code_pays"))));
+			}
+			rs.close();
+        return listeRetour;
+    }
+
+    public Pays obtenirPays(String codePays) throws SQLException {
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete = "SELECT * FROM PAYS WHERE code_pays = " + codePays;
+        rs = st.executeQuery(requete);
+        return new Pays(rs.getString("code_pays"), rs.getString("nom_pays"), rs.getInt("nb_medaille_or"), rs.getInt("nb_medaille_argent"), rs.getInt("nb_medaille_bronze"));
+    }
 }
