@@ -12,8 +12,8 @@ public class VueAppliJO extends Application {
     private Scene mainScene;
     
     private Scene Accueil;
-    private BorderPane rootAccueil;
-
+    private BorderPane rootAccueil
+      
     private Scene pageConnexion;
     private BorderPane rootConnexion;
 
@@ -58,6 +58,8 @@ public class VueAppliJO extends Application {
 
     private Scene pageOrganisateurAcceuil;
     private BorderPane rootOrganisateurAcceuil;
+
+    private Stage stageVue;
 
     private Stage stageVue;
 
@@ -144,6 +146,7 @@ public class VueAppliJO extends Application {
         this.rootJAthlete = loader.load();
         this.pageJAthlete = new Scene(rootJAthlete);
 
+
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoAthlete.fxml"));
         this.rootJIAthlete = loader.load();
         this.pageJIAthlete = new Scene(rootJIAthlete);
@@ -179,7 +182,6 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
         this.rootOrganisateurAcceuil = loader.load();
         this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
-
 
         this.stageVue.setScene(mainScene);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
