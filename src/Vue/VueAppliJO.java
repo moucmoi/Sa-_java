@@ -12,8 +12,8 @@ public class VueAppliJO extends Application {
     private Scene mainScene;
     
     private Scene Accueil;
-    private BorderPane rootAccueil
-      
+    private BorderPane rootAccueil;
+  
     private Scene pageConnexion;
     private BorderPane rootConnexion;
 
@@ -60,10 +60,6 @@ public class VueAppliJO extends Application {
     private BorderPane rootOrganisateurAcceuil;
 
     private Stage stageVue;
-
-    private Stage stageVue;
-
-
     private BorderPane root;
     private FXMLLoader loader;
 
@@ -92,47 +88,88 @@ public class VueAppliJO extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
+
+        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
+        //ControleurConnexion crtlCo = new ControleurConnexion(this);
+        ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
+        ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
+        ControleurRetour crtlRetour = new ControleurRetour(this);
+
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
         this.mainScene = new Scene(rootAccueil); 
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");
-
-        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
         bPageC.setOnAction(crtlBA);
         bPageI.setOnAction(crtlBA);
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("page_connexion.fxml"));
         this.rootConnexion = loader.load();
         this.pageConnexion = new Scene(rootConnexion);
 
-        Button bRetourC = (Button) mainScene.lookup("#Retour");
-        Button bConnexion = (Button) mainScene.lookup("#connexion");
+        Button bRetourC = (Button) pageConnexion.lookup("#retour");
+        Button bConnexion = (Button) pageConnexion.lookup("#connexion");
 
-        ControleurRetour crtlRetour = new ControleurRetour(this);
         bRetourC.setOnAction(crtlRetour);
-        //ControleurConnexion crtlCo = new ControleurConnexion(this);
         // bConnexion.setOnAction(crtlCo);
-
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("page_inscription.fxml"));
         this.rootInscription = loader.load();
         this.pageInscription = new Scene(rootInscription);
 
-        Button bRetourI = (Button) mainScene.lookup("#Retour");
-
+        Button bRetourI = (Button) pageInscription.lookup("#retour");
+        Button bRetourA = (Button) pageInscription.lookup("#retour");
         bRetourI.setOnAction(crtlRetour);
+        bRetourA.setOnAction(crtlRetour);
 
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
+        this.rootAdmin = loader.load();
+        this.pageAdmin = new Scene(rootAdmin);
 
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
-        this.rootAAdmin = loader.load();
-        this.pageAccueilAdmin = new Scene(rootAAdmin);
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournaliste.fxml"));
+        this.rootJournaliste = loader.load();
+        this.pageJournaliste = new Scene(rootJournaliste);
 
-        Button bRetourA = (Button) mainScene.lookup("#Retour");
-        // bRetourA.setOnAction(crtlRetour);
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
+        this.rootJAthlete = loader.load();
+        this.pageJAthlete = new Scene(rootJAthlete);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoAthlete.fxml"));
+        this.rootJIAthlete = loader.load();
+        this.pageJIAthlete = new Scene(rootJIAthlete);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteEpreuve.fxml"));
+        this.rootJEpreuve = loader.load();
+        this.pageJEpreuve = new Scene(rootJEpreuve);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoEpreuve.fxml"));
+        this.rootJIEpreuve = loader.load();
+        this.pageJIEpreuve = new Scene(rootJIEpreuve);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalistePays.fxml"));
+        this.rootJPays = loader.load();
+        this.pageJPays = new Scene(rootJPays);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoPays.fxml"));
+        this.rootJIPays = loader.load();
+        this.pageJIPays = new Scene(rootJIPays);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteSport.fxml"));
+        this.rootJSport = loader.load();
+        this.pageJSport = new Scene(rootJSport);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoSport.fxml"));
+        this.rootJISport = loader.load();
+        this.pageJISport = new Scene(rootJISport);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateur.fxml"));
+        this.rootOrganisateur = loader.load();
+        this.pageOrganisateur = new Scene(rootOrganisateur);
+
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
+        this.rootOrganisateurAcceuil = loader.load();
+        this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
         this.rootAdmin = loader.load();
