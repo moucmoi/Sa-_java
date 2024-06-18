@@ -115,7 +115,7 @@
    <center>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../../../Téléchargements/paris-2024-logo-freelogovectors.net_.png" />
+            <Image url="@../../img/ParisJO.png" />
          </image>
       </ImageView>
    </center>

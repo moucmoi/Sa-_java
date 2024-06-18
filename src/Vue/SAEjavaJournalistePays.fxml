@@ -163,7 +163,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../iut45/Etudiants/o22302631/Images/876779.png" />
+                              <Image url="@../../img/Deconnexion.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -180,7 +180,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../iut45/Etudiants/o22302631/Images/1200px-Logo_JO_dete_-_Paris_2024.svg_-900x1024.png" />
+                              <Image url="@../../img/ParisJO.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
