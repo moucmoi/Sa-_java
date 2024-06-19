@@ -33,21 +33,6 @@
                      </HBox.margin>
                      <children>
                         <Label alignment="CENTER" prefHeight="27.0" prefWidth="201.0" style="-fx-border-color: black;" text="Information Général" />
-                        <Label prefHeight="40.0" prefWidth="197.0" text="Nom du Sport">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label prefHeight="40.0" prefWidth="197.0" text="Genre">
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label prefHeight="40.0" prefWidth="197.0" text="Collectif ou Individuel">
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
                      </children>
                   </VBox>
                   <VBox prefHeight="204.0" prefWidth="200.0" style="-fx-border-color: black;">
@@ -61,21 +46,6 @@
                               <Insets left="127.0" right="2.0" top="2.0" />
                            </VBox.margin>
                         </Button>
-                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="207.0" style="-fx-border-color: black;" text="Athlète ou Equipe n°1">
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="207.0" style="-fx-border-color: black;" text="Athlète ou Equipe n°1">
-                           <VBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="207.0" style="-fx-border-color: black;" text="Athlète ou Equipe n°1">
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </VBox.margin>
-                        </Label>
                      </children>
                   </VBox>
                </children>

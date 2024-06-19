@@ -151,6 +151,20 @@ public class VueAppliJO extends Application {
         this.rootJAthlete = loader.load();
         this.pageJAthlete = new Scene(rootJAthlete);
 
+        Button bDecoJ7 = (Button) pageJAthlete.lookup("#deconnexion");
+        Button bJournaliste7 = (Button) pageJAthlete.lookup("#home");
+        Button bJIPays7 = (Button) pageJAthlete.lookup("#pays");
+        Button bJIAthlete7 = (Button) pageJAthlete.lookup("#athlete");
+        Button bJIEquipe7 = (Button) pageJAthlete.lookup("#equipe");
+        Button bJIEpreuve7 = (Button) pageJAthlete.lookup("#epreuve");
+
+        bDecoJ7.setOnAction(crtlDeco);
+        bJournaliste7.setOnAction(crtlJIPays);
+        bJIPays7.setOnAction(crtlJIPays);
+        bJIAthlete7.setOnAction(crtlJIAthlete);
+        bJIEquipe7.setOnAction(crtlJIEquipe);
+        bJIEpreuve7.setOnAction(crtlJIEpreuve);
+
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoAthlete.fxml"));
         this.rootJIAthlete = loader.load();
         this.pageJIAthlete = new Scene(rootJIAthlete);
@@ -172,6 +186,20 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteEpreuve.fxml"));
         this.rootJEpreuve = loader.load();
         this.pageJEpreuve = new Scene(rootJEpreuve);
+
+        Button bDecoJ5 = (Button) pageJEpreuve.lookup("#deconnexion");
+        Button bJournaliste5 = (Button) pageJEpreuve.lookup("#home");
+        Button bJIPays5 = (Button) pageJEpreuve.lookup("#pays");
+        Button bJIAthlete5 = (Button) pageJEpreuve.lookup("#athlete");
+        Button bJIEquipe5 = (Button) pageJEpreuve.lookup("#equipe");
+        Button bJIEpreuve5 = (Button) pageJEpreuve.lookup("#epreuve");
+
+        bDecoJ5.setOnAction(crtlDeco);
+        bJournaliste5.setOnAction(crtlJIPays);
+        bJIPays5.setOnAction(crtlJIPays);
+        bJIAthlete5.setOnAction(crtlJIAthlete);
+        bJIEquipe5.setOnAction(crtlJIEquipe);
+        bJIEpreuve5.setOnAction(crtlJIEpreuve);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoEpreuve.fxml"));
         this.rootJIEpreuve = loader.load();
@@ -195,6 +223,20 @@ public class VueAppliJO extends Application {
         this.rootJPays = loader.load();
         this.pageJPays = new Scene(rootJPays);
 
+        Button bDecoJ6 = (Button) pageJPays.lookup("#deconnexion");
+        Button bJournaliste6 = (Button) pageJPays.lookup("#home");
+        Button bJIPays6 = (Button) pageJPays.lookup("#pays");
+        Button bJIAthlete6 = (Button) pageJPays.lookup("#athlete");
+        Button bJIEquipe6 = (Button) pageJPays.lookup("#equipe");
+        Button bJIEpreuve6 = (Button) pageJPays.lookup("#epreuve");
+
+        bDecoJ6.setOnAction(crtlDeco);
+        bJournaliste6.setOnAction(crtlJIPays);
+        bJIPays6.setOnAction(crtlJIPays);
+        bJIAthlete6.setOnAction(crtlJIAthlete);
+        bJIEquipe6.setOnAction(crtlJIEquipe);
+        bJIEpreuve6.setOnAction(crtlJIEpreuve);
+
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoPays.fxml"));
         this.rootJIPays = loader.load();
         this.pageJIPays = new Scene(rootJIPays);
@@ -216,6 +258,20 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteEquipe.fxml"));
         this.rootJEquipe = loader.load();
         this.pageJEquipe = new Scene(rootJEquipe);
+
+        Button bDecoJ4 = (Button) pageJEquipe.lookup("#deconnexion");
+        Button bJournaliste4 = (Button) pageJEquipe.lookup("#home");
+        Button bJIPays4 = (Button) pageJEquipe.lookup("#pays");
+        Button bJIAthlete4 = (Button) pageJEquipe.lookup("#athlete");
+        Button bJIEquipe4 = (Button) pageJEquipe.lookup("#equipe");
+        Button bJIEpreuve4 = (Button) pageJEquipe.lookup("#epreuve");
+
+        bDecoJ4.setOnAction(crtlDeco);
+        bJournaliste4.setOnAction(crtlJIPays);
+        bJIPays4.setOnAction(crtlJIPays);
+        bJIAthlete4.setOnAction(crtlJIAthlete);
+        bJIEquipe4.setOnAction(crtlJIEquipe);
+        bJIEpreuve4.setOnAction(crtlJIEpreuve);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoEquipe.fxml"));
         this.rootJIEquipe = loader.load();
