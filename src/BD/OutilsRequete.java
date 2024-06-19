@@ -279,8 +279,7 @@ public class OutilsRequete {
         }
         else {
             return 3; // utilisateur inconnu
-        }
-        
+        }   
     }
 }
 
