@@ -257,24 +257,30 @@ public class OutilsRequete {
         return listeRetour;
     }
 
-    public void inscription(String nomUtilisateur, String motDePasse) throws SQLException {
+    public boolean inscription(String nomUtilisateur, String motDePasse) throws SQLException {
         this.st = this.laConnexion.createStatement();
-        this.st2 = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete2;
-            String requete = "SELECT MAX(id_utilisateur) maxi from UTILISATEUR;";
-            rs = st.executeQuery(requete);
-            if (rs!= null) {
-                int maxi = rs.getInt("maxi");
-                maxi+=1;
-                String maxiString = String.valueOf(maxi);
-                rs.close();
-                requete2 = "INSERT INTO UTILISATEUR VALUES(" + maxiString + ", \"" + nomUtilisateur + "\", \"" + motDePasse + "\", 0 ;"; // 0 correspond à l'id du rôle journaliste
-            }
-            else {
-                requete2 = "INSERT INTO UTILISATEUR VALUES(0, \"" + nomUtilisateur + "\", \"" + motDePasse + "\", 0 ;"; // 0 à la fin correspond à l'id du rôle journaliste
-            }
-        st2.executeUpdate(requete2);
+        rs = st.executeQuery("SELECT * FROM UTILISATEUR WHERE nom_utilisateur = \"" + nomUtilisateur + "\";");
+        if (rs!=null) {
+            String requete = "INSERT INTO UTILISATEUR VALUES(\"" + nomUtilisateur + "\", \"" + motDePasse + "\",0;"; // 0 à la fin correspond à l'id du rôle journaliste   
+            st.executeUpdate(requete);
+            return true;
+        }
+        return false;
+    }
+
+    public int verifConnexion(String nomUtilisateur, String motDePasse) throws SQLException {
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete = "SELECT * FROM UTILISATEUR NATURAL JOIN ROLE WHERE nom_utilisateur = \"" + nomUtilisateur + " AND motDePasse = \"" + motDePasse + "\";";
+        rs = st.executeQuery(requete);
+        if (rs!=null) {
+            return rs.getInt("id_role"); // 0 si journaliste, 1 si organisateur et 2 si administrateur
+        }
+        else {
+            return 3; // utilisateur inconnu
+        }
+        
     }
 }
 
