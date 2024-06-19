@@ -98,12 +98,12 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Retour">
+                  <Button fx:id="retour" mnemonicParsing="false" text="Retour">
                      <HBox.margin>
                         <Insets right="50.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Inscription" />
+                  <Button fx:id="inscription" mnemonicParsing="false" text="Inscription" />
                </children>
             </HBox>
          </children>
@@ -115,7 +115,7 @@
    <center>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../../../Téléchargements/paris-2024-logo-freelogovectors.net_.png" />
+            <Image url="@../../img/ParisJO.png" />
          </image>
       </ImageView>
    </center>

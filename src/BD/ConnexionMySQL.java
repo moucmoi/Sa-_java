@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.io.*;
+import java.util.Scanner;
 
 public class ConnexionMySQL {
 	private Connection mysql;
@@ -9,12 +11,25 @@ public class ConnexionMySQL {
 		Class.forName("org.mariadb.jdbc.Driver");
 	}
 
-	public void connecter() throws SQLException {
+	public void connecter(String nomFichier) throws SQLException {
 		this.mysql=null;
 		this.connecte=false;
-		this.mysql = DriverManager.getConnection(
-					"jdbc:mysql://servinfo-maria:3306/DBfonteny","fonteny","fonteny");
+		try {
+			FileInputStream fichier = new FileInputStream(nomFichier);
+			Scanner scanner = new Scanner(fichier);
+			String nomServeur = scanner.nextLine();
+			String nomBase = scanner.nextLine();
+			String nomLogin = scanner.nextLine();
+			String motDePasse = scanner.nextLine();
+			scanner.close();
+			this.mysql = DriverManager.getConnection(
+					"jdbc:mysql://"+nomServeur+":3306/"+nomBase,nomLogin, motDePasse);
 		this.connecte=true;
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	public void close() throws SQLException {
 		this.mysql.close();

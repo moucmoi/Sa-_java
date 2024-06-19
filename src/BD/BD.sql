@@ -70,9 +70,6 @@ ALTER TABLE EQUIPE ADD FOREIGN KEY (nom_pays) REFERENCES PAYS(nom_pays);
 ALTER TABLE UTILISATEUR ADD FOREIGN KEY (id_role) REFERENCES ROLE(id_role);
 
 
-
-
-
 INSERT INTO PAYS VALUES (
     ("USA", "USA", 0, 0, 0),
     ("CHN", "Chine", 0, 0, 0),
