@@ -67,4 +67,7 @@ public class JO {
             p.majMedaille();
         }
     }
+    public OutilsRequete getOutilsRequete() {
+        return this.requete;
+    }
 }
