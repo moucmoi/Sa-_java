@@ -63,6 +63,10 @@ public class VueAppliJO extends Application {
     private BorderPane root;
     private FXMLLoader loader;
 
+    public VueAppliJO() {
+        super();
+    }
+
     private ConnexionMySQL connexionMySQL;
     private OutilsRequete outils;
     private String role=null;
@@ -135,7 +139,6 @@ public class VueAppliJO extends Application {
         ControleurBoutonJournalisteIAthlete crtlJIAthlete = new ControleurBoutonJournalisteIAthlete(this);
         ControleurBoutonJournalisteISport crtlJISport = new ControleurBoutonJournalisteISport(this);
         ControleurBoutonJournalisteIEpreuve crtlJIEpreuve = new ControleurBoutonJournalisteIEpreuve(this);
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
