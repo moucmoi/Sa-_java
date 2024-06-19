@@ -62,8 +62,14 @@ public class VueAppliJO extends Application {
     private BorderPane root;
     private FXMLLoader loader;
 
+    private String role=null;
+
     public VueAppliJO() {
         super();
+    }
+
+    public String getRole() {
+        return this.role;
     }
 
     public Alert popUpDeconnexion(){
@@ -84,6 +90,11 @@ public class VueAppliJO extends Application {
         this.stageVue.setScene(pageInscription);
     }
 
+    public void pageOrganisateur() {
+        this.stageVue.setScene(pageOrganisateurAcceuil);
+        this.role = "Organisateur";
+    }
+
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
@@ -94,6 +105,8 @@ public class VueAppliJO extends Application {
         ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
         ControleurRetour crtlRetour = new ControleurRetour(this);
         ControleurInscription crtlIn = new ControleurInscription(this);
+        ControleurOrganisateur crtlOrga = new ControleurOrganisateur(this);
+        ControleurHome crtlHome = new ControleurHome(this);
 
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
@@ -174,7 +187,15 @@ public class VueAppliJO extends Application {
         this.rootOrganisateurAcceuil = loader.load();
         this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
 
-        this.stageVue.setScene(mainScene);
+        Button bdeco = (Button) pageOrganisateurAcceuil.lookup("#deconnexion");
+        Button bhomeOrga = (Button) pageOrganisateurAcceuil.lookup("#home");
+        //Button bfiltre = (Button) pageOrganisateurAcceuil.lookup("#filtre");
+        //Button brecherche = (Button) pageOrganisateurAcceuil.lookup("#recherche");
+
+        bdeco.setOnAction(crtlDeco);
+        bhomeOrga.setOnAction(crtlHome);
+
+        this.stageVue.setScene(pageOrganisateurAcceuil);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
         this.stageVue.show();
     }
