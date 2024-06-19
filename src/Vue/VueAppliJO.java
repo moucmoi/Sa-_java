@@ -13,7 +13,6 @@ public class VueAppliJO extends Application {
     
     private Scene Accueil;
     private BorderPane rootAccueil;
-  
     private Scene pageConnexion;
     private BorderPane rootConnexion;
 
@@ -43,7 +42,7 @@ public class VueAppliJO extends Application {
     
     private Scene pageJIPays;
     private BorderPane rootJIPays;
-
+  
     private Scene pageJISport;
     private BorderPane rootJISport;
 
@@ -94,6 +93,8 @@ public class VueAppliJO extends Application {
         ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
         ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
         ControleurRetour crtlRetour = new ControleurRetour(this);
+        ControleurInscription crtlIn = new ControleurInscription(this);
+
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
@@ -119,9 +120,10 @@ public class VueAppliJO extends Application {
         this.pageInscription = new Scene(rootInscription);
 
         Button bRetourI = (Button) pageInscription.lookup("#retour");
-        Button bRetourA = (Button) pageInscription.lookup("#retour");
+        Button bInscription = (Button) pageInscription.lookup("#inscription");
+
         bRetourI.setOnAction(crtlRetour);
-        bRetourA.setOnAction(crtlRetour);
+        bInscription.setOnAction(crtlIn);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
         this.rootAdmin = loader.load();
@@ -139,54 +141,6 @@ public class VueAppliJO extends Application {
         this.rootJIAthlete = loader.load();
         this.pageJIAthlete = new Scene(rootJIAthlete);
 
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteEpreuve.fxml"));
-        this.rootJEpreuve = loader.load();
-        this.pageJEpreuve = new Scene(rootJEpreuve);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoEpreuve.fxml"));
-        this.rootJIEpreuve = loader.load();
-        this.pageJIEpreuve = new Scene(rootJIEpreuve);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalistePays.fxml"));
-        this.rootJPays = loader.load();
-        this.pageJPays = new Scene(rootJPays);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoPays.fxml"));
-        this.rootJIPays = loader.load();
-        this.pageJIPays = new Scene(rootJIPays);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteSport.fxml"));
-        this.rootJSport = loader.load();
-        this.pageJSport = new Scene(rootJSport);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoSport.fxml"));
-        this.rootJISport = loader.load();
-        this.pageJISport = new Scene(rootJISport);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateur.fxml"));
-        this.rootOrganisateur = loader.load();
-        this.pageOrganisateur = new Scene(rootOrganisateur);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
-        this.rootOrganisateurAcceuil = loader.load();
-        this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
-        this.rootAdmin = loader.load();
-        this.pageAdmin = new Scene(rootAdmin);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournaliste.fxml"));
-        this.rootJournaliste = loader.load();
-        this.pageJournaliste = new Scene(rootJournaliste);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
-        this.rootJAthlete = loader.load();
-        this.pageJAthlete = new Scene(rootJAthlete);
-
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoAthlete.fxml"));
-        this.rootJIAthlete = loader.load();
-        this.pageJIAthlete = new Scene(rootJIAthlete);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteEpreuve.fxml"));
         this.rootJEpreuve = loader.load();
