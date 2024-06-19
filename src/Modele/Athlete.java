@@ -15,6 +15,9 @@ public class Athlete implements Comparable<Athlete>{
     private int nbArgent;
     private int nbBronze;
     private Equipe equipe;
+    private int nbOr;
+    private int nbArgent;
+    private int nbBronze; 
 
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurance
@@ -246,7 +249,7 @@ public class Athlete implements Comparable<Athlete>{
      */
     @Override
     public int compareTo(Athlete a){
-        return (int)(this.force+this.agilite+this.endurance)-(int)a.force+a.agilite+a.endurance;
+        return (this.nbOr+this.nbArgent+this.nbBronze)-(a.nbOr-a.getArgent()-a.getBronze());
     }
 
     /**

@@ -12,10 +12,10 @@ public class ControleurBoutonJournaliste implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-         textBouton = this.vueJO.getSource().getText();
+        /* textBouton = this.vueJO.getSource().getText();
         if (textBouton.equals("....")) {
             
         }
-        
+        */
     }
 }

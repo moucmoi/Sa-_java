@@ -10,12 +10,14 @@ public class ControleurHome implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        // recuperer le role en fonction de la page
-        // if role == admin:
-        // this.vueJO.homeAdmin
-        // elif role == organisateur:
-        // this.vueJO.homeOrganisateur
-        // elif role == Journaliste:
-        // this.vueJO.homeJournaliste
+        if (this.vueJO.getRole() == "Organisateur") {
+            this.vueJO.pageOrganisateur();
+        }
+        else if (this.vueJO.getRole() == "Journaliste") {
+
+        }
+        else if (this.vueJO.getRole() == "Administrateur") {
+
+        }
     }
 }
