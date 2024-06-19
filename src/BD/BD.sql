@@ -51,14 +51,25 @@ CREATE TABLE PARTICIPER (
 );
 
 CREATE TABLE ROLE(
+    PRIMARY KEY int(10) id_role,
+    varchar(30) nom_role 
+);
 
-)
+CREATE TABLE UTILISATEUR(
+    PRIMARY KEY int(10) id_utilisateur,
+    int(10) id_role,
+    varchar(30) nom_utilisateur,
+    varchar(30) mdp
+);
 
 ALTER TABLE ATHLETE ADD FOREIGN KEY (nom_equipe) REFERENCES EQUIPE(nom_equipe);
 ALTER TABLE EPREUVE ADD FOREIGN KEY (nom_sport) REFERENCES SPORT(nom_sport);
 ALTER TABLE PARTICIPER ADD FOREIGN KEY (nom_epreuve) REFERENCES EPREUVE(nom_epreuve);
 ALTER TABLE PARTICIPER ADD FOREIGN KEY (num_athlete) REFERENCES ATHLETE(num_athlete);
 ALTER TABLE EQUIPE ADD FOREIGN KEY (nom_pays) REFERENCES PAYS(nom_pays);
+ALTER TABLE UTILISATEUR ADD FOREIGN KEY (id_role) REFERENCES ROLE(id_role);
+
+
 
 
 
