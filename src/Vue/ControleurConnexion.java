@@ -1,3 +1,4 @@
+
 import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -5,6 +6,7 @@ import javafx.event.EventHandler;
 public class ControleurConnexion implements EventHandler<ActionEvent> {
 
     private VueAppliJO vueJO;
+
     private OutilsRequete outilsRequete;
 
     public ControleurConnexion(VueAppliJO vueJO, OutilsRequete outilsRequete) throws SQLException, ClassNotFoundException{
