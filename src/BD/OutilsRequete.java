@@ -275,7 +275,6 @@ public class OutilsRequete {
         ResultSet rsAthlete = null;
         ResultSet rsEquipe = null;
         ResultSet rsEpreuve = null;
-        ResultSet rsSport = null;
         String requetePays="SELECT nom_pays FROM Pays where nom_pays like '%"+mot+"%'";
         rsPays=st.executeQuery(requetePays);
         String requeteAthlete="SELECT nom_athlete, prenom_athlete where nom_athlete like '%"+mot+"%'";
@@ -284,8 +283,6 @@ public class OutilsRequete {
         rsEquipe=st.executeQuery(requeteEquipe);
         String requeteEpreuve="SELECT nom_epreuve FROM Pays where nom_epreuve like '%"+mot+"%'";
         rsEpreuve=st.executeQuery(requeteEpreuve);
-        String requeteSport="SELECT nom_sport FROM Pays where nom_sport like '%"+mot+"%'";
-        rsSport=st.executeQuery(requeteSport);
         while(rsPays.next()){
             Button button=new Button(rsPays.getString("nom_pays"));
             res.add(button);
@@ -295,15 +292,62 @@ public class OutilsRequete {
             res.add(button);
         }
         while(rsEquipe.next()){
-            Button button=new Button(rsPays.getString("nom_equipe"));
+            Button button=new Button(rsEquipe.getString("nom_equipe"));
             res.add(button);
         }
         while(rsEpreuve.next()){
             Button button=new Button(rsEpreuve.getString("nom_epreuve"));
             res.add(button);
         }
-        while(rsSport.next()){
-            Button button=new Button(rsPays.getString("nom_sport"));
+        return res;
+    }
+
+    public List<Button> barreRecherchePays(String mot) throws SQLException{
+        List<Button> res=new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rsPays = null;
+        String requetePays="SELECT nom_pays FROM Pays where nom_pays like '%"+mot+"%'";
+        rsPays=st.executeQuery(requetePays);
+        while(rsPays.next()){
+            Button button=new Button(rsPays.getString("nom_pays"));
+            res.add(button);
+        }
+        return res;
+    }
+
+    public List<Button> barreRechercheAthlete(String mot) throws SQLException{
+        List<Button> res=new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rsAthlete = null;
+        String requeteAthlete="SELECT nom_athlete, prenom_athlete where nom_athlete like '%"+mot+"%'";
+        rsAthlete=st.executeQuery(requeteAthlete);
+        while(rsAthlete.next()){
+            Button button=new Button(rsAthlete.getString("nom_athlete"));
+            res.add(button);
+        }
+        return res;
+    }
+
+    public List<Button> barreRechercheEquipe(String mot) throws SQLException{
+        List<Button> res=new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rsEquipe = null;
+        String requeteEquipe="SELECT nom_equipe FROM Pays where nom_equipe like '%"+mot+"%'";
+        rsEquipe=st.executeQuery(requeteEquipe);
+        while(rsEquipe.next()){
+            Button button=new Button(rsEquipe.getString("nom_equipe"));
+            res.add(button);
+        }
+        return res;
+    }
+    public List<Button> barreRechercheEpreuve(String mot) throws SQLException{
+        List<Button> res=new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rsEpreuve = null;
+        String requeteEpreuve="SELECT nom_epreuve FROM Pays where nom_epreuve like '%"+mot+"%'";
+        rsEpreuve=st.executeQuery(requeteEpreuve);
+        while(rsEpreuve.next()){
+            Button button=new Button(rsEpreuve.getString("nom_epreuve"));
             res.add(button);
         }
         return res;
