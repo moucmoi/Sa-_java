@@ -1,4 +1,10 @@
-
+DROP TABLE IF EXISTS ATHLETE;
+DROP TABLE IF EXISTS PAYS;
+DROP TABLE IF EXISTS EQUIPE;
+DROP TABLE IF EXISTS EPREUVE;
+DROP TABLE IF EXISTS SPORT;
+DROP TABLE IF EXISTS UTILISATEUR;
+DROP TABLE IF EXISTS ROLES;
 
 CREATE TABLE PAYS (
     PRIMARY KEY varchar(3) code_pays,
@@ -58,10 +64,10 @@ CREATE TABLE ROLES(
 );
 
 CREATE TABLE UTILISATEUR(
-    PRIMARY KEY int(10) id_utilisateur,
-    int(10) id_role,
-    varchar(30) nom_utilisateur,
-    varchar(30) mdp
+    PRIMARY KEY varchar(30) nom_utilisateur,
+    varchar(30) mdp,
+    int(10) id_role
+    
 );
 
 ALTER TABLE ATHLETE ADD FOREIGN KEY (nom_equipe) REFERENCES EQUIPE(nom_equipe);
@@ -111,10 +117,10 @@ INSERT INTO ROLES VALUES(
 );
 
 INSERT INTO UTILISATEUR VALUES(
-    (0,0,"Rogez","mdp1"),
-    (1,0,"Meunier","mdp2"),
-    (2,1,"Grison","mdp3"),
-    (3,1,"Ouapiti","mdp4"),
-    (4,2,"Limet","mdp5"),
-    (5,2,"Dalaigre","mdp6")
+    ("Rogez","mdp1",0),
+    ("Meunier","mdp2",0),
+    ("Grison","mdp3",1),
+    ("Ouapiti","mdp4",1),
+    ("Limet","mdp5",2),
+    ("Dalaigre","mdp6",2)
 );
