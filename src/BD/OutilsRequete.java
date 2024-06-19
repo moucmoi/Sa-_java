@@ -10,6 +10,7 @@ public class OutilsRequete {
     Statement st2;
     Statement st3;
 
+
     /**
      * Constructeur d'OutilsRequete
      * @param connexionMySQL la classe pour se connecter sur le serveur
