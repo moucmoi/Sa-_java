@@ -21,7 +21,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
                <children>
-                  <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox1" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
                      <HBox.margin>
                         <Insets bottom="20.0" left="75.0" right="80.0" top="20.0" />
                      </HBox.margin>
@@ -29,7 +29,7 @@
                         <Label alignment="CENTER" prefHeight="30.0" prefWidth="148.0" style="-fx-border-color: black;" text="Athlètes" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox2" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
                      <HBox.margin>
                         <Insets bottom="20.0" left="50.0" right="75.0" top="20.0" />
                      </HBox.margin>

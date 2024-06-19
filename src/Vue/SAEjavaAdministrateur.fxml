@@ -21,131 +21,28 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
                <children>
-                  <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox1" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
                      <HBox.margin>
                         <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                      </HBox.margin>
                      <children>
                         <Label alignment="CENTER" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: black;" text="Médailles" />
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="OR" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: black;" text="ARGENT" />
-                              <Label alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="76.0" style="-fx-border-color: black;" text="BRONZE" />
-                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox2" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
                      <HBox.margin>
                         <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                      </HBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="37.0" prefWidth="147.0" style="-fx-border-color: black;" text="Label" />
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Athlete 1" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb médailles" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Athlete 2">
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="médailles" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Athlete 3" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="médailles" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Athlete 4" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="médailles" />
-                           </children>
-                           <VBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="147.0" style="-fx-border-color: black;" text="Athlètes" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox3" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
                      <HBox.margin>
                         <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                      </HBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="148.0" style="-fx-border-color: black;" text="Label" />
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Sport 1" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="classement" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Sport 1" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="classement" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Sport 1" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="classement" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Sport 1" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="classement" />
-                           </children>
-                           <VBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="148.0" style="-fx-border-color: black;" text="Sports" />
                      </children>
                   </VBox>
                </children>
