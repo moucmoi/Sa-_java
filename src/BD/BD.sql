@@ -7,66 +7,66 @@ DROP TABLE IF EXISTS UTILISATEUR;
 DROP TABLE IF EXISTS ROLES;
 
 CREATE TABLE PAYS (
-    PRIMARY KEY varchar(3) code_pays,
-    varchar(15) nom_pays,
-    int nb_medaille_or,
-    int nb_medaille_argent,
-    int nb_medaille_bronze
+    PRIMARY KEY code_pays varchar(3),
+    nom_pays varchar(15),
+    nb_medaille_or int,
+    nb_medaille_argent int,
+    nb_medaille_bronze int
 );
 
 
 
 CREATE TABLE ATHLETE (
-    PRIMARY KEY varchar(15) num_athlete,
-    varchar(15) nom,
-    varchar(15) prenom,
-    varchar(1) sexe,
-    int force,
-    int agilite,
-    int endurance,
-    varchar(15) nom_equipe,
-    int medaille_or,
-    int medaille_argent,
-    int medaille_bronze
+    PRIMARY KEY num_athlete int,
+    nom varchar(25),
+    prenom varchar(25),
+    sexe varchar(1),
+    forcee int,
+    agilite int,
+    endurance int,
+    nom_equipe varchar(25),
+    medaille_or int,
+    medaille_argent int,
+    medaille_bronze int
 );
 
 CREATE TABLE EPREUVE (
-    PRIMARY KEY varchar(15) nom_epreuve,
-    boolean homme,
-    boolean individuel,
-    varchar(15) nom_sport
+    PRIMARY KEY nom_epreuve varchar(35),
+    homme boolean,
+    individuel boolean,
+    nom_sport varchar(20)
 );
 
 CREATE TABLE EQUIPE (
-    PRIMARY KEY varchar(15) numero_equipe,
-    varchar(15) nom_equipe,
-    varchar(15) nom_pays,
-    int medaille_or,
-    int medaille_argent,
-    int medaille_bronze
+    PRIMARY KEY numero_equipe int,
+    nom_equipe varchar(25),
+    nom_pays varchar(25),
+    medaille_or int,
+    medaille_argent int,
+    medaille_bronze int
 );
 
 CREATE TABLE SPORT (
-    PRIMARY KEY varchar(15) nom_sport,
-    float coeff_force,
-    float coeff_agilite,
-    float coeff_endurance
+    PRIMARY KEY nom_sport varchar(20),
+    coeff_force float,
+    coeff_agilite float,
+    coeff_endurance float
 );  
 
 CREATE TABLE PARTICIPER (
-    PRIMARY KEY varchar(15) nom_epreuve,
-    PRIMARY KEY varchar(15) num_athlete
+    PRIMARY KEY nom_epreuve varchar(35),
+    PRIMARY KEY num_athlete int
 );
 
 CREATE TABLE ROLES(
-    PRIMARY KEY int(10) id_role,
-    varchar(30) nom_role 
+    PRIMARY KEY id_role int,
+    nom_role varchar(20)
 );
 
 CREATE TABLE UTILISATEUR(
-    PRIMARY KEY varchar(30) nom_utilisateur,
-    varchar(30) mdp,
-    int(10) id_role
+    PRIMARY KEY nom_utilisateur varchar(30),
+    mdp varchar(30),
+    id_role int
     
 );
 
