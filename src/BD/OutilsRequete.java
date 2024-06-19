@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.List;
+
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+
 import java.sql.*;
 import java.sql.*;
 
@@ -262,6 +266,47 @@ public class OutilsRequete {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
             String requete = "INSERT INTO UTILISATEUR VALUES(" ;
+    }
+
+    public List<Button> barreRechercheGeneral(String mot) throws SQLException{
+        List<Button> res=new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rsPays = null;
+        ResultSet rsAthlete = null;
+        ResultSet rsEquipe = null;
+        ResultSet rsEpreuve = null;
+        ResultSet rsSport = null;
+        String requetePays="SELECT nom_pays FROM Pays where nom_pays like '%"+mot+"%'";
+        rsPays=st.executeQuery(requetePays);
+        String requeteAthlete="SELECT nom_athlete, prenom_athlete where nom_athlete like '%"+mot+"%'";
+        rsAthlete=st.executeQuery(requeteAthlete);
+        String requeteEquipe="SELECT nom_equipe FROM Pays where nom_equipe like '%"+mot+"%'";
+        rsEquipe=st.executeQuery(requeteEquipe);
+        String requeteEpreuve="SELECT nom_epreuve FROM Pays where nom_epreuve like '%"+mot+"%'";
+        rsEpreuve=st.executeQuery(requeteEpreuve);
+        String requeteSport="SELECT nom_sport FROM Pays where nom_sport like '%"+mot+"%'";
+        rsSport=st.executeQuery(requeteSport);
+        while(rsPays.next()){
+            Button button=new Button(rsPays.getString("nom_pays"));
+            res.add(button);
+        }
+        while(rsAthlete.next()){
+            Button button=new Button(rsAthlete.getString("nom_athlete"));
+            res.add(button);
+        }
+        while(rsEquipe.next()){
+            Button button=new Button(rsPays.getString("nom_equipe"));
+            res.add(button);
+        }
+        while(rsEpreuve.next()){
+            Button button=new Button(rsEpreuve.getString("nom_epreuve"));
+            res.add(button);
+        }
+        while(rsSport.next()){
+            Button button=new Button(rsPays.getString("nom_sport"));
+            res.add(button);
+        }
+        return res;
     }
 }
 
