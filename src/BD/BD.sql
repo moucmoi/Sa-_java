@@ -15,6 +15,9 @@ CREATE TABLE ATHLETE (
     int agilite;
     int endurance;
     varchar(15) nom_equipe;
+    int medaille_or;
+    int medaille_argent;
+    int medaille_bronze;
 );
 
 CREATE TABLE EPREUVE (
