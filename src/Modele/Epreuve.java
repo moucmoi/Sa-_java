@@ -9,6 +9,7 @@ public class Epreuve {
     private boolean individuel;
     private Sport sport;
 
+
     /**
      * Constructeur demandant un nom un prenom, le sexe, la force, l'agilité et l'endurence 
      * @param nomEpreuve le nom de l'épreuve
@@ -22,6 +23,7 @@ public class Epreuve {
         this.homme = homme;
         this.individuel = individuel;
         this.sport = sport;
+
     }
 
     /**

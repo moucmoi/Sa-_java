@@ -59,6 +59,7 @@ public class Executable{
         Equipe e8=new Equipe(8, "Equipe8",australie);
         Equipe e9=new Equipe(9, "Equipe9",bresil);
         Equipe e10=new Equipe(10, "Equipe10",turquie);
+        List<Equipe> lesEquipes=Arrays.asList(e1,e2,e3,e4,e5,e6,e7,e8,e9,e10);
 
         Athlete noa=new Athlete(1, "Fonteny", "Noa", "H",10 , 15, 5, e1);
         Athlete marin=new Athlete(2, "Chesneau", "Marin", "H", 12,2 , 12, e1);
@@ -265,325 +266,69 @@ public class Executable{
         System.out.println(australie.calculerScore());
         System.out.println(bresil.calculerScore());
         System.out.println(turquie.calculerScore());
-
-
-        System.out.println("Bonjour");
-        System.out.println("Pour répondre aux question il faut mettre le numéro de la question");
-        System.out.println(" _________________________________________\n"+
-                           "|========================================|\n"+
-                           "|           Que veux tu faire ?          |\n"+
-                           "|========================================|\n"+
-                           "|                                        |\n"+
-                           "|   1 - Avoir des infos sur les sports   |\n"+
-                           "|   2 - Avoir des infos sur les équipes  |\n"+
-                           "|   3 - Avoir des infos sur les pays     |\n"+
-                           "|   4 - Avoir les infos sur les athletes |\n"+
-                           "|   5 - Quitter                          |\n"+
-                           "|                                        |\n"+
-                           "|                                        |\n"+
-                           "|________________________________________|\n");
-
-        Scanner scan1=new Scanner(System.in);
-        System.out.println("Ta réponse :");
-        String rep1=scan1.nextLine();
         
-        if (rep1.equals("1")){
-            System.out.println(" _________________________________________\n"+
-                           "|========================================|\n"+
-                           "|   Que veux tu savoir sur les sports ?  |\n"+
-                           "|========================================|\n"+
-                           "|                                        |\n"+
-                           "|   1 - Liste des sports                 |\n"+
-                           "|   2 - Liste des épreuves dans un sport |\n"+
-                           "|   3 - Quitter                          |\n"+
-                           "|                                        |\n"+
-                           "|________________________________________|\n");
-            Scanner scanSport=new Scanner(System.in);
-            System.out.println("Ta réponse :");
-            String  repScanSport=scanSport.nextLine();
-            if(repScanSport.equals("1")){
-                String rep="";
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        for(Epreuve ep:e.getLesEpreuves()){
-                            Sport s=ep.getSport();
-                            if(!(rep.contains(s.getNomSport()))){
-                                rep+=s.getNomSport()+"\n";
-                            }
-                        }
+        
+
+        List<Epreuve> listeEpreuve=new ArrayList<>();
+        for(Pays p:pays){
+            for(Equipe e:p.getLesEquipes()){
+                for(Epreuve ep:e.getLesEpreuves()){
+                    if(!(listeEpreuve.contains(ep))){
+                        listeEpreuve.add(ep);
                     }
                 }
-                System.out.println(rep);
-                System. exit(0);
-            }
-            if(repScanSport.equals("2")){
-                Scanner quelSport=new Scanner(System.in);
-                System.out.println("De quel sport veux tu connaître les épreuves");
-                String  repSport1=quelSport.nextLine();
-                String rep="";
-                List<Sport> listeSport=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        for(Epreuve ep:e.getLesEpreuves()){
-                            if(!(listeSport.contains(ep.getSport()))){
-                                listeSport.add(ep.getSport());
-                            }
-                        }
-                    }
-                }
-                for(Sport spo:listeSport){
-                    if(spo.getNomSport().equals(repSport1)){
-                        for(Epreuve ep:spo.getLesEpreuves()){
-                            rep+=ep.getNom()+"\n";
-                        }
-                    }
-                }
-                System.out.println(rep);
-                System. exit(0);
-            }
-            else{
-                System. exit(0);
             }
         }
-        if(rep1.equals("2")){
-            System.out.println(" ______________________________________________\n"+
-                               "|==============================================|\n"+
-                               "|     Que veux tu savoir sur les équipes ?     |\n"+
-                               "|==============================================|\n"+
-                               "|                                              |\n"+
-                               "|   1 - Connaître le classement des équipes    |\n"+
-                               "|   2 - Savoir le nombre de point des équipes  |\n"+
-                               "|   3 - Connaître les membre d'une équipe      |\n"+
-                               "|   4 - Quitter                                |\n"+
-                               "|                                              |\n"+
-                               "|                                              |\n"+
-                               "|______________________________________________|\n");
-            Scanner scanEquipe =new Scanner(System.in);
-            System.out.println("Ta réponse :");
-            String  repScanEquipe=scanEquipe.nextLine();
-            if(repScanEquipe.equals("1")){
-                String rep="";
-                List<Equipe> listeEquipes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        listeEquipes.add(e);
-                    }
-                    
-                }
-                Collections.sort(listeEquipes);
-                Collections.reverse(listeEquipes);
-
-                for(int i=1;i<=listeEquipes.size();i++){
-                    rep+=i+" : "+listeEquipes.get(i-1).getNom()+" venant du "+listeEquipes.get(i-1).getPays().getNomPays()+"\n";
-                }
-                System.out.println(rep);
-                System. exit(0);
+        List<Equipe> equipeNatation=new ArrayList<>();
+        List<Equipe> equipeHandBall=new ArrayList<>();
+        List<Equipe> equipeVolleyBall=new ArrayList<>();
+        List<Equipe> equipeEscrime=new ArrayList<>();
+        List<Equipe> equipeAthletisme=new ArrayList<>();
+        for(Equipe eq:lesEquipes){
+            if(eq.getLesEpreuves().get(0).getSport().equals("Natation")){
+                equipeNatation.add(eq);
             }
-            if(repScanEquipe.equals("2")){
-                String rep="";
-                List<Equipe> listeEquipes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        listeEquipes.add(e);
-                    }
-                }
-                for(Equipe eq:listeEquipes){
-                    rep+="L'équipe "+eq.getNom()+" a "+eq.calculerScore()+ " points"+"\n";
-                }
-                System.out.println(rep);
-                System.exit(0);
+            else if(eq.getLesEpreuves().get(0).getSport().equals("HandBall")){
+                equipeHandBall.add(eq);
             }
-            if(repScanEquipe.equals("3")){
-                Scanner quelEquipe=new Scanner(System.in);
-                System.out.println("De quel équipe veux tu connaître les membres ?");
-                String  repQuelEquipe=quelEquipe.nextLine();
-                String rep="";
-                List<Equipe> listeEquipes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        listeEquipes.add(e);
-                    }
-                }
-                for(Equipe e:listeEquipes){
-                    if(e.getNom().equals(repQuelEquipe)){
-                        for(Athlete a:e.getLesAthletes()){
-                            rep+=a.getNom()+"\n";
-                        }
-                    }
-                }
-                System.out.println(rep);
-                System.exit(0);
+            else if(eq.getLesEpreuves().get(0).getSport().equals("VolleyBall")){
+                equipeVolleyBall.add(eq);
             }
-            else{
-                System.exit(0);
+            else if(eq.getLesEpreuves().get(0).getSport().equals("Escrime")){
+                equipeEscrime.add(eq);
+            }
+            else if(eq.getLesEpreuves().get(0).getSport().equals("Athletisme")){
+                equipeAthletisme.add(eq);
             }
         }
-        if(rep1.equals("3")){
-            System.out.println(" _______________________________________________\n"+
-                               "|===============================================|\n"+
-                               "|      Que veux tu savoir sur les pays ?        |\n"+
-                               "|===============================================|\n"+
-                               "|                                               |\n"+
-                               "|   1 - Connaître le classement des pays        |\n"+
-                               "|   2 - Savoir le nombre de point des pays      |\n"+
-                               "|   3 - Connaître les équipes d'un pays         |\n"+
-                               "|   4 - Connaître les membre d'un pays          |\n"+
-                               "|   5 - Quitter                                 |\n"+
-                               "|                                               |\n"+
-                               "|                                               |\n"+
-                               "|_______________________________________________|\n");
-            Scanner scanPays =new Scanner(System.in);
-            System.out.println("Ta réponse :");
-            String  repScanPays=scanPays.nextLine();
+        List<List<Equipe>> listeSports=Arrays.asList(equipeAthletisme,equipeEscrime,equipeHandBall,equipeNatation,equipeVolleyBall);
 
-            if(repScanPays.equals("1")){
-                String rep="";
-                Collections.sort(pays);
-                Collections.reverse(pays);
 
-                for(int i=1;i<=pays.size();i++){
-                    rep+=i+" : "+pays.get(i-1).getNomPays()+"\n";
-                }
-                System.out.println(rep);
-                System. exit(0);
-            }
-            if(repScanPays.equals("2")){
-                String rep="";
-                for(Pays p:pays){
-                    rep+="Le pays "+p.getNomPays()+" a "+p.calculerScore()+ " points"+"\n";
-                }
-                System.out.println(rep);
-                System.exit(0);
-            }
-            if(repScanPays.equals("3")){
-                Scanner quelPays=new Scanner(System.in);
-                System.out.println("De quel pays veux tu connaître les équipes ?");
-                String  repQuelPays=quelPays.nextLine();
-                String rep="";
-                
-                for(Pays p:pays){
-                    if(p.getNomPays().equals(repQuelPays)){
-                        for(Equipe e:p.getLesEquipes()){
-                            rep+=e.getNom()+"\n";
-                        }
-                    }
-                }
-                System.out.println(rep);
-                System.exit(0);
-            }
-            if(repScanPays.equals("4")){
-                Scanner quelPays2=new Scanner(System.in);
-                System.out.println("De quel pays veux tu connaître les équipes ?");
-                String  repQuelPays2=quelPays2.nextLine();
-                String rep="";
-                
-                for(Pays p:pays){
-                    if(p.getNomPays().equals(repQuelPays2)){
-                        for(Equipe e:p.getLesEquipes()){
-                            for(Athlete a:e.getLesAthletes())
-                                rep+=a+"\n";
-                        }
-                    }
-                }
-                System.out.println(rep);
-                System.exit(0);
-            }
-            else{
-                System.exit(0);
-            }
-        }
-        if(rep1.equals("4")){
-            System.out.println(" _____________________________________________________\n"+
-                               "|=====================================================|\n"+
-                               "|        Que veux tu savoir sur les athletes ?        |\n"+
-                               "|=====================================================|\n"+
-                               "|                                                     |\n"+
-                               "|   1 - Connaître le classement des athletes          |\n"+
-                               "|   2 - Savoir le score des athletes dans une epreuve |\n"+
-                               "|   3 - Connaître le pays d'un athlete                |\n"+
-                               "|   4 - Quitter                                       |\n"+
-                               "|                                                     |\n"+
-                               "|                                                     |\n"+
-                               "|_____________________________________________________|\n");
-            Scanner scanAthlete =new Scanner(System.in);
-            System.out.println("Ta réponse :");
-            String  repScanAthlete=scanAthlete.nextLine();
-            if(repScanAthlete.equals("1")){
-                String rep="";
-                List<Athlete> listeAthletes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        for(Athlete a:e.getLesAthletes())
-                            listeAthletes.add(a);
-                    }
-                }
-                Collections.sort(listeAthletes);
-                Collections.reverse(listeAthletes);
-                for(int i=1;i<=listeAthletes.size();i++){
-                    rep+=i+" : "+listeAthletes.get(i-1)+"\n";
-                }
-                System.out.println(rep);
-                System.exit(0);
-            }
-            if(repScanAthlete.equals("2")){
-                String rep="";
-                List<Athlete> listeAthletes=new ArrayList<>();
-                List<Equipe> listeEquipes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        listeEquipes.add(e);
-                        for(Athlete a:e.getLesAthletes())
-                            listeAthletes.add(a);
-                    }
-                }
-                boolean a=true;
 
-                System.out.println("Sur quel epreuve veux-tu connaître les score des athletes");
-                Scanner scanAthlete2 =new Scanner(System.in);
-                System.out.println("Ta réponse :");
-                String  repScanAthlete2=scanAthlete2.nextLine();
-                Epreuve epreuv;
-                epreuv = null;
-                for(Pays p:pays)
-                    for(Equipe e:p.getLesEquipes()){
-                        for(Epreuve ep:e.getLesEpreuves()){
-                            if(ep.getNom().equals(repScanAthlete2)){
-                                epreuv=ep;
-                            }
-                        }
+
+        public void simulerJo(List<Epreuve> listeEpreuve,List<List<Equipe>> listeSports){
+            for(Epreuve e:listeEpreuve){
+                for(List<Equipe> eq:listeSports){
+                    List<Equipe> ordre=e.simulerEpreuve(eq);
+                    ordre.get(0).ajouterMedaille("Or");
+                    ordre.get(1).ajouterMedaille("Argent");
+                    ordre.get(2).ajouterMedaille("Bronze");
+                    for(Athlete a:ordre.get(0).getLesAthletes()){
+                        a.ajouterMedaille("Or");
                     }
-                
-                for(Athlete at:listeAthletes){
-                    rep+="L'athlete "+at.getNom()+" a "+at.participer(epreuv)+ " points"+"\n";
-                }
-                System.out.println(rep);
-                System.exit(0);
-            }
-            if(repScanAthlete.equals("3")){
-                String rep="";
-                List<Athlete> listeAthletes=new ArrayList<>();
-                for(Pays p:pays){
-                    for(Equipe e:p.getLesEquipes()){
-                        for(Athlete a:e.getLesAthletes())
-                            listeAthletes.add(a);
+                    for(Athlete a:ordre.get(1).getLesAthletes()){
+                        a.ajouterMedaille("Argent");
                     }
-                }
-                Scanner quelAthlete2=new Scanner(System.in);
-                System.out.println("De quel athlete veux tu connaître le pays ?");
-                String  repQuelAthlete2=quelAthlete2.nextLine();
-                for(Athlete at:listeAthletes){
-                    if(at.getNom().equals(repQuelAthlete2)){
-                        System.out.println(at.getEquipe().getPays().getNomPays());
+                    for(Athlete a:ordre.get(2).getLesAthletes()){
+                        a.ajouterMedaille("Bronze");
                     }
                 }
             }
-            else{
-                System.exit(0);
+            for(Pays p:pays){
+                p.majMedaille();
             }
-        }
-        else{
-            System.exit(0);
         }
     }
 }
 
+        
