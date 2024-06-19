@@ -33,6 +33,5 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
        }
        catch (SQLException e) {
        }
-        
     }
 }
