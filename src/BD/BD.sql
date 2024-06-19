@@ -1,46 +1,58 @@
 CREATE TABLE PAYS (
-    PRIMARY KEY varchar(3) code_pays;
-    varchar(15) nom_pays;
-    int nb_medaille_or;
-    int nb_medaille_argent;
-    int nb_medaille_bronze;
+    PRIMARY KEY varchar(3) code_pays,
+    varchar(15) nom_pays,
+    int nb_medaille_or,
+    int nb_medaille_argent,
+    int nb_medaille_bronze
 );
 
+
+
 CREATE TABLE ATHLETE (
-    PRIMARY KEY varchar(15) num_athlete;
-    varchar(15) nom;
-    varchar(15) prenom;
-    varchar(1) sexe;
-    int force;
-    int agilite;
-    int endurance;
-    varchar(15) nom_equipe;
+    PRIMARY KEY varchar(15) num_athlete,
+    varchar(15) nom,
+    varchar(15) prenom,
+    varchar(1) sexe,
+    int force,
+    int agilite,
+    int endurance,
+    varchar(15) nom_equipe,
+    int medaille_or,
+    int medaille_argent,
+    int medaille_bronze
 );
 
 CREATE TABLE EPREUVE (
-    PRIMARY KEY varchar(15) nom_epreuve;
-    boolean homme;
-    boolean individuel;
-    varchar(15) nom_sport;
+    PRIMARY KEY varchar(15) nom_epreuve,
+    boolean homme,
+    boolean individuel,
+    varchar(15) nom_sport
 );
 
 CREATE TABLE EQUIPE (
-    PRIMARY KEY varchar(15) numero_equipe;
-    varchar(15) nom_equipe;
-    varchar(15) nom_pays;
+    PRIMARY KEY varchar(15) numero_equipe,
+    varchar(15) nom_equipe,
+    varchar(15) nom_pays,
+    int medaille_or,
+    int medaille_argent,
+    int medaille_bronze
 );
 
 CREATE TABLE SPORT (
-    PRIMARY KEY varchar(15) nom_sport;
-    float coeff_force;
-    float coeff_agilite;
-    float coeff_endurance;
+    PRIMARY KEY varchar(15) nom_sport,
+    float coeff_force,
+    float coeff_agilite,
+    float coeff_endurance
 );  
 
 CREATE TABLE PARTICIPER (
-    PRIMARY KEY varchar(15) nom_epreuve; 
-    PRIMARY KEY varchar(15) num_athlete;
+    PRIMARY KEY varchar(15) nom_epreuve,
+    PRIMARY KEY varchar(15) num_athlete
 );
+
+CREATE TABLE ROLE(
+
+)
 
 ALTER TABLE ATHLETE ADD FOREIGN KEY (nom_equipe) REFERENCES EQUIPE(nom_equipe);
 ALTER TABLE EPREUVE ADD FOREIGN KEY (nom_sport) REFERENCES SPORT(nom_sport);
