@@ -98,7 +98,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="./img/Deconnexion.png" />
+                              <Image url="@../../img/Deconnexion.png" />
                            </image>
                         </ImageView>
                      </graphic>
