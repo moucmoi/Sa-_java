@@ -123,11 +123,9 @@ public class Pays implements Comparable<Pays>{
      */
     public void majMedaille(){
         for(Equipe e:this.lesEquipes){
-            for (Athlete a:e.getLesAthletes()){
-                this.nbMedailleOr+=a.getOr();
-                this.nbMedailleArgent+=a.getArgent();
-                this.nbMedailleBronze+=a.getBronze();
-            }
+                this.nbMedailleOr+=e.getOr();
+                this.nbMedailleArgent+=e.getArgent();
+                this.nbMedailleBronze+=e.getBronze();
         }
     }    
 

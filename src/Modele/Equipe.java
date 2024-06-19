@@ -9,6 +9,9 @@ public class Equipe implements Comparable<Equipe>{
     private Pays pays;
     private List<Epreuve> lesEpreuves;
     private List<Athlete> lesAthletes;
+    private int nbOr;
+    private int nbArgent;
+    private int nbBronze;
 
     /**
      * Constructeur demandant un nom et un pays
@@ -22,6 +25,29 @@ public class Equipe implements Comparable<Equipe>{
         this.pays=pays;
         this.lesAthletes = new ArrayList<>();
         this.lesEpreuves=new ArrayList<>();
+        this.nbOr=0;
+        this.nbArgent=0;
+        this.nbBronze=0;
+    }
+
+    public int getOr() {
+        return this.nbOr;
+    }
+
+    /**
+     * Retourne le nombre de médaille en argent du pays
+     * @return nombre de médaille en argent du pays
+     */
+    public int getArgent() {
+        return this.nbArgent;
+    }
+
+    /**
+     * Retourne le nombre de médaille en bronze du pays
+     * @return nombre de médaille en bronze du pays
+     */
+    public int getBronze() {
+        return this.nbBronze;
     }
 
     /**
@@ -114,6 +140,18 @@ public class Equipe implements Comparable<Equipe>{
                 res+=epreuve.calculerScore(this);
         }
         return res;
+    }
+
+    public void ajouterMedaille(String medaille){
+        if (medaille.equals("Or")){
+            this.nbOr++;
+        }
+        if(medaille.equals("Argent")){
+            this.nbArgent++;
+        }
+        if(medaille.equals("Bronze")){
+            this.nbBronze++;
+        }
     }
 
     /**
