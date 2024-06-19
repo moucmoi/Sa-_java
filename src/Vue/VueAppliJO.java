@@ -1,3 +1,6 @@
+
+ 
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -5,7 +8,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.scene.layout.Label;
 
 public class VueAppliJO extends Application {
 
@@ -88,6 +93,13 @@ public class VueAppliJO extends Application {
 
     public void pageJournalisteIAthlete() {
         this.stageVue.setScene(pageJIAthlete);
+        Vbox mileu=pageJIAthlete.lookup(vbox);
+        List<Button>resultat=this.modele.requete.barreRechercheAthlete(pageJIAthlete.lookup(textfield).getText());
+        for(int i=0;i<resultat.size();i++){
+            HBox hbox=new HBox();
+            hbox.getChildren().add(new Label(i+1));
+            hbox.getChildren().add(resultat.get(i));
+        }
     }
 
     public void pageJournalisteIEquipe() {
