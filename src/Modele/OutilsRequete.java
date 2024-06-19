@@ -1,11 +1,6 @@
 import java.util.ArrayList;
-import java.util.ArrayList;
 import java.util.List;
-
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
-
-import java.sql.*;
 import java.sql.*;
 
 public class OutilsRequete {
@@ -383,6 +378,18 @@ public class OutilsRequete {
             res.add(button);
         }
         return res;
+    }
+
+    public List<Equipe> listeEquipePourUnSport(String leSport) throws SQLException {
+        List<Equipe> listeRetour = new ArrayList<>();
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete = "SELECT * FROM EQUIPE NATURAL JOIN PARTICIPER NATURAL JOIN EPREUVE NATURAL JOIN SPORT WHERE nom_sport = \"" + leSport + "\";";
+        rs = st.executeQuery(requete);
+        while (rs.next()) {
+            listeRetour.add(new Equipe(rs.getInt("code_equipe"), rs.getString("nom_equipe"), obtenirPays(rs.getString("code_pays"))));
+        }
+        return listeRetour;
     }
 }
 
