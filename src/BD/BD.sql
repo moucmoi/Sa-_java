@@ -1,3 +1,5 @@
+
+
 CREATE TABLE PAYS (
     PRIMARY KEY varchar(3) code_pays,
     varchar(15) nom_pays,
@@ -50,7 +52,7 @@ CREATE TABLE PARTICIPER (
     PRIMARY KEY varchar(15) num_athlete
 );
 
-CREATE TABLE ROLE(
+CREATE TABLE ROLES(
     PRIMARY KEY int(10) id_role,
     varchar(30) nom_role 
 );
@@ -88,7 +90,7 @@ INSERT INTO SPORT VALUES (
     ("Handball"),
     ("Volley-Ball"),
     ("Escrime"),
-    ("Athlétisme"),
+    ("Athlétisme")
 );
 
 INSERT INTO EPREUVE VALUES (
@@ -99,5 +101,20 @@ INSERT INTO EPREUVE VALUES (
   ("Escrime fleuret"),
   ("Escrime épée"),
   ("Athlétisme 110 haies"),
-  ("Athlétisme relais 400m"),
+  ("Athlétisme relais 400m")
+);
+
+INSERT INTO ROLES VALUES(
+    (0,"Journaliste"),
+    (1,"Organisateur"),
+    (2,"Administrateur")
+);
+
+INSERT INTO UTILISATEUR VALUES(
+    (0,0,"Rogez","mdp1"),
+    (1,0,"Meunier","mdp2"),
+    (2,1,"Grison","mdp3"),
+    (3,1,"Ouapiti","mdp4"),
+    (4,2,"Limet","mdp5"),
+    (5,2,"Dalaigre","mdp6")
 );
