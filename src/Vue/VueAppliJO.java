@@ -12,8 +12,8 @@ public class VueAppliJO extends Application {
     private Scene mainScene;
     
     private Scene Accueil;
-    private BorderPane rootAccueil
-      
+    private BorderPane rootAccueil;
+
     private Scene pageConnexion;
     private BorderPane rootConnexion;
 
@@ -60,10 +60,6 @@ public class VueAppliJO extends Application {
     private BorderPane rootOrganisateurAcceuil;
 
     private Stage stageVue;
-
-    private Stage stageVue;
-
-
     private BorderPane root;
     private FXMLLoader loader;
 
@@ -92,47 +88,42 @@ public class VueAppliJO extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
+
+        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
+        //ControleurConnexion crtlCo = new ControleurConnexion(this);
+        ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
+        ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
+        ControleurRetour crtlRetour = new ControleurRetour(this);
+        ControleurInscription crtlIn = new ControleurInscription(this);
+
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
         this.mainScene = new Scene(rootAccueil); 
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");
-
-        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
         bPageC.setOnAction(crtlBA);
         bPageI.setOnAction(crtlBA);
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("page_connexion.fxml"));
         this.rootConnexion = loader.load();
         this.pageConnexion = new Scene(rootConnexion);
 
-        Button bRetourC = (Button) mainScene.lookup("#Retour");
-        Button bConnexion = (Button) mainScene.lookup("#connexion");
+        Button bRetourC = (Button) pageConnexion.lookup("#retour");
+        Button bConnexion = (Button) pageConnexion.lookup("#connexion");
 
-        ControleurRetour crtlRetour = new ControleurRetour(this);
         bRetourC.setOnAction(crtlRetour);
-        //ControleurConnexion crtlCo = new ControleurConnexion(this);
         // bConnexion.setOnAction(crtlCo);
-
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("page_inscription.fxml"));
         this.rootInscription = loader.load();
         this.pageInscription = new Scene(rootInscription);
 
-        Button bRetourI = (Button) mainScene.lookup("#Retour");
+        Button bRetourI = (Button) pageInscription.lookup("#retour");
+        Button bInscription = (Button) pageInscription.lookup("#inscription");
 
         bRetourI.setOnAction(crtlRetour);
-
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
-        this.rootAAdmin = loader.load();
-        this.pageAccueilAdmin = new Scene(rootAAdmin);
-
-        Button bRetourA = (Button) mainScene.lookup("#Retour");
-        // bRetourA.setOnAction(crtlRetour);
+        bInscription.setOnAction(crtlIn);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
         this.rootAdmin = loader.load();
@@ -145,7 +136,6 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
         this.rootJAthlete = loader.load();
         this.pageJAthlete = new Scene(rootJAthlete);
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoAthlete.fxml"));
         this.rootJIAthlete = loader.load();
@@ -182,6 +172,7 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
         this.rootOrganisateurAcceuil = loader.load();
         this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
+
 
         this.stageVue.setScene(mainScene);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
