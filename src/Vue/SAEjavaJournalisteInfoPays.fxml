@@ -7,7 +7,6 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -79,7 +78,7 @@
                   </Label>
                   <Button fx:id="home" mnemonicParsing="false" prefHeight="89.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="81.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../img/ParisJO.png" />
                            </image>
@@ -94,16 +93,14 @@
                   </Button>
                </children>
             </HBox>
-            <ToolBar prefHeight="34.0" prefWidth="599.0" style="-fx-border-color: black;">
-              <items>
-
-                <Button fx:id="pays" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Pays" />
-                  <Button fx:id="athlete" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
-                  <Button fx:id="equipe" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Equipe" />
-
-                  <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
-              </items>
-            </ToolBar>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                <Button fx:id="pays" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Pays" />
+                  <Button fx:id="athlete" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
+                  <Button fx:id="equipe" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Equipe" />
+                  <Button fx:id="epreuve" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </top>

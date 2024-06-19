@@ -3,16 +3,16 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.ButtonType;
 
-public class ControleurBoutonJournalisteISport implements EventHandler<ActionEvent> {
+public class ControleurBoutonJournalisteIPays implements EventHandler<ActionEvent> {
 
     private VueAppliJO vueJO;
 
-    public ControleurBoutonJournalisteISport(VueAppliJO vueJO) {
+    public ControleurBoutonJournalisteIPays(VueAppliJO vueJO) {
         this.vueJO = vueJO;
 
     }
 
     public void handle(ActionEvent actionEvent) {
-        this.vueJO.pageJournalisteISport();
+        this.vueJO.pageJournalisteIPays();
     }
 }

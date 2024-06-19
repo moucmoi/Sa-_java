@@ -10,6 +10,6 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        this.vueJO.pageJournaliste();
+        this.vueJO.pageJournalisteIPays();
     }
 }
