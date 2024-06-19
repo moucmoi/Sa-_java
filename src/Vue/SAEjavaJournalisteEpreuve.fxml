@@ -36,7 +36,7 @@
                      </HBox.margin>
                      <children>
                         <Label alignment="CENTER" prefHeight="27.0" prefWidth="219.0" style="-fx-border-color: black;" text="Classement" />
-                        <Button fx:id="ajouter" alignment="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: white; -fx-border-color: black;" text="AJouter">
+                        <Button fx:id="ajouter" alignment="CENTER" mnemonicParsing="false" prefHeight="14.0" prefWidth="68.0" style="-fx-background-color: white; -fx-border-color: black;" text="AJouter">
                            <VBox.margin>
                               <Insets left="127.0" right="2.0" top="2.0" />
                            </VBox.margin>
