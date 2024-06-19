@@ -14,8 +14,6 @@ public class Athlete implements Comparable<Athlete>{
     private int nbOr;
     private int nbArgent;
     private int nbBronze;
-
-
     private Equipe equipe;
     private int nbOr;
     private int nbArgent;

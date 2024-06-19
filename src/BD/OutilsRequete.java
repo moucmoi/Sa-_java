@@ -10,7 +10,6 @@ public class OutilsRequete {
     Statement st2;
     Statement st3;
 
-
     /**
      * Constructeur d'OutilsRequete
      * @param connexionMySQL la classe pour se connecter sur le serveur
@@ -258,10 +257,29 @@ public class OutilsRequete {
         return listeRetour;
     }
 
-    public void inscription(String nomUtilisateur, String motDePasse) throws SQLException {
+    public boolean inscription(String nomUtilisateur, String motDePasse) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-            String requete = "INSERT INTO UTILISATEUR VALUES(" ;
+        rs = st.executeQuery("SELECT * FROM UTILISATEUR WHERE nom_utilisateur = \"" + nomUtilisateur + "\";");
+        if (rs!=null) {
+            String requete = "INSERT INTO UTILISATEUR VALUES(\"" + nomUtilisateur + "\", \"" + motDePasse + "\",0;"; // 0 à la fin correspond à l'id du rôle journaliste   
+            st.executeUpdate(requete);
+            return true;
+        }
+        return false;
+    }
+
+    public int verifConnexion(String nomUtilisateur, String motDePasse) throws SQLException {
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        String requete = "SELECT * FROM UTILISATEUR NATURAL JOIN ROLE WHERE nom_utilisateur = \"" + nomUtilisateur + " AND motDePasse = \"" + motDePasse + "\";";
+        rs = st.executeQuery(requete);
+        if (rs!=null) {
+            return rs.getInt("id_role"); // 0 si journaliste, 1 si organisateur et 2 si administrateur
+        }
+        else {
+            return 3; // utilisateur inconnu
+        }   
     }
 }
 
