@@ -1,3 +1,4 @@
+package BD;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ public class VueAppliJO extends Application {
     
     private Scene Accueil;
     private BorderPane rootAccueil;
+
     private Scene pageConnexion;
     private BorderPane rootConnexion;
 
@@ -42,7 +44,7 @@ public class VueAppliJO extends Application {
     
     private Scene pageJIPays;
     private BorderPane rootJIPays;
-  
+
     private Scene pageJISport;
     private BorderPane rootJISport;
 
@@ -61,15 +63,17 @@ public class VueAppliJO extends Application {
     private Stage stageVue;
     private BorderPane root;
     private FXMLLoader loader;
-
+    private ConnexionMySQL connexionMySQL;
+    private OutilsRequete outils;
     private String role=null;
 
-    public VueAppliJO() {
-        super();
-    }
+    
+    
+    @Override
+    public void init(){
 
-    public String getRole() {
-        return this.role;
+        this.connexionMySQL=new ConnexionMySQL();
+        this.outils=new OutilsRequete(connexionMySQL);
     }
 
     public Alert popUpDeconnexion(){
@@ -90,24 +94,37 @@ public class VueAppliJO extends Application {
         this.stageVue.setScene(pageInscription);
     }
 
-    public void pageOrganisateur() {
-        this.stageVue.setScene(pageOrganisateurAcceuil);
-        this.role = "Organisateur";
+    public void pageJournaliste() {
+        this.stageVue.setScene(pageJournaliste);
+    }
+
+    public void pageJournalisteIAthlete() {
+        this.stageVue.setScene(pageJIAthlete);
+    }
+
+    public void pageJournalisteISport() {
+        this.stageVue.setScene(pageJISport);
+    }
+
+    public void pageJournalisteIEpreuve() {
+        this.stageVue.setScene(pageJAthlete);
     }
 
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
-
         ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
-        //ControleurConnexion crtlCo = new ControleurConnexion(this);
+        ControleurConnexion crtlCo = new ControleurConnexion(this);
         ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
         ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
         ControleurRetour crtlRetour = new ControleurRetour(this);
         ControleurInscription crtlIn = new ControleurInscription(this);
         ControleurOrganisateur crtlOrga = new ControleurOrganisateur(this);
         ControleurHome crtlHome = new ControleurHome(this);
-
+        ControleurBoutonJournalisteAccueil crtlJAccueil = new ControleurBoutonJournalisteAccueil(this);
+        ControleurBoutonJournalisteIAthlete crtlJIAthlete = new ControleurBoutonJournalisteIAthlete(this);
+        ControleurBoutonJournalisteISport crtlJISport = new ControleurBoutonJournalisteISport(this);
+        ControleurBoutonJournalisteIEpreuve crtlJIEpreuve = new ControleurBoutonJournalisteIEpreuve(this);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
@@ -126,7 +143,7 @@ public class VueAppliJO extends Application {
         Button bConnexion = (Button) pageConnexion.lookup("#connexion");
 
         bRetourC.setOnAction(crtlRetour);
-        // bConnexion.setOnAction(crtlCo);
+        bConnexion.setOnAction(crtlCo);
 
         this.loader = new FXMLLoader(this.getClass().getResource("page_inscription.fxml"));
         this.rootInscription = loader.load();
@@ -146,6 +163,18 @@ public class VueAppliJO extends Application {
         this.rootJournaliste = loader.load();
         this.pageJournaliste = new Scene(rootJournaliste);
 
+        Button bDecoJ = (Button) pageJournaliste.lookup("#deconnexion");
+        Button bJournaliste = (Button) pageJournaliste.lookup("#home");
+        Button bJIAthlete = (Button) pageJournaliste.lookup("#athlete");
+        Button bJISport = (Button) pageJournaliste.lookup("#sport");
+        Button bJIEpreuve = (Button) pageJournaliste.lookup("#epreuve");
+
+        bDecoJ.setOnAction(crtlDeco);
+        bJournaliste.setOnAction(crtlJAccueil);
+        bJIAthlete.setOnAction(crtlJIAthlete);
+        bJISport.setOnAction(crtlJISport);
+        bJIEpreuve.setOnAction(crtlJIEpreuve);
+
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
         this.rootJAthlete = loader.load();
         this.pageJAthlete = new Scene(rootJAthlete);
@@ -153,7 +182,6 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteInfoAthlete.fxml"));
         this.rootJIAthlete = loader.load();
         this.pageJIAthlete = new Scene(rootJIAthlete);
-
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteEpreuve.fxml"));
         this.rootJEpreuve = loader.load();
@@ -187,15 +215,8 @@ public class VueAppliJO extends Application {
         this.rootOrganisateurAcceuil = loader.load();
         this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
 
-        Button bdeco = (Button) pageOrganisateurAcceuil.lookup("#deconnexion");
-        Button bhomeOrga = (Button) pageOrganisateurAcceuil.lookup("#home");
-        //Button bfiltre = (Button) pageOrganisateurAcceuil.lookup("#filtre");
-        //Button brecherche = (Button) pageOrganisateurAcceuil.lookup("#recherche");
 
-        bdeco.setOnAction(crtlDeco);
-        bhomeOrga.setOnAction(crtlHome);
-
-        this.stageVue.setScene(pageOrganisateurAcceuil);
+        this.stageVue.setScene(mainScene);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
         this.stageVue.show();
     }

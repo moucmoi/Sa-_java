@@ -28,33 +28,6 @@
                      </HBox.margin>
                      <children>
                         <Label alignment="CENTER" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: black;" text="Médailles" />
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="OR" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: black;" text="ARGENT" />
-                              <Label alignment="CENTER" prefHeight="60.0" prefWidth="70.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="76.0" style="-fx-border-color: black;" text="BRONZE" />
-                              <Label alignment="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
                      </children>
                   </VBox>
                   <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
@@ -62,10 +35,7 @@
                         <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                      </HBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="37.0" prefWidth="147.0" style="-fx-border-color: black;" text="Information Général" />
-                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="157.0" text="Genre" />
-                        <Label alignment="CENTER" prefHeight="57.0" prefWidth="147.0" text="Nom Pays" />
-                        <Label alignment="CENTER" prefHeight="53.0" prefWidth="147.0" text="Nom Equipe" />
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="147.0" style="-fx-border-color: black;" text="Information Général" />
                      </children>
                   </VBox>
                   <VBox prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
@@ -73,34 +43,7 @@
                         <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                      </HBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="38.0" prefWidth="148.0" style="-fx-border-color: black;" text="Statistique" />
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Agilité" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Endurance" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
-                        <HBox prefHeight="50.0" prefWidth="147.0" style="-fx-border-color: black;">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="49.0" prefWidth="80.0" style="-fx-border-color: black;" text="Force" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="68.0" style="-fx-border-color: black;" text="nb" />
-                           </children>
-                           <VBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </VBox.margin>
-                        </HBox>
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="148.0" style="-fx-border-color: black;" text="Statistique" />
                      </children>
                   </VBox>
                </children>
@@ -117,7 +60,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../img.Deconnexion.png" />
+                              <Image url="@../../img/Deconnexion.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -151,7 +94,7 @@
                <items>
                   <Button fx:id="pays" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Pays" />
                   <Button fx:id="athlete" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Athlète" />
-                  <Button fx:id="sport" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Sport" />
+                  <Button fx:id="equipe" mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Equipe" />
                   <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
                </items>
             </ToolBar>

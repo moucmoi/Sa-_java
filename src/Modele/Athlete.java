@@ -246,7 +246,7 @@ public class Athlete implements Comparable<Athlete>{
      */
     @Override
     public int compareTo(Athlete a){
-        return (this.nbOr+this.nbArgent+this.nbBronze)-(a.nbOr-a.getArgent()-a.getBronze());
+        return this.nom.compareTo(a.getNom());
     }
 
     /**
