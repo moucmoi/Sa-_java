@@ -1,3 +1,6 @@
+
+
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -5,7 +8,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 public class VueAppliJO extends Application {
 
@@ -44,6 +50,7 @@ public class VueAppliJO extends Application {
     private Scene pageJIEquipe;
     private BorderPane rootJIEquipe;
 
+
     private Scene pageJPays;
     private BorderPane rootJPays;
 
@@ -62,11 +69,26 @@ public class VueAppliJO extends Application {
 
     public VueAppliJO() {
         super();
+
+    private String role=null;
+    private JO modele;
+
+    
+    
+    @Override
+    public void init(){
+
     }
 
     public Alert popUpDeconnexion(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Vous allez vous déconnecter \n Etes-vous sûr de vous déconnecter ?", ButtonType.YES, ButtonType.NO);
         alert.setTitle("Attention");
+        return alert;
+    }
+
+    public Alert popUpUtilisateurOuMdpIncorrect(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Nom d'utilisateur ou mot de passe incorrect", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Erreur");
         return alert;
     }
   
@@ -84,6 +106,7 @@ public class VueAppliJO extends Application {
 
     public void pageJournalisteIPays() {
         this.stageVue.setScene(pageJIPays);
+
     }
 
     public void pageJournalisteIAthlete() {
@@ -96,21 +119,36 @@ public class VueAppliJO extends Application {
 
     public void pageJournalisteIEpreuve() {
         this.stageVue.setScene(pageJIEpreuve);
+
+        Vbox mileu=pageJIAthlete.lookup(vbox);
+        List<Button>resultat=this.modele.requete.barreRechercheAthlete(pageJIAthlete.lookup(textfield).getText());
+        for(int i=0;i<resultat.size();i++){
+            HBox hbox=new HBox();
+            hbox.getChildren().add(new Label(i+1));
+            hbox.getChildren().add(resultat.get(i));
+        }
+    }
+
+
     }
 
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
-
         ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
-        ControleurConnexion crtlCo = new ControleurConnexion(this);
+        ControleurConnexion crtlCo = new ControleurConnexion(this, this.modele.getOutilsRequete());
+      
         ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
         ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
         ControleurRetour crtlRetour = new ControleurRetour(this);
         ControleurInscription crtlIn = new ControleurInscription(this);
+
         ControleurBoutonJournalisteIPays crtlJIPays = new ControleurBoutonJournalisteIPays(this);
         ControleurBoutonJournalisteIAthlete crtlJIAthlete = new ControleurBoutonJournalisteIAthlete(this);
         ControleurBoutonJournalisteIEquipe crtlJIEquipe = new ControleurBoutonJournalisteIEquipe(this);
+        ControleurOrganisateur crtlOrga = new ControleurOrganisateur(this);
+        ControleurHome crtlHome = new ControleurHome(this);
+
         ControleurBoutonJournalisteIEpreuve crtlJIEpreuve = new ControleurBoutonJournalisteIEpreuve(this);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
@@ -146,6 +184,18 @@ public class VueAppliJO extends Application {
         this.rootAdmin = loader.load();
         this.pageAdmin = new Scene(rootAdmin);
 
+
+        Button bDecoJ = (Button) pageJournaliste.lookup("#deconnexion");
+        Button bJournaliste = (Button) pageJournaliste.lookup("#home");
+        Button bJIAthlete = (Button) pageJournaliste.lookup("#athlete");
+        Button bJISport = (Button) pageJournaliste.lookup("#sport");
+        Button bJIEpreuve = (Button) pageJournaliste.lookup("#epreuve");
+
+        bDecoJ.setOnAction(crtlDeco);
+        bJournaliste.setOnAction(crtlJAccueil);
+        bJIAthlete.setOnAction(crtlJIAthlete);
+        bJISport.setOnAction(crtlJISport);
+        bJIEpreuve.setOnAction(crtlJIEpreuve);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
         this.rootJAthlete = loader.load();
