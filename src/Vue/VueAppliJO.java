@@ -1,4 +1,4 @@
-package BD;
+ 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -63,17 +63,13 @@ public class VueAppliJO extends Application {
     private Stage stageVue;
     private BorderPane root;
     private FXMLLoader loader;
-    private ConnexionMySQL connexionMySQL;
-    private OutilsRequete outils;
     private String role=null;
+    private JO modele;
 
     
     
     @Override
     public void init(){
-
-        this.connexionMySQL=new ConnexionMySQL();
-        this.outils=new OutilsRequete(connexionMySQL);
     }
 
     public Alert popUpDeconnexion(){
