@@ -63,6 +63,26 @@ public class VueAppliJO extends Application {
     private BorderPane root;
     private FXMLLoader loader;
 
+    private ConnexionMySQL connexionMySQL;
+    private OutilsRequete outils;
+    private String role=null;
+    
+    @Override
+    public init(){
+        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
+        //ControleurConnexion crtlCo = new ControleurConnexion(this);
+        ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
+        ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
+        ControleurRetour crtlRetour = new ControleurRetour(this);
+        ControleurInscription crtlIn = new ControleurInscription(this);
+        ControleurOrganisateur crtlOrga = new ControleurOrganisateur(this);
+        ControleurHome crtlHome = new ControleurHome(this);
+
+        this.connexionMySQL=new ConnexionMySQL();
+        this.outils=new OutilsRequete(connexionMySQL);
+    }
+
+
     public VueAppliJO() {
         super();
     }
@@ -104,7 +124,7 @@ public class VueAppliJO extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
-
+      
         ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
         ControleurConnexion crtlCo = new ControleurConnexion(this);
         ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
@@ -115,6 +135,7 @@ public class VueAppliJO extends Application {
         ControleurBoutonJournalisteIAthlete crtlJIAthlete = new ControleurBoutonJournalisteIAthlete(this);
         ControleurBoutonJournalisteISport crtlJISport = new ControleurBoutonJournalisteISport(this);
         ControleurBoutonJournalisteIEpreuve crtlJIEpreuve = new ControleurBoutonJournalisteIEpreuve(this);
+
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
