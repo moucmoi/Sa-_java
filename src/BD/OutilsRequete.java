@@ -257,6 +257,13 @@ public class OutilsRequete {
         return listeRetour;
     }
 
+    /**
+     * Permet l'inscription (d'un journaliste), retourne un boulean indiquant si l'inscription s'est bien déroulée
+     * @param nomUtilisateur le nom du nouvel utilisateur
+     * @param motDePasse le mot de passe du nouvel utilisateur
+     * @return boolean indiquant si l'opération s'est bien déroulée
+     * @throws SQLException exception SQL
+     */
     public boolean inscription(String nomUtilisateur, String motDePasse) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
@@ -269,6 +276,13 @@ public class OutilsRequete {
         return false;
     }
 
+    /**
+     * Permet de vérifier la connexion et si l'utilisateur existe retourné son rôle via un int
+     * @param nomUtilisateur le nom de l'utilisateur
+     * @param motDePasse le mot de passe de l'utilisateur
+     * @return un int, 0, 1 ou 2 si la connexion s'est bien déroulée. 0 si c'est un journaliste, 1 si c'est un organisateur et 2 si c'est un administrateur. Renvoie 3 si le combo de l'utilisateur et du mot de passe n'existe pas
+     * @throws SQLException exception SQL
+     */
     public int verifConnexion(String nomUtilisateur, String motDePasse) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
