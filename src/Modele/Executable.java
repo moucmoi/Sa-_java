@@ -306,27 +306,26 @@ public class Executable{
 
 
 
-        public void simulerJo(List<Epreuve> listeEpreuve,List<List<Equipe>> listeSports){
-            for(Epreuve e:listeEpreuve){
-                for(List<Equipe> eq:listeSports){
-                    List<Equipe> ordre=e.simulerEpreuve(eq);
-                    ordre.get(0).ajouterMedaille("Or");
-                    ordre.get(1).ajouterMedaille("Argent");
-                    ordre.get(2).ajouterMedaille("Bronze");
-                    for(Athlete a:ordre.get(0).getLesAthletes()){
-                        a.ajouterMedaille("Or");
-                    }
-                    for(Athlete a:ordre.get(1).getLesAthletes()){
-                        a.ajouterMedaille("Argent");
-                    }
-                    for(Athlete a:ordre.get(2).getLesAthletes()){
-                        a.ajouterMedaille("Bronze");
-                    }
+
+        for(Epreuve e:listeEpreuve){
+            for(List<Equipe> eq:listeSports){
+                List<Equipe> ordre=e.simulerEpreuve(eq);
+                ordre.get(0).ajouterMedaille("Or");
+                ordre.get(1).ajouterMedaille("Argent");
+                ordre.get(2).ajouterMedaille("Bronze");
+                for(Athlete a:ordre.get(0).getLesAthletes()){
+                    a.ajouterMedaille("Or");
+                }
+                for(Athlete a:ordre.get(1).getLesAthletes()){
+                    a.ajouterMedaille("Argent");
+                }
+                for(Athlete a:ordre.get(2).getLesAthletes()){
+                    a.ajouterMedaille("Bronze");
                 }
             }
-            for(Pays p:pays){
-                p.majMedaille();
-            }
+        }
+        for(Pays p:pays){
+            p.majMedaille();
         }
     }
 }
