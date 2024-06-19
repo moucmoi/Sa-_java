@@ -1,6 +1,6 @@
- 
-import java.util.List;
 
+
+import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -101,6 +101,13 @@ public class VueAppliJO extends Application {
 
     public void pageJournalisteIAthlete() {
         this.stageVue.setScene(pageJIAthlete);
+        Vbox mileu=pageJIAthlete.lookup(vbox);
+        List<Button>resultat=this.modele.requete.barreRechercheAthlete(pageJIAthlete.lookup(textfield).getText());
+        for(int i=0;i<resultat.size();i++){
+            HBox hbox=new HBox();
+            hbox.getChildren().add(new Label(i+1));
+            hbox.getChildren().add(resultat.get(i));
+        }
     }
 
     public void pageJournalisteISport() {
