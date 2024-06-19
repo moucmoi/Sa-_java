@@ -53,7 +53,7 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField prefHeight="33.0" prefWidth="382.0">
+            <TextField fx:id="textfield" prefHeight="33.0" prefWidth="382.0">
                <HBox.margin>
                   <Insets left="75.0" top="100.0" />
                </HBox.margin>

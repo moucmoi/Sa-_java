@@ -15,7 +15,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="327.0" prefWidth="370.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="page_connexion" alignment="CENTER" mnemonicParsing="false" prefHeight="58.0" prefWidth="137.0" scaleShape="false" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10;" text="Connexion">
                <VBox.margin>

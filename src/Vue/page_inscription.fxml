@@ -38,7 +38,7 @@
                         <Insets left="10.0" />
                      </opaqueInsets>
                   </Label>
-                  <TextField prefHeight="24.0" prefWidth="100.0">
+                  <TextField fx:id="textfield" prefHeight="24.0" prefWidth="100.0">
                      <opaqueInsets>
                         <Insets left="10.0" />
                      </opaqueInsets>
@@ -58,7 +58,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Label>
-                  <PasswordField prefHeight="24.0" prefWidth="108.0">
+                  <PasswordField fx:id="passwordfield1" prefHeight="24.0" prefWidth="108.0">
                      <opaqueInsets>
                         <Insets left="10.0" />
                      </opaqueInsets>
@@ -86,7 +86,7 @@
                         </Label>
                      </children>
                   </VBox>
-                  <PasswordField prefHeight="24.0" prefWidth="96.0">
+                  <PasswordField fx:id="passwordfield2" prefHeight="24.0" prefWidth="96.0">
                      <opaqueInsets>
                         <Insets left="10.0" />
                      </opaqueInsets>
