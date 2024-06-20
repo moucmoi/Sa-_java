@@ -4,8 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,19 +15,15 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <VBox fx:id="vbox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="vbox" prefHeight="303.0" prefWidth="598.0" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="45.0" prefWidth="600.0">
                <children>
-                  <MenuButton fx:id="filtre" mnemonicParsing="false" prefHeight="24.0" prefWidth="71.0" text="filtre">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="croissant" />
-                      <MenuItem mnemonicParsing="false" text="decroissant" />
-                    </items>
+                  <Button mnemonicParsing="false" style="-fx-background-color: WHITE; -fx-border-color: BLACK; -fx-border-radius: 5;" text="AJOUTER">
                      <HBox.margin>
-                        <Insets left="20.0" right="10.0" top="10.0" />
+                        <Insets left="20.0" right="10.0" top="12.0" />
                      </HBox.margin>
-                  </MenuButton>
+                  </Button>
                   <TextField fx:id="textfield" prefHeight="27.0" prefWidth="427.0">
                      <HBox.margin>
                         <Insets top="10.0" />
@@ -99,4 +94,7 @@
          </children>
       </VBox>
    </top>
+   <right>
+      <ScrollBar fx:id="scroll" orientation="VERTICAL" prefHeight="249.0" prefWidth="15.0" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>

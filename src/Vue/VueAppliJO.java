@@ -119,12 +119,10 @@ public class VueAppliJO extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
-        //new ControleurConnexion(this,this.modele.getOutilsRequete());
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
         this.mainScene = new Scene(rootAccueil); 
-        this.modele.simulationJO();
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");

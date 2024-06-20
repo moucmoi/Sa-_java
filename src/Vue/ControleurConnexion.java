@@ -8,35 +8,31 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
     private VueAppliJO vueJO;
     private OutilsRequete outilsRequete;
 
-    // private OutilsRequete outilsRequete;
-
-    // public ControleurConnexion(VueAppliJO vueJO, OutilsRequete outilsRequete) throws SQLException, ClassNotFoundException{
-    public ControleurConnexion(VueAppliJO vueJO) throws SQLException, ClassNotFoundException{
+     public ControleurConnexion(VueAppliJO vueJO, OutilsRequete outilsRequete) throws SQLException, ClassNotFoundException{
         this.vueJO = vueJO;
-        // this.outilsRequete = outilsRequete;
+        this.outilsRequete = outilsRequete;
     }
 
     public void handle(ActionEvent actionEvent) {
-        this.vueJO.pageJournalisteIPays();
-    //    String nomUtilisateur = this.vueJO.pageConnexion.lookup("#textfield").getAccessibleText();
-    //    String mdp = this.vueJO.pageConnexion.lookup("#passwordfield").getAccessibleText();
-    //    try {
-    //     int retour = outilsRequete.verifConnexion(nomUtilisateur, mdp);
-    //     if (retour == 0) {
-    //         this.vueJO.pageJournalisteIPays();
-    //     }
-    //     else if (retour == 1) {
-    //         this.vueJO.pageOrganisateurAcceuil();
-    //     }
-    //     else if (retour == 2) {
-    //         this.vueJO.pageAccueilAdmin();
-    //     }
-    //     else {
-    //         this.vueJO.popUpUtilisateurOuMdpIncorrect();
-    //     }
+        String nomUtilisateur = this.vueJO.pageConnexion.lookup("#textfield").getAccessibleText();
+        String mdp = this.vueJO.pageConnexion.lookup("#passwordfield").getAccessibleText();
+        try {
+         int retour = outilsRequete.verifConnexion(nomUtilisateur, mdp);
+         if (retour == 0) {
+             this.vueJO.pageJournalisteIPays();
+         }
+         else if (retour == 1) {
+             this.vueJO.pageOrganisateurAcceuil();
+         }
+         else if (retour == 2) {
+             this.vueJO.pageAccueilAdmin();
+         }
+         else {
+             this.vueJO.popUpUtilisateurOuMdpIncorrect();
+         }
         
-    //    }
-    //    catch (SQLException e) {
-    //    }
+        }
+        catch (SQLException e) {
+        }
     }
 }
