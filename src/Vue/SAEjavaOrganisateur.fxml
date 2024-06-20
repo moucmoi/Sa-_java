@@ -17,7 +17,7 @@
          <children>
             <HBox prefHeight="48.0" prefWidth="598.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="500.0" text="                      Nom Epreuve" />
+                  <Label fx:id="label" alignment="CENTER" prefHeight="36.0" prefWidth="500.0" />
                   <Button fx:id="enregistrer" mnemonicParsing="false" prefHeight="12.0" prefWidth="133.0" style="-fx-background-color: WHITE; -fx-border-color: black; -fx-border-radius: 5;" text="ENREGISTRER">
                      <HBox.margin>
                         <Insets left="5.0" right="2.0" top="5.0" />
