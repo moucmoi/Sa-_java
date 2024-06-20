@@ -61,8 +61,8 @@ public class VueAppliJO extends Application {
     private Scene pageOrganisateur;
     private BorderPane rootOrganisateur;
 
-    private Scene pageOrganisateurAcceuil;
-    private BorderPane rootOrganisateurAcceuil;
+    private Scene pageOrganisateurAccueil;
+    private BorderPane rootOrganisateurAccueil;
 
     private Stage stageVue;
     private BorderPane root;
@@ -101,10 +101,10 @@ public class VueAppliJO extends Application {
         this.crtlBJEP=new ControleurBoutonJournalisteEpreuve(this, modele);
         this.crtlBJP=new ControleurBoutonJournalistePays(this, modele);
         this.crtlBA=new ControleurBoutonAccueil(this);
-        this.crtlCo=new ControleurConnexion(this);
+        this.crtlCo=new ControleurConnexion(this, this.modele.getOutilsRequete());
         this.crtlDeco=new ControleurDeconnexion(this);
         this.crtlRetour=new ControleurRetour(this);
-        this.crtlIn=new ControleurInscription(this);
+        this.crtlIn=new ControleurInscription(this, this.modele.getOutilsRequete());
         this.crtlJIPays=new ControleurBoutonJournalisteIPays(this);
         this.crtlJIAthlete= new ControleurBoutonJournalisteIAthlete(this);
         this.crtlJIEquipe=new ControleurBoutonJournalisteIEquipe(this);
@@ -303,8 +303,8 @@ public class VueAppliJO extends Application {
         this.pageOrganisateur = new Scene(rootOrganisateur);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
-        this.rootOrganisateurAcceuil = loader.load();
-        this.pageOrganisateurAcceuil = new Scene(rootOrganisateurAcceuil);
+        this.rootOrganisateurAccueil = loader.load();
+        this.pageOrganisateurAccueil = new Scene(rootOrganisateurAccueil);
 
 
         this.stageVue.setScene(mainScene);
@@ -319,7 +319,13 @@ public class VueAppliJO extends Application {
     }
 
     public Alert popUpUtilisateurOuMdpIncorrect(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Nom d'utilisateur ou mot de passe incorrect", ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Nom d'utilisateur incorrect, celui-ci existe déjà, veillez en enttrer un autre");
+        alert.setTitle("Erreur");
+        return alert;
+    }
+
+    public Alert popUpInscriptionIncorrect(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Nom d'utilisateur ou mot de passe invalide");
         alert.setTitle("Erreur");
         return alert;
     }
@@ -340,6 +346,10 @@ public class VueAppliJO extends Application {
         return pageJEpreuve;
     }
 
+    public Scene getPageConnexion() {
+        return this.pageConnexion;
+    }
+
   
     public void pageAccueil() {
         this.stageVue.setScene(mainScene);
@@ -353,8 +363,17 @@ public class VueAppliJO extends Application {
         this.stageVue.setScene(pageInscription);
     }
 
+    public void pageOrganisateurAccueil() {
+        this.stageVue.setScene(pageOrganisateurAccueil);
+    }
+
+    public void pageAccueilAdmin() {
+        this.stageVue.setScene(pageAccueilAdmin);
+    }
+
+
+
     public void pageJournalistePays(Pays p) throws SQLException{
-        this.stageVue.setScene(pageJPays);
         List<Integer> listeMedaille =modele.getOutilsRequete().listerMedaillesPays(p);
         List<Athlete> listeAthletes=modele.getOutilsRequete().listerAthletePourUnSport(p.getNomPays());
         VBox vBoxM=(VBox)pageJPays.lookup("#vbox1");
@@ -383,13 +402,13 @@ public class VueAppliJO extends Application {
             hbox.getChildren().add(new Label(a.getPrenom()));
             vBoxA.getChildren().add(hbox);
         }
+        this.stageVue.setScene(pageJPays);
     }
 
     public void pageJournalisteIPays() {
-        this.stageVue.setScene(pageJIPays);
         if(crtlRJP.getPays().isEmpty()){
             List<Pays> liste=this.crtlBJP.getListe();
-            VBox vBox=(VBox)pageJPays.lookup("#vbox");
+            VBox vBox=(VBox)pageJIPays.lookup("#vbox");
             for(int i=0;i<liste.size();i++){
                 HBox hbox=new HBox();
                 hbox.getChildren().add(new Label(String.valueOf(i+1)));
@@ -401,17 +420,17 @@ public class VueAppliJO extends Application {
         }
         else{
             List<String> liste=this.crtlRJP.getPays();
-            VBox vBox=(VBox)pageJPays.lookup("#vbox");
+            VBox vBox=(VBox)pageJIPays.lookup("#vbox");
             for(String s:liste){
                 Button bouton=new Button(s);
                 bouton.setOnAction(crtlAPIJ);
                 vBox.getChildren().add(bouton);
             }
         }
+        this.stageVue.setScene(pageJIPays);
     }
 
     public void pageJournalisteAthlete(Athlete a) throws SQLException{
-        this.stageVue.setScene(pageJAthlete);
         List<Integer> listeMedaille = modele.getOutilsRequete().listerMedaillesAthlete(a);
         VBox vBoxM=(VBox)pageJAthlete.lookup("#vbox1");
         HBox hBoxM=new HBox();
@@ -436,7 +455,7 @@ public class VueAppliJO extends Application {
         this.stageVue.setScene(pageJIAthlete);
         if(crtlRJA.getAthletes().isEmpty()){
             List<Athlete> liste=this.crtlBJA.getListe();
-            VBox vBox=(VBox)pageJAthlete.lookup("#vbox");
+            VBox vBox=(VBox)pageJIAthlete.lookup("#vbox");
             for(int i=0;i<liste.size();i++){
                 HBox hbox=new HBox();
                 hbox.getChildren().add(new Label(String.valueOf(i+1)));
@@ -448,17 +467,17 @@ public class VueAppliJO extends Application {
         }
         else{
             List<String> liste=this.crtlRJA.getAthletes();
-            VBox vBox=(VBox)pageJAthlete.lookup("#vbox");
+            VBox vBox=(VBox)pageJIAthlete.lookup("#vbox");
             for(String s:liste){
                 Button bouton=new Button(s);
                 bouton.setOnAction(crtlAPIJ);
                 vBox.getChildren().add(bouton);
             }
         }
+        this.stageVue.setScene(pageJAthlete);
     }
 
     public void pageJournalisteEquipe(Equipe e) throws SQLException{
-        this.stageVue.setScene(pageJEquipe);
         List<Integer> listeMedaille =modele.getOutilsRequete().listerMedaillesEquipe(e);
         List<Athlete> listeAthletes=modele.getOutilsRequete().listerAthletePourEquipe(e.getNum());
         VBox vBoxA=(VBox)pageJEquipe.lookup("#vbox1");
@@ -487,10 +506,10 @@ public class VueAppliJO extends Application {
             hbox.getChildren().add(new Label(a.getPrenom()));
             vBoxA.getChildren().add(hbox);
         }
+        this.stageVue.setScene(pageJEquipe);
     }
 
     public void pageJournalisteIEquipe() {
-        this.stageVue.setScene(pageJIEquipe);
         if(crtlRJEQ.getEquipes().isEmpty()){
             List<Equipe> liste=this.crtlBJEQ.getListe();
             VBox vBox=(VBox)pageJEquipe.lookup("#vbox");
@@ -512,10 +531,10 @@ public class VueAppliJO extends Application {
                 vBox.getChildren().add(bouton);
             }
         }
+        this.stageVue.setScene(pageJIEquipe);
     }
 
     public void pageJournalisteEpreuve(Epreuve e){
-        this.stageVue.setScene(pageJEpreuve);
         VBox vBoxI=(VBox)pageJEpreuve.lookup("#vbox1");
         vBoxI.getChildren().add(new Label(e.getNom()));
         if(e.getHomme()){
@@ -555,6 +574,7 @@ public class VueAppliJO extends Application {
                 vBox.getChildren().add(bouton);
             }
         }
+        this.stageVue.setScene(pageJEpreuve);
     }
 
 

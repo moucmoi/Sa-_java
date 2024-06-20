@@ -1,4 +1,5 @@
-
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,15 +15,21 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        String nomUtilisateur = this.vueJO.pageConnexion.lookup("#textfield").getAccessibleText();
-        String mdp = this.vueJO.pageConnexion.lookup("#passwordfield").getAccessibleText();
+        TextField textUtilisateur = (TextField) this.vueJO.getPageConnexion().lookup("#textfield");
+        PasswordField passwordfieldUtilisateur = (PasswordField) this.vueJO.getPageConnexion().lookup("#passwordfield");
+        String nomUtilisateur = textUtilisateur.getText() ;
+        String mdp = passwordfieldUtilisateur.getText();
+        System.out.println(nomUtilisateur);
+        System.out.println(mdp); 
         try {
          int retour = outilsRequete.verifConnexion(nomUtilisateur, mdp);
+         System.out.println(retour);
+
          if (retour == 0) {
              this.vueJO.pageJournalisteIPays();
          }
          else if (retour == 1) {
-             this.vueJO.pageOrganisateurAcceuil();
+            this.vueJO.pageOrganisateurAcceuil();
          }
          else if (retour == 2) {
              this.vueJO.pageAccueilAdmin();
@@ -33,6 +40,7 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
         
         }
         catch (SQLException e) {
+            this.vueJO.popUpUtilisateurOuMdpIncorrect();
         }
     }
 }
