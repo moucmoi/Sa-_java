@@ -285,7 +285,7 @@ public class OutilsRequete {
     public int verifConnexion(String nomUtilisateur, String motDePasse) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT * FROM UTILISATEUR NATURAL JOIN ROLE WHERE nom_utilisateur = \"" + nomUtilisateur + " AND motDePasse = \"" + motDePasse + "\";";
+        String requete = "SELECT * FROM UTILISATEUR NATURAL JOIN ROLES WHERE nom_utilisateur = \"" + nomUtilisateur + " AND motDePasse = \"" + motDePasse + "\";";
         rs = st.executeQuery(requete);
         if (rs!=null) {
             return rs.getInt("id_role"); // 0 si journaliste, 1 si organisateur et 2 si administrateur
