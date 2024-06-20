@@ -325,7 +325,7 @@ public class VueAppliJO extends Application {
     }
 
     public Alert popUpInscriptionIncorrect(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Nom d'utilisateur ou mot de passe invalide", ButtonType.YES, ButtonType.NO);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Nom d'utilisateur ou mot de passe invalide");
         alert.setTitle("Erreur");
         return alert;
     }
