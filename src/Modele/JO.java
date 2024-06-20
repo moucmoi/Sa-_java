@@ -14,6 +14,7 @@ public class JO {
 
     public JO() throws ClassNotFoundException , SQLException{
         this.connexion = new ConnexionMySQL();
+        this.connexion.connecter("ConfigBD.txt");
         this.requete = new OutilsRequete(this.connexion);
         this.pays=this.requete.listerPays();
         this.equipes=this.requete.listerEquipe();
