@@ -24,11 +24,12 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
         try {
          int retour = outilsRequete.verifConnexion(nomUtilisateur, mdp);
          System.out.println(retour);
+
          if (retour == 0) {
              this.vueJO.pageJournalisteIPays();
          }
          else if (retour == 1) {
-             this.vueJO.pageOrganisateurAccueil();
+            this.vueJO.pageOrganisateurAcceuil();
          }
          else if (retour == 2) {
              this.vueJO.pageAccueilAdmin();
