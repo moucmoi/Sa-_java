@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -108,4 +109,7 @@
          </children>
       </VBox>
    </top>
+   <right>
+      <ScrollBar fx:id="scroll" orientation="VERTICAL" BorderPane.alignment="CENTER" />
+   </right>
 </BorderPane>
