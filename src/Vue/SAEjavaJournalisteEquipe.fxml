@@ -15,7 +15,7 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="621.0" text="Nom Equipe" />
+            <Label fx:id="label" alignment="CENTER" prefHeight="30.0" prefWidth="621.0" />
             <HBox prefHeight="240.0" prefWidth="598.0">
                <VBox.margin>
                   <Insets bottom="5.0" />

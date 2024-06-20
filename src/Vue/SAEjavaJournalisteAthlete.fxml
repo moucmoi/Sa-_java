@@ -15,34 +15,26 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="661.0" text="Nom Athlète" />
-            <HBox prefHeight="240.0" prefWidth="598.0">
+            <Label fx:id="label" alignment="CENTER" prefHeight="48.0" prefWidth="598.0" />
+            <HBox prefHeight="200.0" prefWidth="598.0">
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
                <children>
-                  <VBox fx:id="vbox1" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox1" prefHeight="199.0" prefWidth="200.0" style="-fx-border-color: black;">
                      <HBox.margin>
-                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                        <Insets left="50.0" right="50.0" />
                      </HBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="147.0" style="-fx-border-color: black;" text="Médailles" />
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="382.0" style="-fx-border-color: black;" text="Médailles" />
                      </children>
                   </VBox>
-                  <VBox fx:id="vbox2" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
+                  <VBox fx:id="vbox2" prefHeight="199.0" prefWidth="200.0" style="-fx-border-color: black;">
                      <HBox.margin>
-                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                        <Insets left="50.0" right="50.0" />
                      </HBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="147.0" style="-fx-border-color: black;" text="Information Général" />
-                     </children>
-                  </VBox>
-                  <VBox fx:id="vbox3" prefHeight="240.0" prefWidth="150.0" style="-fx-border-color: black;">
-                     <HBox.margin>
-                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
-                     </HBox.margin>
-                     <children>
-                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="148.0" style="-fx-border-color: black;" text="Statistique" />
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="235.0" style="-fx-border-color: black;" text="Information Général" />
                      </children>
                   </VBox>
                </children>
@@ -91,8 +83,8 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="pays" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Pays" />
-                  <Button fx:id="athlete" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Athlète" />
+                  <Button fx:id="pays" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Pays" />
+                  <Button fx:id="athlete" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: lightyellow; -fx-border-color: black;" text="Athlète" />
                   <Button fx:id="equipe" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Equipe" />
                   <Button fx:id="epreuve" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: black;" text="Epreuve" />
                </children>
