@@ -20,7 +20,7 @@ public class VueAppliJO extends Application {
     private Scene Accueil;
     private BorderPane rootAccueil;
 
-    private Scene pageConnexion;
+    public Scene pageConnexion;
     private BorderPane rootConnexion;
 
     private Scene pageInscription;
@@ -136,7 +136,7 @@ public class VueAppliJO extends Application {
         this.stageVue = stage;
 
         ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
-        ControleurConnexion crtlCo = new ControleurConnexion(this);
+        ControleurConnexion crtlCo = new ControleurConnexion(this, this.modele.getOutilsRequete());
         ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
         ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
         ControleurRetour crtlRetour = new ControleurRetour(this);
