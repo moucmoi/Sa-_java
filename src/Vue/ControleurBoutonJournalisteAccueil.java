@@ -13,6 +13,6 @@ public class ControleurBoutonJournalisteAccueil implements EventHandler<ActionEv
     }
 
     public void handle(ActionEvent actionEvent) {
-        this.vueJO.pageJournaliste();
+        this.vueJO.pageJournalisteIPays();
     }
 }

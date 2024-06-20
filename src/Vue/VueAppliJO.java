@@ -1,5 +1,6 @@
 
-
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.List;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -66,89 +67,64 @@ public class VueAppliJO extends Application {
     private Stage stageVue;
     private BorderPane root;
     private FXMLLoader loader;
-
     private String role=null;
-
     private JO modele;
+
+    private ControleurBoutonJournalisteAthlete crtlBJA;
+    private ControleurBoutonJournalisteEquipe crtlBJEQ;
+    private ControleurBoutonJournalisteEpreuve crtlBJEP;
+    private ControleurBoutonJournalistePays crtlBJP;
+    private ControleurBoutonAccueil crtlBA;
+    private ControleurConnexion crtlCo;
+    private ControleurDeconnexion crtlDeco;
+    private ControleurRetour crtlRetour;
+    private ControleurInscription crtlIn;
+    private ControleurBoutonJournalisteIPays crtlJIPays;
+    private ControleurBoutonJournalisteIAthlete crtlJIAthlete;
+    private ControleurBoutonJournalisteIEquipe crtlJIEquipe;
+    private ControleurBoutonJournalisteIEpreuve crtlJIEpreuve;
+    private ControleurAllerPageInfoJ crtlAPIJ;
+    private ControleurRechercheJA crtlRJA;
+    private ControleurRechercheJP crtlRJP;
+    private ControleurRechercheJEQ crtlRJEQ;
+    private ControleurRechercheJEP crtlRJEP;
+
 
     public VueAppliJO() {
         super();
     }
 
-    
-    
-    
-
-    public Alert popUpDeconnexion(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Vous allez vous déconnecter \n Etes-vous sûr de vous déconnecter ?", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("Attention");
-        return alert;
+    public void init() throws SQLException, ClassNotFoundException,FileNotFoundException{
+        this.modele=new JO();
+        this.crtlBJA=new ControleurBoutonJournalisteAthlete(this,modele);
+        this.crtlBJEQ=new ControleurBoutonJournalisteEquipe(this, modele);
+        this.crtlBJEP=new ControleurBoutonJournalisteEpreuve(this, modele);
+        this.crtlBJP=new ControleurBoutonJournalistePays(this, modele);
+        this.crtlBA=new ControleurBoutonAccueil(this);
+        this.crtlCo=new ControleurConnexion(this);
+        this.crtlDeco=new ControleurDeconnexion(this);
+        this.crtlRetour=new ControleurRetour(this);
+        this.crtlIn=new ControleurInscription(this);
+        this.crtlJIPays=new ControleurBoutonJournalisteIPays(this);
+        this.crtlJIAthlete= new ControleurBoutonJournalisteIAthlete(this);
+        this.crtlJIEquipe=new ControleurBoutonJournalisteIEquipe(this);
+        this.crtlJIEpreuve=new ControleurBoutonJournalisteIEpreuve(this);
+        this.crtlAPIJ=new ControleurAllerPageInfoJ(this, modele);
+        this.crtlRJA=new ControleurRechercheJA(this, modele);
+        this.crtlRJP=new ControleurRechercheJP(this, modele);
+        this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
+        this.crtlRJEP=new ControleurRechercheJEP(this, modele);
     }
-
-    public Alert popUpUtilisateurOuMdpIncorrect(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Nom d'utilisateur ou mot de passe incorrect", ButtonType.YES, ButtonType.NO);
-        alert.setTitle("Erreur");
-        return alert;
-    }
-  
-    public void pageAccueil() {
-        this.stageVue.setScene(mainScene);
-    }
-
-    public void pageConnexion() {
-        this.stageVue.setScene(pageConnexion);
-    }
-
-    public void pageInscription() {
-        this.stageVue.setScene(pageInscription);
-    }
-
-    public void pageJournalisteIPays() {
-        this.stageVue.setScene(pageJIPays);
-
-    }
-
-    public void pageJournalisteIAthlete() {
-        this.stageVue.setScene(pageJIAthlete);
-    }
-
-    public void pageJournalisteIEquipe() {
-        this.stageVue.setScene(pageJIEquipe);
-    }
-
-    public void pageJournalisteIEpreuve() {
-        this.stageVue.setScene(pageJIEpreuve);
-
-        Vbox mileu=pageJIAthlete.lookup(vbox);
-        List<Button>resultat=this.modele.requete.barreRechercheAthlete(pageJIAthlete.lookup(textfield).getText());
-        for(int i=0;i<resultat.size();i++){
-            HBox hbox=new HBox();
-            hbox.getChildren().add(new Label(i+1));
-            hbox.getChildren().add(resultat.get(i));
-        }
-    }
-
-
-    
 
     @Override
     public void start(Stage stage) throws Exception{
         this.stageVue = stage;
-
-        ControleurBoutonAccueil crtlBA = new ControleurBoutonAccueil(this);
-        ControleurConnexion crtlCo = new ControleurConnexion(this, this.modele.getOutilsRequete());
-        ControleurDeconnexion crtlDeco = new ControleurDeconnexion(this);
-        ControleurBoutonJournaliste crtlBJ = new ControleurBoutonJournaliste(this);
-        ControleurRetour crtlRetour = new ControleurRetour(this);
-        ControleurInscription crtlIn = new ControleurInscription(this);
-        ControleurBoutonJournalisteIPays crtlJIPays = new ControleurBoutonJournalisteIPays(this);
-        ControleurBoutonJournalisteIAthlete crtlJIAthlete = new ControleurBoutonJournalisteIAthlete(this);
-        ControleurBoutonJournalisteIEquipe crtlJIEquipe = new ControleurBoutonJournalisteIEquipe(this);
-        ControleurBoutonJournalisteIEpreuve crtlJIEpreuve = new ControleurBoutonJournalisteIEpreuve(this);
+        //new ControleurConnexion(this,this.modele.getOutilsRequete());
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAccueil.fxml"));
         this.rootAccueil = loader.load();
         this.mainScene = new Scene(rootAccueil); 
+        this.modele.simulationJO();
 
         Button bPageC = (Button) mainScene.lookup("#page_connexion");
         Button bPageI = (Button) mainScene.lookup("#page_inscription");
@@ -336,6 +312,251 @@ public class VueAppliJO extends Application {
         this.stageVue.setScene(mainScene);
         this.stageVue.setTitle("- Jeux IUT'Olympiques -");
         this.stageVue.show();
+    }
+
+    public Alert popUpDeconnexion(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Vous allez vous déconnecter \n Etes-vous sûr de vous déconnecter ?", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Attention");
+        return alert;
+    }
+
+    public Alert popUpUtilisateurOuMdpIncorrect(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Nom d'utilisateur ou mot de passe incorrect", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Erreur");
+        return alert;
+    }
+
+    public Scene getPageJAthlete() {
+        return pageJAthlete;
+    }
+
+    public Scene getPageJEquipe() {
+        return pageJEquipe;
+    }
+    
+    public Scene getPageJPays() {
+        return pageJPays;
+    }
+
+    public Scene getPageJEpreuve() {
+        return pageJEpreuve;
+    }
+
+  
+    public void pageAccueil() {
+        this.stageVue.setScene(mainScene);
+    }
+
+    public void pageConnexion() {
+        this.stageVue.setScene(pageConnexion);
+    }
+
+    public void pageInscription() {
+        this.stageVue.setScene(pageInscription);
+    }
+
+    public void pageJournalistePays(Pays p) throws SQLException{
+        this.stageVue.setScene(pageJPays);
+        List<Integer> listeMedaille =modele.getOutilsRequete().listerMedaillesPays(p);
+        List<Athlete> listeAthletes=modele.getOutilsRequete().listerAthletePourUnSport(p.getNomPays());
+        VBox vBoxM=(VBox)pageJPays.lookup("#vbox1");
+        VBox vBoxA=(VBox)pageJPays.lookup("#vbox2");
+
+        HBox hBoxM=new HBox();
+        HBox hBoxM1=new HBox();
+        HBox hBoxM2=new HBox();
+
+        hBoxM.getChildren().add(new Label("Or"));
+        hBoxM.getChildren().add(new Label(String.valueOf(listeMedaille.get(0))));
+        
+        hBoxM1.getChildren().add(new Label("Argent"));
+        hBoxM1.getChildren().add(new Label(String.valueOf(listeMedaille.get(1))));
+        
+        hBoxM2.getChildren().add(new Label("Bronze"));
+        hBoxM2.getChildren().add(new Label(String.valueOf(listeMedaille.get(2))));
+
+        vBoxM.getChildren().add(hBoxM);
+        vBoxM.getChildren().add(hBoxM1);
+        vBoxM.getChildren().add(hBoxM2);
+
+        for(Athlete a:listeAthletes){
+            HBox hbox=new HBox();
+            hbox.getChildren().add(new Label(a.getNom()));
+            hbox.getChildren().add(new Label(a.getPrenom()));
+            vBoxA.getChildren().add(hbox);
+        }
+    }
+
+    public void pageJournalisteIPays() {
+        this.stageVue.setScene(pageJIPays);
+        if(crtlRJP.getPays().isEmpty()){
+            List<Pays> liste=this.crtlBJP.getListe();
+            VBox vBox=(VBox)pageJPays.lookup("#vbox");
+            for(int i=0;i<liste.size();i++){
+                HBox hbox=new HBox();
+                hbox.getChildren().add(new Label(String.valueOf(i+1)));
+                Button bouton=new Button(liste.get(i).getNomPays());
+                bouton.setOnAction(this.crtlAPIJ);
+                hbox.getChildren().add(bouton);
+                vBox.getChildren().add(hbox);
+            }
+        }
+        else{
+            List<String> liste=this.crtlRJP.getPays();
+            VBox vBox=(VBox)pageJPays.lookup("#vbox");
+            for(String s:liste){
+                Button bouton=new Button(s);
+                bouton.setOnAction(crtlAPIJ);
+                vBox.getChildren().add(bouton);
+            }
+        }
+    }
+
+    public void pageJournalisteAthlete(Athlete a) throws SQLException{
+        this.stageVue.setScene(pageJAthlete);
+        List<Integer> listeMedaille = modele.getOutilsRequete().listerMedaillesAthlete(a);
+        VBox vBoxM=(VBox)pageJAthlete.lookup("#vbox1");
+        HBox hBoxM=new HBox();
+        HBox hBoxM1=new HBox();
+        HBox hBoxM2=new HBox();
+
+        hBoxM.getChildren().add(new Label("Or"));
+        hBoxM.getChildren().add(new Label(String.valueOf(listeMedaille.get(0))));
+        
+        hBoxM1.getChildren().add(new Label("Argent"));
+        hBoxM1.getChildren().add(new Label(String.valueOf(listeMedaille.get(1))));
+        
+        hBoxM2.getChildren().add(new Label("Bronze"));
+        hBoxM2.getChildren().add(new Label(String.valueOf(listeMedaille.get(2))));
+
+        vBoxM.getChildren().add(hBoxM);
+        vBoxM.getChildren().add(hBoxM1);
+        vBoxM.getChildren().add(hBoxM2);
+    }
+
+    public void pageJournalisteIAthlete() {
+        this.stageVue.setScene(pageJIAthlete);
+        if(crtlRJA.getAthletes().isEmpty()){
+            List<Athlete> liste=this.crtlBJA.getListe();
+            VBox vBox=(VBox)pageJAthlete.lookup("#vbox");
+            for(int i=0;i<liste.size();i++){
+                HBox hbox=new HBox();
+                hbox.getChildren().add(new Label(String.valueOf(i+1)));
+                Button bouton=new Button(liste.get(i).getNom());
+                bouton.setOnAction(this.crtlAPIJ);
+                hbox.getChildren().add(bouton);
+                vBox.getChildren().add(hbox);
+            }
+        }
+        else{
+            List<String> liste=this.crtlRJA.getAthletes();
+            VBox vBox=(VBox)pageJAthlete.lookup("#vbox");
+            for(String s:liste){
+                Button bouton=new Button(s);
+                bouton.setOnAction(crtlAPIJ);
+                vBox.getChildren().add(bouton);
+            }
+        }
+    }
+
+    public void pageJournalisteEquipe(Equipe e) throws SQLException{
+        this.stageVue.setScene(pageJEquipe);
+        List<Integer> listeMedaille =modele.getOutilsRequete().listerMedaillesEquipe(e);
+        List<Athlete> listeAthletes=modele.getOutilsRequete().listerAthletePourEquipe(e.getNum());
+        VBox vBoxA=(VBox)pageJEquipe.lookup("#vbox1");
+        VBox vBoxM=(VBox)pageJEquipe.lookup("#vbox2");
+
+        HBox hBoxM=new HBox();
+        HBox hBoxM1=new HBox();
+        HBox hBoxM2=new HBox();
+
+        hBoxM.getChildren().add(new Label("Or"));
+        hBoxM.getChildren().add(new Label(String.valueOf(listeMedaille.get(0))));
+        
+        hBoxM1.getChildren().add(new Label("Argent"));
+        hBoxM1.getChildren().add(new Label(String.valueOf(listeMedaille.get(1))));
+        
+        hBoxM2.getChildren().add(new Label("Bronze"));
+        hBoxM2.getChildren().add(new Label(String.valueOf(listeMedaille.get(2))));
+
+        vBoxM.getChildren().add(hBoxM);
+        vBoxM.getChildren().add(hBoxM1);
+        vBoxM.getChildren().add(hBoxM2);
+
+        for(Athlete a:listeAthletes){
+            HBox hbox=new HBox();
+            hbox.getChildren().add(new Label(a.getNom()));
+            hbox.getChildren().add(new Label(a.getPrenom()));
+            vBoxA.getChildren().add(hbox);
+        }
+    }
+
+    public void pageJournalisteIEquipe() {
+        this.stageVue.setScene(pageJIEquipe);
+        if(crtlRJEQ.getEquipes().isEmpty()){
+            List<Equipe> liste=this.crtlBJEQ.getListe();
+            VBox vBox=(VBox)pageJEquipe.lookup("#vbox");
+            for(int i=0;i<liste.size();i++){
+                HBox hbox=new HBox();
+                hbox.getChildren().add(new Label(String.valueOf(i+1)));
+                Button bouton=new Button(liste.get(i).getNom());
+                bouton.setOnAction(this.crtlAPIJ);
+                hbox.getChildren().add(bouton);
+                vBox.getChildren().add(hbox);
+            }
+        }
+        else{
+            List<String> liste=this.crtlRJEQ.getEquipes();
+            VBox vBox=(VBox)pageJEquipe.lookup("#vbox");
+            for(String s:liste){
+                Button bouton=new Button(s);
+                bouton.setOnAction(crtlAPIJ);
+                vBox.getChildren().add(bouton);
+            }
+        }
+    }
+
+    public void pageJournalisteEpreuve(Epreuve e){
+        this.stageVue.setScene(pageJEpreuve);
+        VBox vBoxI=(VBox)pageJEpreuve.lookup("#vbox1");
+        vBoxI.getChildren().add(new Label(e.getNom()));
+        if(e.getHomme()){
+            vBoxI.getChildren().add(new Label("Epreuve masculine"));
+        }
+        else{
+            vBoxI.getChildren().add(new Label("Epreuve feminine"));
+        }
+        if(e.getIndividuel()){
+            vBoxI.getChildren().add(new Label("Epreuve individuel"));
+        }
+        else{
+            vBoxI.getChildren().add(new Label("Epreuve collective"));
+        }
+    }
+
+    public void pageJournalisteIEpreuve() {
+        this.stageVue.setScene(pageJIEpreuve);
+        if(crtlRJEP.getEpreuves().isEmpty()){
+            List<Epreuve> liste=this.crtlBJEP.getListe();
+            VBox vBox=(VBox)pageJEpreuve.lookup("#vbox");
+            for(int i=0;i<liste.size();i++){
+                HBox hbox=new HBox();
+                hbox.getChildren().add(new Label(String.valueOf(i+1)));
+                Button bouton=new Button(liste.get(i).getNom());
+                bouton.setOnAction(this.crtlAPIJ);
+                hbox.getChildren().add(bouton);
+                vBox.getChildren().add(hbox);
+            }
+        }
+        else{
+            List<String> liste=this.crtlRJEP.getEpreuves();
+            VBox vBox=(VBox)pageJEpreuve.lookup("#vbox");
+            for(String s:liste){
+                Button bouton=new Button(s);
+                bouton.setOnAction(crtlAPIJ);
+                vBox.getChildren().add(bouton);
+            }
+        }
     }
 
 
