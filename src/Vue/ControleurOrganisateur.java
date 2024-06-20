@@ -10,7 +10,7 @@ public class ControleurOrganisateur implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent actionEvent) {
-        this.vueJO.pageOrganisateur();
+        // this.vueJO.pageOrganisateurAcceuil();
     }
 }
 
