@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 public class ControleurConnexion implements EventHandler<ActionEvent> {
 
     private VueAppliJO vueJO;
+    private OutilsRequete outilsRequete;
 
     // private OutilsRequete outilsRequete;
 
