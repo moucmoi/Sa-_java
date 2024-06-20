@@ -15,6 +15,7 @@ public class ControleurRechercheJP implements EventHandler<ActionEvent>{
     public ControleurRechercheJP(VueAppliJO vueJO,JO modele) {
         this.vueJO = vueJO;
         this.modele=modele;
+        this.pays=new ArrayList<>();
     }
 
     public void handle(ActionEvent actionEvent){
