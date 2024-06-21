@@ -142,8 +142,4 @@ public class Epreuve {
     public String toString(){
         return "Epreuve : " + this.nomEpreuve + '\n' + " homme : " + this.homme + "\n" + " individuel : " + this.individuel + "\n" + " sport : " + this.sport;
     }
-
-    
-
-
 }
