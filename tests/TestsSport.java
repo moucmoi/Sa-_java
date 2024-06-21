@@ -1,6 +1,9 @@
+package tests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
+
+import src.Modele.*;
 
 public class TestsSport {
     private static Sport natation;

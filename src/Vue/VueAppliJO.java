@@ -1,3 +1,4 @@
+package src.Vue;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
@@ -13,6 +14,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
+
+import src.Modele.*;
+import src.Controleur.*;
 
 public class VueAppliJO extends Application {
 

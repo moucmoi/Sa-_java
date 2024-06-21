@@ -1,6 +1,10 @@
+package tests;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
+
+import src.Modele.*;
+
 public class TestsEquipe {
     private static Pays france;
     private static Pays chine;

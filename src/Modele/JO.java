@@ -1,6 +1,8 @@
+package src.Modele;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.io.FileNotFoundException;
 import java.sql.*;
 
 public class JO {
@@ -12,14 +14,17 @@ public class JO {
     private ConnexionMySQL connexion;
     private OutilsRequete requete;
 
-    public JO() throws ClassNotFoundException , SQLException{
+
+    public JO() throws ClassNotFoundException , SQLException, FileNotFoundException,NullPointerException{
         this.connexion = new ConnexionMySQL();
+        connexion.connecter("ConfigBD.txt");
         this.requete = new OutilsRequete(this.connexion);
         this.pays=this.requete.listerPays();
         this.equipes=this.requete.listerEquipe();
         this.athletes=this.requete.listerAthletes();
         this.epreuves=this.requete.listerEpreuve();
         this.sports=this.requete.listerSport();
+        
     }
         
     public void simulationJO(){
@@ -67,7 +72,8 @@ public class JO {
             p.majMedaille();
         }
     }
-    public OutilsRequete getOutilsRequete() {
+    
+    public OutilsRequete getOutilsRequete(){
         return this.requete;
     }
 }
