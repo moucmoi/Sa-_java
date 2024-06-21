@@ -33,6 +33,11 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
              this.vueJO.pageJournalisteIPays();
          }
          else if (retour == 1) {
+<<<<<<< HEAD
+            //this.vueJO.pageOrganisateurAcceuil();
+=======
+            this.vueJO.pageOrganisateurAcceuil();
+>>>>>>> 8d6bcfbe5f4c2c218ed9f0507b7a3bb3b9a5fcb2
             //this.vueJO.pageOrganisateurAcceuil();
          }
          else if (retour == 2) {
@@ -44,6 +49,11 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
         
         }
         catch (SQLException e) {
+<<<<<<< HEAD
+            this.vueJO.popUpUtilisateurOuMdpIncorrect(); 
+=======
+            this.vueJO.popUpUtilisateurOuMdpIncorrect();
+>>>>>>> 8d6bcfbe5f4c2c218ed9f0507b7a3bb3b9a5fcb2
             this.vueJO.popUpUtilisateurOuMdpIncorrect(); 
         }
     }
