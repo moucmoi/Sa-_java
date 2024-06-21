@@ -1,6 +1,6 @@
 package src.Vue;
 
-import package.src.Modele;
+import src.Modele.*;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.List;
