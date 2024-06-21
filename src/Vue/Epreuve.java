@@ -142,10 +142,9 @@ public class Epreuve implements Comparable<Epreuve>{
     public String toString(){
         return "Epreuve : " + this.nomEpreuve + '\n' + " homme : " + this.homme + "\n" + " individuel : " + this.individuel + "\n" + " sport : " + this.sport;
     }
+
     @Override
     public int compareTo(Epreuve e){
         return this.getNom().compareTo(e.getNom());
     }
-
-
 }

@@ -19,6 +19,7 @@ public class ControleurBoutonJournalisteEpreuve implements EventHandler<ActionEv
             this.liste=modele.getOutilsRequete().listerEpreuve();
         }
         catch (SQLException e){}
+        this.liste=new ArrayList<>();
     }
 
     public void handle(ActionEvent actionEvent) {

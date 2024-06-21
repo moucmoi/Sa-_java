@@ -1,4 +1,6 @@
+package src.Vue;
 
+import package.src.Modele;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.List;
@@ -27,11 +29,8 @@ public class VueAppliJO extends Application {
     private Scene pageInscription;
     private BorderPane rootInscription; 
 
-    private Scene pageAccueilAdmin;
-    private BorderPane rootAAdmin;
-
-    private Scene pageAdmin;
-    private BorderPane rootAdmin;
+    private Scene pageAdminAcceuil;
+    private BorderPane rootAdminAcceuil;
 
     private Scene pageJAthlete;
     private BorderPane rootJAthlete;
@@ -58,9 +57,12 @@ public class VueAppliJO extends Application {
     private Scene pageJEquipe;
     private BorderPane rootJEquipe;
 
+<<<<<<< HEAD
+=======
     private Scene pageOrganisateur;
     private BorderPane rootOrganisateur;
 
+>>>>>>> 8d6bcfbe5f4c2c218ed9f0507b7a3bb3b9a5fcb2
     private Scene pageOrganisateurAccueil;
     private BorderPane rootOrganisateurAccueil;
 
@@ -88,6 +90,7 @@ public class VueAppliJO extends Application {
     private ControleurRechercheJP crtlRJP;
     private ControleurRechercheJEQ crtlRJEQ;
     private ControleurRechercheJEP crtlRJEP;
+    private ControleurOrganisateur crtlOA,
 
 
     public VueAppliJO() {
@@ -114,6 +117,7 @@ public class VueAppliJO extends Application {
         this.crtlRJP=new ControleurRechercheJP(this, modele);
         this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
         this.crtlRJEP=new ControleurRechercheJEP(this, modele);
+        this.crtlOA=new ControleurOrganisateur(this);
     }
 
     @Override
@@ -149,10 +153,9 @@ public class VueAppliJO extends Application {
         bRetourI.setOnAction(crtlRetour);
         bInscription.setOnAction(crtlIn);
 
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
-        this.rootAdmin = loader.load();
-        this.pageAdmin = new Scene(rootAdmin);
-
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateurAccueil.fxml"));
+        this.rootAdminAcceuil = loader.load();
+        this.pageAdminAcceuil = new Scene(rootAdminAcceuil);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
         this.rootJAthlete = loader.load();
@@ -298,13 +301,15 @@ public class VueAppliJO extends Application {
         bJIEquipe1.setOnAction(crtlJIEquipe);
         bJIEpreuve1.setOnAction(crtlJIEpreuve);
 
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateur.fxml"));
-        this.rootOrganisateur = loader.load();
-        this.pageOrganisateur = new Scene(rootOrganisateur);
-
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
         this.rootOrganisateurAccueil = loader.load();
         this.pageOrganisateurAccueil = new Scene(rootOrganisateurAccueil);
+
+        Button bDecoJ1 = (Button) pageOrganisateurAccueil.lookup("#deconnexion");
+        Button bJournaliste1 = (Button) pageOrganisateurAccueil.lookup("#home");
+
+        bDecoJ1.setOnAction(crtlDeco);
+        bJournaliste1.setOnAction(crtlOA);
 
 
         this.stageVue.setScene(mainScene);

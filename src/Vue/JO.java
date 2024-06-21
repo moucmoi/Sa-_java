@@ -25,7 +25,6 @@ public class JO {
         this.athletes=this.requete.listerAthletes();
         this.epreuves=this.requete.listerEpreuve();
         this.sports=this.requete.listerSport();
-        
     }
         
     public void simulationJO(){

@@ -32,7 +32,7 @@ public class OutilsRequete{
     public List<Integer> listerMedaillesPays(Pays pays) throws SQLException {
         List<Integer> listeRetour = new ArrayList<>();
         ResultSet rs = null;
-        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM PAYS WHERE code_pays =" + pays.getCodePays() + ";";
+        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM PAYS WHERE code_pays =\"" + pays.getCodePays() + "\";";
         rs = st.executeQuery(requete);
         listeRetour.add(rs.getInt("nb_medaille_or"));
         listeRetour.add(rs.getInt("nb_medaille_argent"));
@@ -47,7 +47,7 @@ public class OutilsRequete{
         List<Integer> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM ATHLETE WHERE nom =" + a.getNom() + ";";
+        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM ATHLETE WHERE nom =\"" + a.getNom() + "\";";
         rs = st.executeQuery(requete);
         listeRetour.add(rs.getInt("nb_medaille_or"));
         listeRetour.add(rs.getInt("nb_medaille_argent"));
@@ -61,7 +61,7 @@ public class OutilsRequete{
         List<Integer> listeRetour = new ArrayList<>();
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM EQUIPE WHERE nom_equipe =" + e.getNom() + ";";
+        String requete = "SELECT nb_medaille_or, nb_medaille_argent, nb_medaille_argent FROM EQUIPE WHERE nom_equipe =\"" + e.getNom() + "\";";
         rs = st.executeQuery(requete);
         listeRetour.add(rs.getInt("nb_medaille_or"));
         listeRetour.add(rs.getInt("nb_medaille_argent"));
@@ -104,7 +104,7 @@ public class OutilsRequete{
         List<Epreuve> listeRetour = new ArrayList<>();
         this.st2 = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT * FROM EPREUVE NATURAL JOIN EQUIPE NATURAL JOIN SPORT WHERE numero_equipe = " + numEquipe + ";";
+        String requete = "SELECT * FROM EPREUVE NATURAL JOIN EQUIPE NATURAL JOIN SPORT WHERE numero_equipe = \"" + numEquipe + "\";";
         rs = st2.executeQuery(requete);
         while (rs.next()){
             listeRetour.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"))));
@@ -123,7 +123,7 @@ public class OutilsRequete{
         List<Athlete> listeRetour = new ArrayList<>();
         this.st3 = this.laConnexion.createStatement();
         ResultSet rs = null;
-            String requete = "SELECT * FROM ATHLETE NATURAL JOIN EQUIPE WHERE numero_equipe = " + numEquipe + ";";
+            String requete = "SELECT * FROM ATHLETE NATURAL JOIN EQUIPE WHERE numero_equipe = \"" + numEquipe + "\";";
             rs = st3.executeQuery(requete);
             while (rs.next()){
 				listeRetour.add(new Athlete(rs.getInt("num_athlete"), rs.getString("nom"),rs.getString("prenom"), rs.getString("sexe"),  rs.getInt("forcee"), rs.getInt("agilite"), rs.getInt("endurance"),obtenirEquipe(rs.getInt("numero_equipe")), rs.getInt("medaille_or"), rs.getInt("medaille_argent"), rs.getInt("medaille_bronze")));
@@ -143,7 +143,7 @@ public class OutilsRequete{
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
         codePays="'"+codePays+"'";
-        String requete = "SELECT * FROM PAYS WHERE code_pays = " + codePays + ";";
+        String requete = "SELECT * FROM PAYS WHERE code_pays = \"" + codePays + "\";";
         rs = st.executeQuery(requete);
         if(rs.next()){
             return new Pays(rs.getString("code_pays"), rs.getString("nom_pays"), rs.getInt("nb_medaille_or"), rs.getInt("nb_medaille_argent"), rs.getInt("nb_medaille_bronze"));
@@ -195,7 +195,7 @@ public class OutilsRequete{
         this.st2 = this.laConnexion.createStatement();
         codePays = "'"+codePays+"'";
         ResultSet rs = null;
-            String requete = "SELECT * FROM EQUIPE WHERE numero_equipe = " + codePays + ";";
+            String requete = "SELECT * FROM EQUIPE WHERE numero_equipe = \"" + codePays + "\";";
             rs = st2.executeQuery(requete);
             while (rs.next()){
 				listeRetour.add(new Equipe(rs.getInt("numero_equipe"), rs.getString("nom_equipe"),obtenirPays(rs.getString("code_pays"))));
@@ -232,7 +232,7 @@ public class OutilsRequete{
     public Equipe obtenirEquipe(int numEquipe) throws SQLException {
         this.st = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT * FROM EQUIPE WHERE numero_equipe = " + numEquipe + ";";
+        String requete = "SELECT * FROM EQUIPE WHERE numero_equipe = \"" + numEquipe + "\";";
         rs = st.executeQuery(requete);
         if(rs.next()){
             return new Equipe(rs.getInt("numero_equipe"), rs.getString("nom_equipe"), obtenirPays(rs.getString("code_pays")));
@@ -294,7 +294,7 @@ public class OutilsRequete{
         this.st2 = this.laConnexion.createStatement();
         ResultSet rs = null;
 
-        String requete = "SELECT * FROM EPREUVE NATURAL JOIN SPORT WHERE nom_sport = '" + nomSport + "';";
+        String requete = "SELECT * FROM EPREUVE NATURAL JOIN SPORT WHERE nom_sport = \"" + nomSport + "\";";
         rs = st2.executeQuery(requete);
         while (rs.next()){
             listeRetour.add(new Epreuve(rs.getString("nom_epreuve"),rs.getBoolean("homme"),rs.getBoolean("individuel"),new Sport(rs.getString("nom_sport"),rs.getFloat("coeff_force"),rs.getFloat("coeff_agilite"),rs.getFloat("coeff_endurance"))));
@@ -307,7 +307,7 @@ public class OutilsRequete{
         List<Athlete> listeRetour = new ArrayList<>();
         this.st2 = this.laConnexion.createStatement();
         ResultSet rs = null;
-        String requete = "SELECT * FROM ATHLETE NATURAL JOIN EPREUVE NATURAL JOIN SPORT WHERE nom_sport = " + nomSport + ";";
+        String requete = "SELECT * FROM ATHLETE NATURAL JOIN EPREUVE NATURAL JOIN SPORT WHERE nom_sport = \"" + nomSport + "\";";
         rs = st2.executeQuery(requete);
         while (rs.next()){
             listeRetour.add(new Athlete(rs.getInt("num_athlete"), rs.getString("nom"), rs.getString("prenom"), rs.getString("sexe"), rs.getInt("forcee"), rs.getInt("agilite"), rs.getInt("agilite"), null));
