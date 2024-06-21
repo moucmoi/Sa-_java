@@ -16,6 +16,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 
+import src.Modele.*;
+import src.Controleur.*;
+
 public class VueAppliJO extends Application {
 
     private Scene mainScene;

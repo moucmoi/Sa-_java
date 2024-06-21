@@ -1,4 +1,0 @@
-servinfo-maria
-DBfonteny
-fonteny
-fonteny

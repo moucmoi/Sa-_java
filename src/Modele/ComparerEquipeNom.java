@@ -1,3 +1,4 @@
+package src.Modele;
 import java.util.Comparator;
 
 public class ComparerEquipeNom implements Comparator<Equipe> {

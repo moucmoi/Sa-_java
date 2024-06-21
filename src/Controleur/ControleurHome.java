@@ -1,5 +1,9 @@
+package src.Controleur;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import src.Modele.*;
+import src.Vue.*;
 
 public class ControleurHome implements EventHandler<ActionEvent> {
 

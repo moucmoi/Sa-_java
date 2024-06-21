@@ -1,9 +1,10 @@
+package src.Modele;
 import java.util.ArrayList;
 import java.util.List;
 /**
  * Classe Epreuve
  */
-public class Epreuve {
+public class Epreuve implements Comparable<Epreuve>{
     private String nomEpreuve;
     private boolean homme;
     private boolean individuel;
@@ -141,5 +142,10 @@ public class Epreuve {
     @Override
     public String toString(){
         return "Epreuve : " + this.nomEpreuve + '\n' + " homme : " + this.homme + "\n" + " individuel : " + this.individuel + "\n" + " sport : " + this.sport;
+    }
+
+    @Override
+    public int compareTo(Epreuve e){
+        return this.getNom().compareTo(e.getNom());
     }
 }
