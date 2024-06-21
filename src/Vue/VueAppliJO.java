@@ -90,7 +90,7 @@ public class VueAppliJO extends Application {
     private ControleurRechercheJP crtlRJP;
     private ControleurRechercheJEQ crtlRJEQ;
     private ControleurRechercheJEP crtlRJEP;
-    private ControleurBoutonOrganisateur crtlOA,
+    private ControleurOrganisateur crtlOA,
 
 
     public VueAppliJO() {
@@ -117,7 +117,7 @@ public class VueAppliJO extends Application {
         this.crtlRJP=new ControleurRechercheJP(this, modele);
         this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
         this.crtlRJEP=new ControleurRechercheJEP(this, modele);
-        this.crtlOA=new ControleurBoutonOrganisateur(this);
+        this.crtlOA=new ControleurOrganisateur(this);
     }
 
     @Override
