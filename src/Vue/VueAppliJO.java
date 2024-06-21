@@ -118,7 +118,7 @@ public class VueAppliJO extends Application {
         this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
         this.crtlRJEP=new ControleurRechercheJEP(this, modele);
         this.crtlOA=new ControleurBoutonOrganisateur(this);
-        }
+    }
 
     @Override
     public void start(Stage stage) throws Exception{
