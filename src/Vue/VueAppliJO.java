@@ -90,7 +90,7 @@ public class VueAppliJO extends Application {
     private ControleurRechercheJP crtlRJP;
     private ControleurRechercheJEQ crtlRJEQ;
     private ControleurRechercheJEP crtlRJEP;
-    private Controleur crtlOA
+    private ControleurBoutonOrganisateur crtlOA,
 
 
     public VueAppliJO() {
@@ -117,8 +117,8 @@ public class VueAppliJO extends Application {
         this.crtlRJP=new ControleurRechercheJP(this, modele);
         this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
         this.crtlRJEP=new ControleurRechercheJEP(this, modele);
-        this.crtlOA=
-    }
+        this.crtlOA=new ControleurBoutonOrganisateur(this);
+        }
 
     @Override
     public void start(Stage stage) throws Exception{
