@@ -36,6 +36,9 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
 <<<<<<< HEAD
             //this.vueJO.pageOrganisateurAcceuil();
 =======
+<<<<<<< HEAD
+            //this.vueJO.pageOrganisateurAcceuil();
+=======
             this.vueJO.pageOrganisateurAcceuil();
 >>>>>>> 8d6bcfbe5f4c2c218ed9f0507b7a3bb3b9a5fcb2
             //this.vueJO.pageOrganisateurAcceuil();
