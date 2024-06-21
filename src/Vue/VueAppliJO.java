@@ -1,4 +1,6 @@
+package src.Vue;
 
+import package.src.Modele;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.List;
@@ -27,11 +29,8 @@ public class VueAppliJO extends Application {
     private Scene pageInscription;
     private BorderPane rootInscription; 
 
-    private Scene pageAccueilAdmin;
-    private BorderPane rootAAdmin;
-
-    private Scene pageAdmin;
-    private BorderPane rootAdmin;
+    private Scene pageAdminAcceuil;
+    private BorderPane rootAdminAcceuil;
 
     private Scene pageJAthlete;
     private BorderPane rootJAthlete;
@@ -57,9 +56,6 @@ public class VueAppliJO extends Application {
 
     private Scene pageJEquipe;
     private BorderPane rootJEquipe;
-
-    private Scene pageOrganisateur;
-    private BorderPane rootOrganisateur;
 
     private Scene pageOrganisateurAccueil;
     private BorderPane rootOrganisateurAccueil;
@@ -149,10 +145,9 @@ public class VueAppliJO extends Application {
         bRetourI.setOnAction(crtlRetour);
         bInscription.setOnAction(crtlIn);
 
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateur.fxml"));
-        this.rootAdmin = loader.load();
-        this.pageAdmin = new Scene(rootAdmin);
-
+        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateurAccueil.fxml"));
+        this.rootAdminAcceuil = loader.load();
+        this.pageAdminAcceuil = new Scene(rootAdminAcceuil);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
         this.rootJAthlete = loader.load();
@@ -297,10 +292,6 @@ public class VueAppliJO extends Application {
         bJIAthlete1.setOnAction(crtlJIAthlete);
         bJIEquipe1.setOnAction(crtlJIEquipe);
         bJIEpreuve1.setOnAction(crtlJIEpreuve);
-
-        this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateur.fxml"));
-        this.rootOrganisateur = loader.load();
-        this.pageOrganisateur = new Scene(rootOrganisateur);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
         this.rootOrganisateurAccueil = loader.load();

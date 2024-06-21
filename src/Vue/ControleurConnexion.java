@@ -29,7 +29,7 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
              this.vueJO.pageJournalisteIPays();
          }
          else if (retour == 1) {
-            this.vueJO.pageOrganisateurAcceuil();
+            //this.vueJO.pageOrganisateurAcceuil();
          }
          else if (retour == 2) {
              this.vueJO.pageAccueilAdmin();
@@ -40,7 +40,7 @@ public class ControleurConnexion implements EventHandler<ActionEvent> {
         
         }
         catch (SQLException e) {
-            this.vueJO.popUpUtilisateurOuMdpIncorrect();
+            this.vueJO.popUpUtilisateurOuMdpIncorrect(); 
         }
     }
 }
