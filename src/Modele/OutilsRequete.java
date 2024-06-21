@@ -444,4 +444,17 @@ public class OutilsRequete{
         }
         return listeRetour;
     }
+
+    public boolean insererAthlete(String numAthlete, String nom, String prenom, String sexe, String force, String agilite, String endurance, String numeroEquipe, String mdOr, String mdArgent, String mdBronze) throws SQLException{
+        this.st = this.laConnexion.createStatement();
+        ResultSet rs = null;
+        rs = st.executeQuery("SELECT * FROM ATHLETE WHERE num_athlete = " + numAthlete + ";");
+        if (rs!=null) {
+            String requete = "INSERT INTO UTILISATEUR VALUES(" + numAthlete + ", \"" + nom + "\", \"" + prenom + "\", \"" + sexe + "\", " + force + ", " + agilite + ", " + endurance+ ", " + numeroEquipe+");";  
+            System.out.println(requete);
+            st.executeUpdate(requete);
+            return true;
+        }
+        return false;
+    }
 }

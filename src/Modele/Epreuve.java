@@ -108,7 +108,7 @@ public class Epreuve implements Comparable<Epreuve>{
         Double max=null;
         int id=0;
         for(int i=0; i<liste.size();i++){
-            if(max.equals(null)||liste.get(i)>max){
+            if(max==null||liste.get(i)>max){
                 max=liste.get(i);
                 id=i;
             }
@@ -120,11 +120,7 @@ public class Epreuve implements Comparable<Epreuve>{
         List<Equipe> rep=new ArrayList<>();
         List<Double> listeScore=new ArrayList<>();
         for(Equipe e:liste){
-            Double score=0.0;
-            for(Athlete a:e.getLesAthletes()){
-                score+=a.participer(this);
-            }
-            listeScore.add(score);
+            listeScore.add(calculerScore(e));
         }
         for(int i=0;i<listeScore.size();i++){
             int meilleur=idMax(listeScore);

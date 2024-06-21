@@ -1,8 +1,4 @@
 {
-
-    "java.project.sourcePaths": [
-        "."
-    ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "/usr/share/java/junit-jupiter-api-5.3.2.jar",

@@ -1,6 +1,5 @@
 package src.Vue;
 
-import src.Modele.*;
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.List;
@@ -60,12 +59,6 @@ public class VueAppliJO extends Application {
     private Scene pageJEquipe;
     private BorderPane rootJEquipe;
 
-<<<<<<< HEAD
-=======
-    private Scene pageOrganisateur;
-    private BorderPane rootOrganisateur;
-
->>>>>>> 8d6bcfbe5f4c2c218ed9f0507b7a3bb3b9a5fcb2
     private Scene pageOrganisateurAccueil;
     private BorderPane rootOrganisateurAccueil;
 
@@ -93,12 +86,10 @@ public class VueAppliJO extends Application {
     private ControleurRechercheJP crtlRJP;
     private ControleurRechercheJEQ crtlRJEQ;
     private ControleurRechercheJEP crtlRJEP;
-    private ControleurOrganisateur crtlOA,
-
-
-    public VueAppliJO() {
-        super();
-    }
+    private ControleurOrganisateur crtlOA;
+    private ControleurOrganisateurLancer crtlOL;
+    private ControleurAdmin crtlAA;
+    private ControleurAdminCreer crtlAC;
 
     public void init() throws SQLException, ClassNotFoundException,FileNotFoundException{
         this.modele=new JO();
@@ -121,6 +112,9 @@ public class VueAppliJO extends Application {
         this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
         this.crtlRJEP=new ControleurRechercheJEP(this, modele);
         this.crtlOA=new ControleurOrganisateur(this);
+        this.crtlOL=new ControleurOrganisateurLancer(this, modele);
+        this.crtlAA=new ControleurAdmin(this);
+        this.crtlAC=new ControleurAdminCreer(this, this.modele.getOutilsRequete());
     }
 
     @Override
@@ -159,6 +153,13 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaAdministrateurAccueil.fxml"));
         this.rootAdminAcceuil = loader.load();
         this.pageAdminAcceuil = new Scene(rootAdminAcceuil);
+
+        Button bDecoA = (Button) pageAdminAcceuil.lookup("#deconnexion");
+        Button bHomeA = (Button) pageAdminAcceuil.lookup("#home");
+        Button bCreerA = (Button) pageAdminAcceuil.lookup("#creer");
+        bDecoA.setOnAction(crtlDeco);
+        bHomeA.setOnAction(crtlBA);
+        bCreerA.setOnAction(crtlAC);
 
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaJournalisteAthlete.fxml"));
         this.rootJAthlete = loader.load();
@@ -308,11 +309,13 @@ public class VueAppliJO extends Application {
         this.rootOrganisateurAccueil = loader.load();
         this.pageOrganisateurAccueil = new Scene(rootOrganisateurAccueil);
 
-        Button bDecoJ1 = (Button) pageOrganisateurAccueil.lookup("#deconnexion");
-        Button bJournaliste1 = (Button) pageOrganisateurAccueil.lookup("#home");
+        Button bDecoO = (Button) pageOrganisateurAccueil.lookup("#deconnexion");
+        Button bOrganisateur = (Button) pageOrganisateurAccueil.lookup("#home");
+        Button bLancer = (Button) pageOrganisateurAccueil.lookup("#lancer");
 
-        bDecoJ1.setOnAction(crtlDeco);
-        bJournaliste1.setOnAction(crtlOA);
+        bDecoO.setOnAction(crtlDeco);
+        bOrganisateur.setOnAction(crtlOA);
+        bLancer.setOnAction(crtlOL);
 
 
         this.stageVue.setScene(mainScene);
@@ -335,6 +338,24 @@ public class VueAppliJO extends Application {
     public Alert popUpInscriptionIncorrect(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION,"Nom d'utilisateur ou mot de passe invalide");
         alert.setTitle("Erreur");
+        return alert;
+    }
+
+    public Alert popUpDejaLancer(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Les IUT'Olympiques sont déjà lancé !");
+        alert.setTitle("IUT'Olympique");
+        return alert;
+    }
+
+    public Alert popUpLancer(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Les IUT'Olympiques sont lancé !");
+        alert.setTitle("IUT'Olympique");
+        return alert;
+    }
+
+    public Alert popAthleteInserer(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"Un athlète a était inserer");
+        alert.setTitle("IUT'Olympique");
         return alert;
     }
 
@@ -376,7 +397,7 @@ public class VueAppliJO extends Application {
     }
 
     public void pageAccueilAdmin() {
-        this.stageVue.setScene(pageAccueilAdmin);
+        this.stageVue.setScene(pageAdminAcceuil);
     }
 
 
@@ -578,15 +599,14 @@ public class VueAppliJO extends Application {
             VBox vBox=(VBox)pageJEpreuve.lookup("#vbox");
             for(String s:liste){
                 Button bouton=new Button(s);
-                bouton.setOnAction(crtlAPIJ);
+                bouton.setOnAction(this.crtlAPIJ);
                 vBox.getChildren().add(bouton);
             }
         }
         this.stageVue.setScene(pageJEpreuve);
     }
-
-
+    
     public static void main(String[] args) {
         launch(args);
-    }
+    } 
 }
