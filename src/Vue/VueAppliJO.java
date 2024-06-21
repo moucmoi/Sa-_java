@@ -57,6 +57,12 @@ public class VueAppliJO extends Application {
     private Scene pageJEquipe;
     private BorderPane rootJEquipe;
 
+<<<<<<< HEAD
+=======
+    private Scene pageOrganisateur;
+    private BorderPane rootOrganisateur;
+
+>>>>>>> 8d6bcfbe5f4c2c218ed9f0507b7a3bb3b9a5fcb2
     private Scene pageOrganisateurAccueil;
     private BorderPane rootOrganisateurAccueil;
 
@@ -84,6 +90,7 @@ public class VueAppliJO extends Application {
     private ControleurRechercheJP crtlRJP;
     private ControleurRechercheJEQ crtlRJEQ;
     private ControleurRechercheJEP crtlRJEP;
+    private Controleur crtlOA
 
 
     public VueAppliJO() {
@@ -110,6 +117,7 @@ public class VueAppliJO extends Application {
         this.crtlRJP=new ControleurRechercheJP(this, modele);
         this.crtlRJEQ=new ControleurRechercheJEQ(this, modele);
         this.crtlRJEP=new ControleurRechercheJEP(this, modele);
+        this.crtlOA=
     }
 
     @Override
@@ -296,6 +304,12 @@ public class VueAppliJO extends Application {
         this.loader = new FXMLLoader(this.getClass().getResource("SAEjavaOrganisateurAccueil.fxml"));
         this.rootOrganisateurAccueil = loader.load();
         this.pageOrganisateurAccueil = new Scene(rootOrganisateurAccueil);
+
+        Button bDecoJ1 = (Button) pageOrganisateurAccueil.lookup("#deconnexion");
+        Button bJournaliste1 = (Button) pageOrganisateurAccueil.lookup("#home");
+
+        bDecoJ1.setOnAction(crtlDeco);
+        bJournaliste1.setOnAction(crtlOA);
 
 
         this.stageVue.setScene(mainScene);
